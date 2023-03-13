@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**model** | **object** | The embedding_model to use for embedding vector generation | [optional] 
+**model** | [**\Swagger\Client\Model\IndexMappingModel**](IndexMappingModel.md) |  | [optional] 
 **text_indexed** | **bool** | Whether to index the text or not | [optional] 
 **mapping** | **object** | The metadata mapping | [optional] 
 
