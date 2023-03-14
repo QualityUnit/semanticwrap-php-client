@@ -1,6 +1,6 @@
 <?php
 /**
- * AugmentationResponseResult
+ * LlmResponse
  *
  * PHP version 7.4
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * AugmentationResponseResult Class Doc Comment
+ * LlmResponse Class Doc Comment
  *
  * @category Class
- * @description The response from the chat
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSerializable
+class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AugmentationResponse_result';
+    protected static $openAPIModelName = 'LlmResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

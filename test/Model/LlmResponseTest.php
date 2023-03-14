@@ -1,6 +1,6 @@
 <?php
 /**
- * AugmentationResponseResultTest
+ * LlmResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AugmentationResponseResultTest Class Doc Comment
+ * LlmResponseTest Class Doc Comment
  *
  * @category    Class
- * @description The response from the chat
+ * @description LlmResponse
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AugmentationResponseResultTest extends TestCase
+class LlmResponseTest extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class AugmentationResponseResultTest extends TestCase
     }
 
     /**
-     * Test "AugmentationResponseResult"
+     * Test "LlmResponse"
      */
-    public function testAugmentationResponseResult()
+    public function testLlmResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

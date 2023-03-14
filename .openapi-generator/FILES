@@ -25,6 +25,7 @@ docs/Model/IndexMapping.md
 docs/Model/IndexMappingModel.md
 docs/Model/IndexResponse.md
 docs/Model/IndexResponseTiming.md
+docs/Model/LlmResponse.md
 docs/Model/MemoryfullAugmentationQuery.md
 docs/Model/MemorylessAugmentationQuery.md
 docs/Model/MemorylessAugmentationQueryFilter.md
@@ -56,6 +57,7 @@ lib/Model/IndexMapping.php
 lib/Model/IndexMappingModel.php
 lib/Model/IndexResponse.php
 lib/Model/IndexResponseTiming.php
+lib/Model/LlmResponse.php
 lib/Model/MemoryfullAugmentationQuery.php
 lib/Model/MemorylessAugmentationQuery.php
 lib/Model/MemorylessAugmentationQueryFilter.php
@@ -94,6 +96,7 @@ test/Model/IndexMappingModelTest.php
 test/Model/IndexMappingTest.php
 test/Model/IndexResponseTest.php
 test/Model/IndexResponseTimingTest.php
+test/Model/LlmResponseTest.php
 test/Model/MemoryfullAugmentationQueryTest.php
 test/Model/MemorylessAugmentationQueryFilterTest.php
 test/Model/MemorylessAugmentationQueryModelTest.php

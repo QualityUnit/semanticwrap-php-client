@@ -1,4 +1,4 @@
-# # AugmentationResponseResult
+# # LlmResponse
 
 ## Properties
 
