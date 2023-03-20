@@ -141,4 +141,13 @@ class IndexMappingModelTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "auth_security"
+     */
+    public function testPropertyAuthSecurity()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

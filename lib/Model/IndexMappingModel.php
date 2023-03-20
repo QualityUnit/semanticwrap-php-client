@@ -64,7 +64,8 @@ class IndexMappingModel implements ModelInterface, ArrayAccess, \JsonSerializabl
         'augmenting_model_name' => 'string',
         'embed_instruction' => 'string',
         'query_instruction' => 'string',
-        'self_hosted_url' => 'string'
+        'self_hosted_url' => 'string',
+        'auth_security' => '\OpenAPI\Client\Model\AuthSecurity'
     ];
 
     /**
@@ -81,7 +82,8 @@ class IndexMappingModel implements ModelInterface, ArrayAccess, \JsonSerializabl
         'augmenting_model_name' => null,
         'embed_instruction' => null,
         'query_instruction' => null,
-        'self_hosted_url' => null
+        'self_hosted_url' => null,
+        'auth_security' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class IndexMappingModel implements ModelInterface, ArrayAccess, \JsonSerializabl
 		'augmenting_model_name' => false,
 		'embed_instruction' => false,
 		'query_instruction' => false,
-		'self_hosted_url' => false
+		'self_hosted_url' => false,
+		'auth_security' => false
     ];
 
     /**
@@ -191,7 +194,8 @@ class IndexMappingModel implements ModelInterface, ArrayAccess, \JsonSerializabl
         'augmenting_model_name' => 'augmenting_model_name',
         'embed_instruction' => 'embed_instruction',
         'query_instruction' => 'query_instruction',
-        'self_hosted_url' => 'self_hosted_url'
+        'self_hosted_url' => 'self_hosted_url',
+        'auth_security' => 'auth_security'
     ];
 
     /**
@@ -206,7 +210,8 @@ class IndexMappingModel implements ModelInterface, ArrayAccess, \JsonSerializabl
         'augmenting_model_name' => 'setAugmentingModelName',
         'embed_instruction' => 'setEmbedInstruction',
         'query_instruction' => 'setQueryInstruction',
-        'self_hosted_url' => 'setSelfHostedUrl'
+        'self_hosted_url' => 'setSelfHostedUrl',
+        'auth_security' => 'setAuthSecurity'
     ];
 
     /**
@@ -221,7 +226,8 @@ class IndexMappingModel implements ModelInterface, ArrayAccess, \JsonSerializabl
         'augmenting_model_name' => 'getAugmentingModelName',
         'embed_instruction' => 'getEmbedInstruction',
         'query_instruction' => 'getQueryInstruction',
-        'self_hosted_url' => 'getSelfHostedUrl'
+        'self_hosted_url' => 'getSelfHostedUrl',
+        'auth_security' => 'getAuthSecurity'
     ];
 
     /**
@@ -288,6 +294,7 @@ class IndexMappingModel implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('embed_instruction', $data ?? [], null);
         $this->setIfExists('query_instruction', $data ?? [], null);
         $this->setIfExists('self_hosted_url', $data ?? [], null);
+        $this->setIfExists('auth_security', $data ?? [], null);
     }
 
     /**
@@ -517,6 +524,33 @@ class IndexMappingModel implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable self_hosted_url cannot be null');
         }
         $this->container['self_hosted_url'] = $self_hosted_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets auth_security
+     *
+     * @return \OpenAPI\Client\Model\AuthSecurity|null
+     */
+    public function getAuthSecurity()
+    {
+        return $this->container['auth_security'];
+    }
+
+    /**
+     * Sets auth_security
+     *
+     * @param \OpenAPI\Client\Model\AuthSecurity|null $auth_security auth_security
+     *
+     * @return self
+     */
+    public function setAuthSecurity($auth_security)
+    {
+        if (is_null($auth_security)) {
+            throw new \InvalidArgumentException('non-nullable auth_security cannot be null');
+        }
+        $this->container['auth_security'] = $auth_security;
 
         return $this;
     }

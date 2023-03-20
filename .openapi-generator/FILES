@@ -13,6 +13,7 @@ docs/Model/Ack.md
 docs/Model/AugmentationResponse.md
 docs/Model/AugmentationResponseResult.md
 docs/Model/AugmentationResponseTiming.md
+docs/Model/AuthSecurity.md
 docs/Model/BulkIndex.md
 docs/Model/Document.md
 docs/Model/DocumentNonQuery.md
@@ -45,6 +46,7 @@ lib/Model/Ack.php
 lib/Model/AugmentationResponse.php
 lib/Model/AugmentationResponseResult.php
 lib/Model/AugmentationResponseTiming.php
+lib/Model/AuthSecurity.php
 lib/Model/BulkIndex.php
 lib/Model/Document.php
 lib/Model/DocumentNonQuery.php
@@ -84,6 +86,7 @@ test/Model/AckTest.php
 test/Model/AugmentationResponseResultTest.php
 test/Model/AugmentationResponseTest.php
 test/Model/AugmentationResponseTimingTest.php
+test/Model/AuthSecurityTest.php
 test/Model/BulkIndexTest.php
 test/Model/DocumentNonQueryTest.php
 test/Model/DocumentQueryByVectorTest.php

@@ -26,22 +26,11 @@ Get Related Documents from the index with ANN search
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: huggingface_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-HUGGINGFACE-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-HUGGINGFACE-KEY', 'Bearer');
-
-// Configure API key authorization: openai_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-OPENAI-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-OPENAI-KEY', 'Bearer');
-
 
 $apiInstance = new OpenAPI\Client\Api\SearchApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
 $payload = new \OpenAPI\Client\Model\DocumentQuery(); // \OpenAPI\Client\Model\DocumentQuery
@@ -67,7 +56,7 @@ try {
 
 ### Authorization
 
-[huggingface_key](../../README.md#huggingface_key), [openai_key](../../README.md#openai_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -95,22 +84,11 @@ Get Related Documents from the index with ANN search by vector
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: huggingface_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-HUGGINGFACE-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-HUGGINGFACE-KEY', 'Bearer');
-
-// Configure API key authorization: openai_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-OPENAI-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-OPENAI-KEY', 'Bearer');
-
 
 $apiInstance = new OpenAPI\Client\Api\SearchApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
 $payload = new \OpenAPI\Client\Model\DocumentQueryByVector(); // \OpenAPI\Client\Model\DocumentQueryByVector
@@ -136,7 +114,7 @@ try {
 
 ### Authorization
 
-[huggingface_key](../../README.md#huggingface_key), [openai_key](../../README.md#openai_key)
+No authorization required
 
 ### HTTP request headers
 
@@ -164,22 +142,11 @@ Get Related Documents from the index with ANN search for given document id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: huggingface_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-HUGGINGFACE-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-HUGGINGFACE-KEY', 'Bearer');
-
-// Configure API key authorization: openai_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-OPENAI-KEY', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-OPENAI-KEY', 'Bearer');
-
 
 $apiInstance = new OpenAPI\Client\Api\SearchApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
 $doc_id = 'doc_id_example'; // string
@@ -207,7 +174,7 @@ try {
 
 ### Authorization
 
-[huggingface_key](../../README.md#huggingface_key), [openai_key](../../README.md#openai_key)
+No authorization required
 
 ### HTTP request headers
 

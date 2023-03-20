@@ -1,6 +1,6 @@
 <?php
 /**
- * MemorylessAugmentationQueryModel
+ * AuthSecurity
  *
  * PHP version 7.4
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * MemorylessAugmentationQueryModel Class Doc Comment
+ * AuthSecurity Class Doc Comment
  *
  * @category Class
- * @description Model to be used
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \JsonSerializable
+class AuthSecurity implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MemorylessAugmentationQuery_model';
+    protected static $openAPIModelName = 'AuthSecurity';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,14 +57,8 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'embedding_class' => 'string',
-        'embedding_model_name' => 'string',
-        'augmenting_class' => 'string',
-        'augmenting_model_name' => 'string',
-        'embed_instruction' => 'string',
-        'query_instruction' => 'string',
-        'self_hosted_url' => 'string',
-        'auth_security' => '\OpenAPI\Client\Model\AuthSecurity'
+        'openai_api_key' => 'string',
+        'hf_api_key' => 'string'
     ];
 
     /**
@@ -76,14 +69,8 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'embedding_class' => null,
-        'embedding_model_name' => null,
-        'augmenting_class' => null,
-        'augmenting_model_name' => null,
-        'embed_instruction' => null,
-        'query_instruction' => null,
-        'self_hosted_url' => null,
-        'auth_security' => null
+        'openai_api_key' => null,
+        'hf_api_key' => null
     ];
 
     /**
@@ -92,14 +79,8 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'embedding_class' => false,
-		'embedding_model_name' => false,
-		'augmenting_class' => false,
-		'augmenting_model_name' => false,
-		'embed_instruction' => false,
-		'query_instruction' => false,
-		'self_hosted_url' => false,
-		'auth_security' => false
+        'openai_api_key' => false,
+		'hf_api_key' => false
     ];
 
     /**
@@ -188,14 +169,8 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'embedding_class' => 'embedding_class',
-        'embedding_model_name' => 'embedding_model_name',
-        'augmenting_class' => 'augmenting_class',
-        'augmenting_model_name' => 'augmenting_model_name',
-        'embed_instruction' => 'embed_instruction',
-        'query_instruction' => 'query_instruction',
-        'self_hosted_url' => 'self_hosted_url',
-        'auth_security' => 'auth_security'
+        'openai_api_key' => 'openai_api_key',
+        'hf_api_key' => 'hf_api_key'
     ];
 
     /**
@@ -204,14 +179,8 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'embedding_class' => 'setEmbeddingClass',
-        'embedding_model_name' => 'setEmbeddingModelName',
-        'augmenting_class' => 'setAugmentingClass',
-        'augmenting_model_name' => 'setAugmentingModelName',
-        'embed_instruction' => 'setEmbedInstruction',
-        'query_instruction' => 'setQueryInstruction',
-        'self_hosted_url' => 'setSelfHostedUrl',
-        'auth_security' => 'setAuthSecurity'
+        'openai_api_key' => 'setOpenaiApiKey',
+        'hf_api_key' => 'setHfApiKey'
     ];
 
     /**
@@ -220,14 +189,8 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'embedding_class' => 'getEmbeddingClass',
-        'embedding_model_name' => 'getEmbeddingModelName',
-        'augmenting_class' => 'getAugmentingClass',
-        'augmenting_model_name' => 'getAugmentingModelName',
-        'embed_instruction' => 'getEmbedInstruction',
-        'query_instruction' => 'getQueryInstruction',
-        'self_hosted_url' => 'getSelfHostedUrl',
-        'auth_security' => 'getAuthSecurity'
+        'openai_api_key' => 'getOpenaiApiKey',
+        'hf_api_key' => 'getHfApiKey'
     ];
 
     /**
@@ -287,14 +250,8 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('embedding_class', $data ?? [], null);
-        $this->setIfExists('embedding_model_name', $data ?? [], null);
-        $this->setIfExists('augmenting_class', $data ?? [], null);
-        $this->setIfExists('augmenting_model_name', $data ?? [], null);
-        $this->setIfExists('embed_instruction', $data ?? [], null);
-        $this->setIfExists('query_instruction', $data ?? [], null);
-        $this->setIfExists('self_hosted_url', $data ?? [], null);
-        $this->setIfExists('auth_security', $data ?? [], null);
+        $this->setIfExists('openai_api_key', $data ?? [], null);
+        $this->setIfExists('hf_api_key', $data ?? [], null);
     }
 
     /**
@@ -340,217 +297,55 @@ class MemorylessAugmentationQueryModel implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets embedding_class
+     * Gets openai_api_key
      *
      * @return string|null
      */
-    public function getEmbeddingClass()
+    public function getOpenaiApiKey()
     {
-        return $this->container['embedding_class'];
+        return $this->container['openai_api_key'];
     }
 
     /**
-     * Sets embedding_class
+     * Sets openai_api_key
      *
-     * @param string|null $embedding_class The class of the embedding embedding_model
+     * @param string|null $openai_api_key OpenAI API Key
      *
      * @return self
      */
-    public function setEmbeddingClass($embedding_class)
+    public function setOpenaiApiKey($openai_api_key)
     {
-        if (is_null($embedding_class)) {
-            throw new \InvalidArgumentException('non-nullable embedding_class cannot be null');
+        if (is_null($openai_api_key)) {
+            throw new \InvalidArgumentException('non-nullable openai_api_key cannot be null');
         }
-        $this->container['embedding_class'] = $embedding_class;
+        $this->container['openai_api_key'] = $openai_api_key;
 
         return $this;
     }
 
     /**
-     * Gets embedding_model_name
+     * Gets hf_api_key
      *
      * @return string|null
      */
-    public function getEmbeddingModelName()
+    public function getHfApiKey()
     {
-        return $this->container['embedding_model_name'];
+        return $this->container['hf_api_key'];
     }
 
     /**
-     * Sets embedding_model_name
+     * Sets hf_api_key
      *
-     * @param string|null $embedding_model_name The name of the embedding embedding_model
+     * @param string|null $hf_api_key HuggingFace API Key
      *
      * @return self
      */
-    public function setEmbeddingModelName($embedding_model_name)
+    public function setHfApiKey($hf_api_key)
     {
-        if (is_null($embedding_model_name)) {
-            throw new \InvalidArgumentException('non-nullable embedding_model_name cannot be null');
+        if (is_null($hf_api_key)) {
+            throw new \InvalidArgumentException('non-nullable hf_api_key cannot be null');
         }
-        $this->container['embedding_model_name'] = $embedding_model_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets augmenting_class
-     *
-     * @return string|null
-     */
-    public function getAugmentingClass()
-    {
-        return $this->container['augmenting_class'];
-    }
-
-    /**
-     * Sets augmenting_class
-     *
-     * @param string|null $augmenting_class The class of the augmenting embedding_model
-     *
-     * @return self
-     */
-    public function setAugmentingClass($augmenting_class)
-    {
-        if (is_null($augmenting_class)) {
-            throw new \InvalidArgumentException('non-nullable augmenting_class cannot be null');
-        }
-        $this->container['augmenting_class'] = $augmenting_class;
-
-        return $this;
-    }
-
-    /**
-     * Gets augmenting_model_name
-     *
-     * @return string|null
-     */
-    public function getAugmentingModelName()
-    {
-        return $this->container['augmenting_model_name'];
-    }
-
-    /**
-     * Sets augmenting_model_name
-     *
-     * @param string|null $augmenting_model_name The name of the augmenting embedding_model
-     *
-     * @return self
-     */
-    public function setAugmentingModelName($augmenting_model_name)
-    {
-        if (is_null($augmenting_model_name)) {
-            throw new \InvalidArgumentException('non-nullable augmenting_model_name cannot be null');
-        }
-        $this->container['augmenting_model_name'] = $augmenting_model_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets embed_instruction
-     *
-     * @return string|null
-     */
-    public function getEmbedInstruction()
-    {
-        return $this->container['embed_instruction'];
-    }
-
-    /**
-     * Sets embed_instruction
-     *
-     * @param string|null $embed_instruction The instruction for embedding
-     *
-     * @return self
-     */
-    public function setEmbedInstruction($embed_instruction)
-    {
-        if (is_null($embed_instruction)) {
-            throw new \InvalidArgumentException('non-nullable embed_instruction cannot be null');
-        }
-        $this->container['embed_instruction'] = $embed_instruction;
-
-        return $this;
-    }
-
-    /**
-     * Gets query_instruction
-     *
-     * @return string|null
-     */
-    public function getQueryInstruction()
-    {
-        return $this->container['query_instruction'];
-    }
-
-    /**
-     * Sets query_instruction
-     *
-     * @param string|null $query_instruction The instruction for querying
-     *
-     * @return self
-     */
-    public function setQueryInstruction($query_instruction)
-    {
-        if (is_null($query_instruction)) {
-            throw new \InvalidArgumentException('non-nullable query_instruction cannot be null');
-        }
-        $this->container['query_instruction'] = $query_instruction;
-
-        return $this;
-    }
-
-    /**
-     * Gets self_hosted_url
-     *
-     * @return string|null
-     */
-    public function getSelfHostedUrl()
-    {
-        return $this->container['self_hosted_url'];
-    }
-
-    /**
-     * Sets self_hosted_url
-     *
-     * @param string|null $self_hosted_url The url for self hosted embedding_model
-     *
-     * @return self
-     */
-    public function setSelfHostedUrl($self_hosted_url)
-    {
-        if (is_null($self_hosted_url)) {
-            throw new \InvalidArgumentException('non-nullable self_hosted_url cannot be null');
-        }
-        $this->container['self_hosted_url'] = $self_hosted_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets auth_security
-     *
-     * @return \OpenAPI\Client\Model\AuthSecurity|null
-     */
-    public function getAuthSecurity()
-    {
-        return $this->container['auth_security'];
-    }
-
-    /**
-     * Sets auth_security
-     *
-     * @param \OpenAPI\Client\Model\AuthSecurity|null $auth_security auth_security
-     *
-     * @return self
-     */
-    public function setAuthSecurity($auth_security)
-    {
-        if (is_null($auth_security)) {
-            throw new \InvalidArgumentException('non-nullable auth_security cannot be null');
-        }
-        $this->container['auth_security'] = $auth_security;
+        $this->container['hf_api_key'] = $hf_api_key;
 
         return $this;
     }
