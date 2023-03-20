@@ -60,6 +60,7 @@ class DocumentQueryFilter implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'fields' => 'string[]',
         'query' => 'object',
+        'sort' => 'object[]',
         'limit' => 'int',
         'fetching_accuracy' => 'float'
     ];
@@ -74,6 +75,7 @@ class DocumentQueryFilter implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'fields' => null,
         'query' => null,
+        'sort' => null,
         'limit' => null,
         'fetching_accuracy' => null
     ];
@@ -86,6 +88,7 @@ class DocumentQueryFilter implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static array $openAPINullables = [
         'fields' => false,
 		'query' => false,
+		'sort' => false,
 		'limit' => false,
 		'fetching_accuracy' => false
     ];
@@ -178,6 +181,7 @@ class DocumentQueryFilter implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'fields' => 'fields',
         'query' => 'query',
+        'sort' => 'sort',
         'limit' => 'limit',
         'fetching_accuracy' => 'fetching_accuracy'
     ];
@@ -190,6 +194,7 @@ class DocumentQueryFilter implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'fields' => 'setFields',
         'query' => 'setQuery',
+        'sort' => 'setSort',
         'limit' => 'setLimit',
         'fetching_accuracy' => 'setFetchingAccuracy'
     ];
@@ -202,6 +207,7 @@ class DocumentQueryFilter implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'fields' => 'getFields',
         'query' => 'getQuery',
+        'sort' => 'getSort',
         'limit' => 'getLimit',
         'fetching_accuracy' => 'getFetchingAccuracy'
     ];
@@ -265,6 +271,7 @@ class DocumentQueryFilter implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $this->setIfExists('fields', $data ?? [], null);
         $this->setIfExists('query', $data ?? [], null);
+        $this->setIfExists('sort', $data ?? [], null);
         $this->setIfExists('limit', $data ?? [], null);
         $this->setIfExists('fetching_accuracy', $data ?? [], null);
     }
@@ -361,6 +368,33 @@ class DocumentQueryFilter implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable query cannot be null');
         }
         $this->container['query'] = $query;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     *
+     * @return object[]|null
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     *
+     * @param object[]|null $sort List of sort criteria
+     *
+     * @return self
+     */
+    public function setSort($sort)
+    {
+        if (is_null($sort)) {
+            throw new \InvalidArgumentException('non-nullable sort cannot be null');
+        }
+        $this->container['sort'] = $sort;
 
         return $this;
     }

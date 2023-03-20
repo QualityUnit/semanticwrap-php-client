@@ -62,7 +62,8 @@ class AIModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augmenting_class' => 'string',
         'augmenting_model_name' => 'string',
         'embed_instruction' => 'string',
-        'query_instruction' => 'string'
+        'query_instruction' => 'string',
+        'self_hosted_url' => 'string'
     ];
 
     /**
@@ -78,7 +79,8 @@ class AIModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augmenting_class' => null,
         'augmenting_model_name' => null,
         'embed_instruction' => null,
-        'query_instruction' => null
+        'query_instruction' => null,
+        'self_hosted_url' => null
     ];
 
     /**
@@ -92,7 +94,8 @@ class AIModel implements ModelInterface, ArrayAccess, \JsonSerializable
 		'augmenting_class' => false,
 		'augmenting_model_name' => false,
 		'embed_instruction' => false,
-		'query_instruction' => false
+		'query_instruction' => false,
+		'self_hosted_url' => false
     ];
 
     /**
@@ -186,7 +189,8 @@ class AIModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augmenting_class' => 'augmenting_class',
         'augmenting_model_name' => 'augmenting_model_name',
         'embed_instruction' => 'embed_instruction',
-        'query_instruction' => 'query_instruction'
+        'query_instruction' => 'query_instruction',
+        'self_hosted_url' => 'self_hosted_url'
     ];
 
     /**
@@ -200,7 +204,8 @@ class AIModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augmenting_class' => 'setAugmentingClass',
         'augmenting_model_name' => 'setAugmentingModelName',
         'embed_instruction' => 'setEmbedInstruction',
-        'query_instruction' => 'setQueryInstruction'
+        'query_instruction' => 'setQueryInstruction',
+        'self_hosted_url' => 'setSelfHostedUrl'
     ];
 
     /**
@@ -214,7 +219,8 @@ class AIModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augmenting_class' => 'getAugmentingClass',
         'augmenting_model_name' => 'getAugmentingModelName',
         'embed_instruction' => 'getEmbedInstruction',
-        'query_instruction' => 'getQueryInstruction'
+        'query_instruction' => 'getQueryInstruction',
+        'self_hosted_url' => 'getSelfHostedUrl'
     ];
 
     /**
@@ -280,6 +286,7 @@ class AIModel implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('augmenting_model_name', $data ?? [], null);
         $this->setIfExists('embed_instruction', $data ?? [], null);
         $this->setIfExists('query_instruction', $data ?? [], null);
+        $this->setIfExists('self_hosted_url', $data ?? [], null);
     }
 
     /**
@@ -482,6 +489,33 @@ class AIModel implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable query_instruction cannot be null');
         }
         $this->container['query_instruction'] = $query_instruction;
+
+        return $this;
+    }
+
+    /**
+     * Gets self_hosted_url
+     *
+     * @return string|null
+     */
+    public function getSelfHostedUrl()
+    {
+        return $this->container['self_hosted_url'];
+    }
+
+    /**
+     * Sets self_hosted_url
+     *
+     * @param string|null $self_hosted_url The url for self hosted embedding_model
+     *
+     * @return self
+     */
+    public function setSelfHostedUrl($self_hosted_url)
+    {
+        if (is_null($self_hosted_url)) {
+            throw new \InvalidArgumentException('non-nullable self_hosted_url cannot be null');
+        }
+        $this->container['self_hosted_url'] = $self_hosted_url;
 
         return $this;
     }

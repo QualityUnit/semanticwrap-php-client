@@ -132,4 +132,13 @@ class MemorylessAugmentationQueryModelTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "self_hosted_url"
+     */
+    public function testPropertySelfHostedUrl()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

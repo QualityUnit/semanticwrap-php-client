@@ -25,10 +25,15 @@ get an llm augmentation from your own indexed data with memory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: openai_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X_OPENAI_KEY', 'YOUR_API_KEY');
+// Configure API key authorization: huggingface_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-HUGGINGFACE-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X_OPENAI_KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-HUGGINGFACE-KEY', 'Bearer');
+
+// Configure API key authorization: openai_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-OPENAI-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-OPENAI-KEY', 'Bearer');
 
 
 $apiInstance = new OpenAPI\Client\Api\AugmentationApi(
@@ -63,7 +68,7 @@ try {
 
 ### Authorization
 
-[openai_key](../../README.md#openai_key)
+[huggingface_key](../../README.md#huggingface_key), [openai_key](../../README.md#openai_key)
 
 ### HTTP request headers
 
@@ -77,7 +82,7 @@ try {
 ## `memorylessAugment()`
 
 ```php
-memorylessAugment($index_name, $payload, $with_source): \OpenAPI\Client\Model\AugmentationResponse
+memorylessAugment($index_name, $payload, $ignore_query, $with_source): \OpenAPI\Client\Model\AugmentationResponse
 ```
 
 Answers a given query from the documents in the index
@@ -91,10 +96,15 @@ get an llm augmentation from your own indexed data
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: openai_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X_OPENAI_KEY', 'YOUR_API_KEY');
+// Configure API key authorization: huggingface_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-HUGGINGFACE-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X_OPENAI_KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-HUGGINGFACE-KEY', 'Bearer');
+
+// Configure API key authorization: openai_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-OPENAI-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-OPENAI-KEY', 'Bearer');
 
 
 $apiInstance = new OpenAPI\Client\Api\AugmentationApi(
@@ -105,10 +115,11 @@ $apiInstance = new OpenAPI\Client\Api\AugmentationApi(
 );
 $index_name = 'index_name_example'; // string
 $payload = new \OpenAPI\Client\Model\MemorylessAugmentationQuery(); // \OpenAPI\Client\Model\MemorylessAugmentationQuery
+$ignore_query = 'ignore_query_example'; // string | If true, the query is ignored and instead only the elasticsearch filter is applied
 $with_source = 'with_source_example'; // string | If true, the source of the answer is returned
 
 try {
-    $result = $apiInstance->memorylessAugment($index_name, $payload, $with_source);
+    $result = $apiInstance->memorylessAugment($index_name, $payload, $ignore_query, $with_source);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AugmentationApi->memorylessAugment: ', $e->getMessage(), PHP_EOL;
@@ -121,6 +132,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
 | **payload** | [**\OpenAPI\Client\Model\MemorylessAugmentationQuery**](../Model/MemorylessAugmentationQuery.md)|  | |
+| **ignore_query** | **string**| If true, the query is ignored and instead only the elasticsearch filter is applied | [optional] |
 | **with_source** | **string**| If true, the source of the answer is returned | [optional] |
 
 ### Return type
@@ -129,7 +141,7 @@ try {
 
 ### Authorization
 
-[openai_key](../../README.md#openai_key)
+[huggingface_key](../../README.md#huggingface_key), [openai_key](../../README.md#openai_key)
 
 ### HTTP request headers
 

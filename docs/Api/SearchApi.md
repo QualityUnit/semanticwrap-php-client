@@ -26,10 +26,15 @@ Get Related Documents from the index with ANN search
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: openai_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X_OPENAI_KEY', 'YOUR_API_KEY');
+// Configure API key authorization: huggingface_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-HUGGINGFACE-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X_OPENAI_KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-HUGGINGFACE-KEY', 'Bearer');
+
+// Configure API key authorization: openai_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-OPENAI-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-OPENAI-KEY', 'Bearer');
 
 
 $apiInstance = new OpenAPI\Client\Api\SearchApi(
@@ -62,7 +67,7 @@ try {
 
 ### Authorization
 
-[openai_key](../../README.md#openai_key)
+[huggingface_key](../../README.md#huggingface_key), [openai_key](../../README.md#openai_key)
 
 ### HTTP request headers
 
@@ -90,10 +95,15 @@ Get Related Documents from the index with ANN search by vector
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: openai_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X_OPENAI_KEY', 'YOUR_API_KEY');
+// Configure API key authorization: huggingface_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-HUGGINGFACE-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X_OPENAI_KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-HUGGINGFACE-KEY', 'Bearer');
+
+// Configure API key authorization: openai_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-OPENAI-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-OPENAI-KEY', 'Bearer');
 
 
 $apiInstance = new OpenAPI\Client\Api\SearchApi(
@@ -126,7 +136,7 @@ try {
 
 ### Authorization
 
-[openai_key](../../README.md#openai_key)
+[huggingface_key](../../README.md#huggingface_key), [openai_key](../../README.md#openai_key)
 
 ### HTTP request headers
 
@@ -154,10 +164,15 @@ Get Related Documents from the index with ANN search for given document id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: openai_key
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X_OPENAI_KEY', 'YOUR_API_KEY');
+// Configure API key authorization: huggingface_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-HUGGINGFACE-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X_OPENAI_KEY', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-HUGGINGFACE-KEY', 'Bearer');
+
+// Configure API key authorization: openai_key
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-OPENAI-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-OPENAI-KEY', 'Bearer');
 
 
 $apiInstance = new OpenAPI\Client\Api\SearchApi(
@@ -192,7 +207,7 @@ try {
 
 ### Authorization
 
-[openai_key](../../README.md#openai_key)
+[huggingface_key](../../README.md#huggingface_key), [openai_key](../../README.md#openai_key)
 
 ### HTTP request headers
 

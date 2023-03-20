@@ -429,9 +429,14 @@ class IndexApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X_OPENAI_KEY');
+        $apiKey = $this->config->getApiKeyWithPrefix('X-HUGGINGFACE-KEY');
         if ($apiKey !== null) {
-            $headers['X_OPENAI_KEY'] = $apiKey;
+            $headers['X-HUGGINGFACE-KEY'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-OPENAI-KEY');
+        if ($apiKey !== null) {
+            $headers['X-OPENAI-KEY'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -759,9 +764,14 @@ class IndexApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('X_OPENAI_KEY');
+        $apiKey = $this->config->getApiKeyWithPrefix('X-HUGGINGFACE-KEY');
         if ($apiKey !== null) {
-            $headers['X_OPENAI_KEY'] = $apiKey;
+            $headers['X-HUGGINGFACE-KEY'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-OPENAI-KEY');
+        if ($apiKey !== null) {
+            $headers['X-OPENAI-KEY'] = $apiKey;
         }
 
         $defaultHeaders = [];
