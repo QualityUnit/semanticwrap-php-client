@@ -12,7 +12,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 ## `search()`
 
 ```php
-search($index_name, $payload): \OpenAPI\Client\Model\SearchResponse
+search($index_name, $payload, $ignore_query): \OpenAPI\Client\Model\SearchResponse
 ```
 
 Get Related Documents from the index with ANN search
@@ -34,9 +34,10 @@ $apiInstance = new OpenAPI\Client\Api\SearchApi(
 );
 $index_name = 'index_name_example'; // string
 $payload = new \OpenAPI\Client\Model\DocumentQuery(); // \OpenAPI\Client\Model\DocumentQuery
+$ignore_query = 'ignore_query_example'; // string | If true, the query is ignored and instead only the elasticsearch filter is applied
 
 try {
-    $result = $apiInstance->search($index_name, $payload);
+    $result = $apiInstance->search($index_name, $payload, $ignore_query);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SearchApi->search: ', $e->getMessage(), PHP_EOL;
@@ -49,6 +50,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
 | **payload** | [**\OpenAPI\Client\Model\DocumentQuery**](../Model/DocumentQuery.md)|  | |
+| **ignore_query** | **string**| If true, the query is ignored and instead only the elasticsearch filter is applied | [optional] |
 
 ### Return type
 
