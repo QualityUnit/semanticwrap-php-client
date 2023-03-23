@@ -15,6 +15,8 @@ docs/Model/AugmentationResponseResult.md
 docs/Model/AugmentationResponseTiming.md
 docs/Model/AuthSecurity.md
 docs/Model/BulkIndex.md
+docs/Model/DocsSearch.md
+docs/Model/DocsSearchFilter.md
 docs/Model/Document.md
 docs/Model/DocumentNonQuery.md
 docs/Model/DocumentQuery.md
@@ -48,6 +50,8 @@ lib/Model/AugmentationResponseResult.php
 lib/Model/AugmentationResponseTiming.php
 lib/Model/AuthSecurity.php
 lib/Model/BulkIndex.php
+lib/Model/DocsSearch.php
+lib/Model/DocsSearchFilter.php
 lib/Model/Document.php
 lib/Model/DocumentNonQuery.php
 lib/Model/DocumentQuery.php
@@ -88,6 +92,8 @@ test/Model/AugmentationResponseTest.php
 test/Model/AugmentationResponseTimingTest.php
 test/Model/AuthSecurityTest.php
 test/Model/BulkIndexTest.php
+test/Model/DocsSearchFilterTest.php
+test/Model/DocsSearchTest.php
 test/Model/DocumentNonQueryTest.php
 test/Model/DocumentQueryByVectorTest.php
 test/Model/DocumentQueryFilterTest.php

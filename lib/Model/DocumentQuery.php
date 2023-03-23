@@ -59,6 +59,7 @@ class DocumentQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'query' => 'string',
         'model' => '\OpenAPI\Client\Model\DocumentQueryModel',
+        'group_by' => 'string',
         'filter' => '\OpenAPI\Client\Model\DocumentQueryFilter'
     ];
 
@@ -72,6 +73,7 @@ class DocumentQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'query' => null,
         'model' => null,
+        'group_by' => null,
         'filter' => null
     ];
 
@@ -83,6 +85,7 @@ class DocumentQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'query' => false,
 		'model' => false,
+		'group_by' => false,
 		'filter' => false
     ];
 
@@ -174,6 +177,7 @@ class DocumentQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'query' => 'query',
         'model' => 'model',
+        'group_by' => 'group_by',
         'filter' => 'filter'
     ];
 
@@ -185,6 +189,7 @@ class DocumentQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'query' => 'setQuery',
         'model' => 'setModel',
+        'group_by' => 'setGroupBy',
         'filter' => 'setFilter'
     ];
 
@@ -196,6 +201,7 @@ class DocumentQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'query' => 'getQuery',
         'model' => 'getModel',
+        'group_by' => 'getGroupBy',
         'filter' => 'getFilter'
     ];
 
@@ -258,6 +264,7 @@ class DocumentQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('query', $data ?? [], null);
         $this->setIfExists('model', $data ?? [], null);
+        $this->setIfExists('group_by', $data ?? [], null);
         $this->setIfExists('filter', $data ?? [], null);
     }
 
@@ -356,6 +363,33 @@ class DocumentQuery implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable model cannot be null');
         }
         $this->container['model'] = $model;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_by
+     *
+     * @return string|null
+     */
+    public function getGroupBy()
+    {
+        return $this->container['group_by'];
+    }
+
+    /**
+     * Sets group_by
+     *
+     * @param string|null $group_by The field to group the results by
+     *
+     * @return self
+     */
+    public function setGroupBy($group_by)
+    {
+        if (is_null($group_by)) {
+            throw new \InvalidArgumentException('non-nullable group_by cannot be null');
+        }
+        $this->container['group_by'] = $group_by;
 
         return $this;
     }

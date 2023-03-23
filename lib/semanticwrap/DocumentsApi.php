@@ -133,19 +133,18 @@ class DocumentsApi
      *
      * Deletes a document
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name index_name (required)
      * @param  string $doc_id doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Ack|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error
      */
-    public function deleteDocument($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['deleteDocument'][0])
+    public function deleteDocument($index_name, $doc_id, $payload, string $contentType = self::contentTypes['deleteDocument'][0])
     {
-        list($response) = $this->deleteDocumentWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $doc_id, $contentType);
+        list($response) = $this->deleteDocumentWithHttpInfo($index_name, $doc_id, $payload, $contentType);
         return $response;
     }
 
@@ -154,19 +153,18 @@ class DocumentsApi
      *
      * Deletes a document
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Ack|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteDocumentWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['deleteDocument'][0])
+    public function deleteDocumentWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['deleteDocument'][0])
     {
-        $request = $this->deleteDocumentRequest($embedding_class, $embedding_model_name, $index_name, $doc_id, $contentType);
+        $request = $this->deleteDocumentRequest($index_name, $doc_id, $payload, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -303,18 +301,17 @@ class DocumentsApi
      *
      * Deletes a document
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentAsync($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['deleteDocument'][0])
+    public function deleteDocumentAsync($index_name, $doc_id, $payload, string $contentType = self::contentTypes['deleteDocument'][0])
     {
-        return $this->deleteDocumentAsyncWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $doc_id, $contentType)
+        return $this->deleteDocumentAsyncWithHttpInfo($index_name, $doc_id, $payload, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -327,19 +324,18 @@ class DocumentsApi
      *
      * Deletes a document
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteDocumentAsyncWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['deleteDocument'][0])
+    public function deleteDocumentAsyncWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['deleteDocument'][0])
     {
         $returnType = '\OpenAPI\Client\Model\Ack';
-        $request = $this->deleteDocumentRequest($embedding_class, $embedding_model_name, $index_name, $doc_id, $contentType);
+        $request = $this->deleteDocumentRequest($index_name, $doc_id, $payload, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -380,31 +376,16 @@ class DocumentsApi
     /**
      * Create request for operation 'deleteDocument'
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteDocumentRequest($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['deleteDocument'][0])
+    public function deleteDocumentRequest($index_name, $doc_id, $payload, string $contentType = self::contentTypes['deleteDocument'][0])
     {
-
-        // verify the required parameter 'embedding_class' is set
-        if ($embedding_class === null || (is_array($embedding_class) && count($embedding_class) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $embedding_class when calling deleteDocument'
-            );
-        }
-
-        // verify the required parameter 'embedding_model_name' is set
-        if ($embedding_model_name === null || (is_array($embedding_model_name) && count($embedding_model_name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $embedding_model_name when calling deleteDocument'
-            );
-        }
 
         // verify the required parameter 'index_name' is set
         if ($index_name === null || (is_array($index_name) && count($index_name) === 0)) {
@@ -420,6 +401,13 @@ class DocumentsApi
             );
         }
 
+        // verify the required parameter 'payload' is set
+        if ($payload === null || (is_array($payload) && count($payload) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $payload when calling deleteDocument'
+            );
+        }
+
 
         $resourcePath = '/doc/{index_name}/{doc_id}';
         $formParams = [];
@@ -428,24 +416,6 @@ class DocumentsApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $embedding_class,
-            'embedding_class', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $embedding_model_name,
-            'embedding_model_name', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
 
 
         // path params
@@ -473,7 +443,14 @@ class DocumentsApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($payload)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($payload));
+            } else {
+                $httpBody = $payload;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -524,19 +501,18 @@ class DocumentsApi
      *
      * Get a document
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name index_name (required)
      * @param  string $doc_id doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Document|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error
      */
-    public function getDocument($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['getDocument'][0])
+    public function getDocument($index_name, $doc_id, $payload, string $contentType = self::contentTypes['getDocument'][0])
     {
-        list($response) = $this->getDocumentWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $doc_id, $contentType);
+        list($response) = $this->getDocumentWithHttpInfo($index_name, $doc_id, $payload, $contentType);
         return $response;
     }
 
@@ -545,19 +521,18 @@ class DocumentsApi
      *
      * Get a document
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Document|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['getDocument'][0])
+    public function getDocumentWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['getDocument'][0])
     {
-        $request = $this->getDocumentRequest($embedding_class, $embedding_model_name, $index_name, $doc_id, $contentType);
+        $request = $this->getDocumentRequest($index_name, $doc_id, $payload, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -694,18 +669,17 @@ class DocumentsApi
      *
      * Get a document
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentAsync($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['getDocument'][0])
+    public function getDocumentAsync($index_name, $doc_id, $payload, string $contentType = self::contentTypes['getDocument'][0])
     {
-        return $this->getDocumentAsyncWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $doc_id, $contentType)
+        return $this->getDocumentAsyncWithHttpInfo($index_name, $doc_id, $payload, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -718,19 +692,18 @@ class DocumentsApi
      *
      * Get a document
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentAsyncWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['getDocument'][0])
+    public function getDocumentAsyncWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['getDocument'][0])
     {
         $returnType = '\OpenAPI\Client\Model\Document';
-        $request = $this->getDocumentRequest($embedding_class, $embedding_model_name, $index_name, $doc_id, $contentType);
+        $request = $this->getDocumentRequest($index_name, $doc_id, $payload, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -771,31 +744,16 @@ class DocumentsApi
     /**
      * Create request for operation 'getDocument'
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDocumentRequest($embedding_class, $embedding_model_name, $index_name, $doc_id, string $contentType = self::contentTypes['getDocument'][0])
+    public function getDocumentRequest($index_name, $doc_id, $payload, string $contentType = self::contentTypes['getDocument'][0])
     {
-
-        // verify the required parameter 'embedding_class' is set
-        if ($embedding_class === null || (is_array($embedding_class) && count($embedding_class) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $embedding_class when calling getDocument'
-            );
-        }
-
-        // verify the required parameter 'embedding_model_name' is set
-        if ($embedding_model_name === null || (is_array($embedding_model_name) && count($embedding_model_name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $embedding_model_name when calling getDocument'
-            );
-        }
 
         // verify the required parameter 'index_name' is set
         if ($index_name === null || (is_array($index_name) && count($index_name) === 0)) {
@@ -811,6 +769,13 @@ class DocumentsApi
             );
         }
 
+        // verify the required parameter 'payload' is set
+        if ($payload === null || (is_array($payload) && count($payload) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $payload when calling getDocument'
+            );
+        }
+
 
         $resourcePath = '/doc/{index_name}/{doc_id}';
         $formParams = [];
@@ -819,24 +784,6 @@ class DocumentsApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $embedding_class,
-            'embedding_class', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $embedding_model_name,
-            'embedding_model_name', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
 
 
         // path params
@@ -864,7 +811,14 @@ class DocumentsApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($payload)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($payload));
+            } else {
+                $httpBody = $payload;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -915,19 +869,17 @@ class DocumentsApi
      *
      * Get a document by query
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\QueryFilter $payload payload (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Document[]|\OpenAPI\Client\Model\Error
      */
-    public function getDocumentByQuery($embedding_class, $embedding_model_name, $index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
+    public function getDocumentByQuery($index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
     {
-        list($response) = $this->getDocumentByQueryWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $payload, $contentType);
+        list($response) = $this->getDocumentByQueryWithHttpInfo($index_name, $payload, $contentType);
         return $response;
     }
 
@@ -936,19 +888,17 @@ class DocumentsApi
      *
      * Get a document by query
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\QueryFilter $payload (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Document[]|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentByQueryWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
+    public function getDocumentByQueryWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
     {
-        $request = $this->getDocumentByQueryRequest($embedding_class, $embedding_model_name, $index_name, $payload, $contentType);
+        $request = $this->getDocumentByQueryRequest($index_name, $payload, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1062,18 +1012,16 @@ class DocumentsApi
      *
      * Get a document by query
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\QueryFilter $payload (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentByQueryAsync($embedding_class, $embedding_model_name, $index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
+    public function getDocumentByQueryAsync($index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
     {
-        return $this->getDocumentByQueryAsyncWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $payload, $contentType)
+        return $this->getDocumentByQueryAsyncWithHttpInfo($index_name, $payload, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1086,19 +1034,17 @@ class DocumentsApi
      *
      * Get a document by query
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\QueryFilter $payload (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentByQueryAsyncWithHttpInfo($embedding_class, $embedding_model_name, $index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
+    public function getDocumentByQueryAsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
     {
         $returnType = '\OpenAPI\Client\Model\Document[]';
-        $request = $this->getDocumentByQueryRequest($embedding_class, $embedding_model_name, $index_name, $payload, $contentType);
+        $request = $this->getDocumentByQueryRequest($index_name, $payload, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1139,31 +1085,15 @@ class DocumentsApi
     /**
      * Create request for operation 'getDocumentByQuery'
      *
-     * @param  string $embedding_class The embedding class used for indexing document (required)
-     * @param  string $embedding_model_name The embedding model name used for indexing document (required)
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\QueryFilter $payload (required)
+     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDocumentByQueryRequest($embedding_class, $embedding_model_name, $index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
+    public function getDocumentByQueryRequest($index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
     {
-
-        // verify the required parameter 'embedding_class' is set
-        if ($embedding_class === null || (is_array($embedding_class) && count($embedding_class) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $embedding_class when calling getDocumentByQuery'
-            );
-        }
-
-        // verify the required parameter 'embedding_model_name' is set
-        if ($embedding_model_name === null || (is_array($embedding_model_name) && count($embedding_model_name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $embedding_model_name when calling getDocumentByQuery'
-            );
-        }
 
         // verify the required parameter 'index_name' is set
         if ($index_name === null || (is_array($index_name) && count($index_name) === 0)) {
@@ -1187,24 +1117,6 @@ class DocumentsApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $embedding_class,
-            'embedding_class', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $embedding_model_name,
-            'embedding_model_name', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
 
 
         // path params

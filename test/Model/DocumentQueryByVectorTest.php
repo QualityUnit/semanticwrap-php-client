@@ -89,6 +89,15 @@ class DocumentQueryByVectorTest extends TestCase
     }
 
     /**
+     * Test attribute "group_by"
+     */
+    public function testPropertyGroupBy()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "model"
      */
     public function testPropertyModel()

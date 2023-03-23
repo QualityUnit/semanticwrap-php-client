@@ -135,16 +135,15 @@ class SearchApi
      *
      * @param  string $index_name index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQuery $payload payload (required)
-     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error
      */
-    public function search($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['search'][0])
+    public function search($index_name, $payload, string $contentType = self::contentTypes['search'][0])
     {
-        list($response) = $this->searchWithHttpInfo($index_name, $payload, $ignore_query, $contentType);
+        list($response) = $this->searchWithHttpInfo($index_name, $payload, $contentType);
         return $response;
     }
 
@@ -155,16 +154,15 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQuery $payload (required)
-     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchWithHttpInfo($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['search'][0])
+    public function searchWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['search'][0])
     {
-        $request = $this->searchRequest($index_name, $payload, $ignore_query, $contentType);
+        $request = $this->searchRequest($index_name, $payload, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -280,15 +278,14 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQuery $payload (required)
-     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsync($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['search'][0])
+    public function searchAsync($index_name, $payload, string $contentType = self::contentTypes['search'][0])
     {
-        return $this->searchAsyncWithHttpInfo($index_name, $payload, $ignore_query, $contentType)
+        return $this->searchAsyncWithHttpInfo($index_name, $payload, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -303,16 +300,15 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQuery $payload (required)
-     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsyncWithHttpInfo($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['search'][0])
+    public function searchAsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['search'][0])
     {
         $returnType = '\OpenAPI\Client\Model\SearchResponse';
-        $request = $this->searchRequest($index_name, $payload, $ignore_query, $contentType);
+        $request = $this->searchRequest($index_name, $payload, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -355,13 +351,12 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQuery $payload (required)
-     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function searchRequest($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['search'][0])
+    public function searchRequest($index_name, $payload, string $contentType = self::contentTypes['search'][0])
     {
 
         // verify the required parameter 'index_name' is set
@@ -379,7 +374,6 @@ class SearchApi
         }
 
 
-
         $resourcePath = '/search/{index_name}';
         $formParams = [];
         $queryParams = [];
@@ -387,15 +381,6 @@ class SearchApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ignore_query,
-            'ignore_query', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
         // path params
@@ -475,15 +460,16 @@ class SearchApi
      *
      * @param  string $index_name index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error
      */
-    public function searchByVector($index_name, $payload, string $contentType = self::contentTypes['searchByVector'][0])
+    public function searchByVector($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['searchByVector'][0])
     {
-        list($response) = $this->searchByVectorWithHttpInfo($index_name, $payload, $contentType);
+        list($response) = $this->searchByVectorWithHttpInfo($index_name, $payload, $ignore_query, $contentType);
         return $response;
     }
 
@@ -494,15 +480,16 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByVectorWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['searchByVector'][0])
+    public function searchByVectorWithHttpInfo($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['searchByVector'][0])
     {
-        $request = $this->searchByVectorRequest($index_name, $payload, $contentType);
+        $request = $this->searchByVectorRequest($index_name, $payload, $ignore_query, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -618,14 +605,15 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByVectorAsync($index_name, $payload, string $contentType = self::contentTypes['searchByVector'][0])
+    public function searchByVectorAsync($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['searchByVector'][0])
     {
-        return $this->searchByVectorAsyncWithHttpInfo($index_name, $payload, $contentType)
+        return $this->searchByVectorAsyncWithHttpInfo($index_name, $payload, $ignore_query, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -640,15 +628,16 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByVectorAsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['searchByVector'][0])
+    public function searchByVectorAsyncWithHttpInfo($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['searchByVector'][0])
     {
         $returnType = '\OpenAPI\Client\Model\SearchResponse';
-        $request = $this->searchByVectorRequest($index_name, $payload, $contentType);
+        $request = $this->searchByVectorRequest($index_name, $payload, $ignore_query, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -691,12 +680,13 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function searchByVectorRequest($index_name, $payload, string $contentType = self::contentTypes['searchByVector'][0])
+    public function searchByVectorRequest($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['searchByVector'][0])
     {
 
         // verify the required parameter 'index_name' is set
@@ -714,6 +704,7 @@ class SearchApi
         }
 
 
+
         $resourcePath = '/search/vector/{index_name}';
         $formParams = [];
         $queryParams = [];
@@ -721,6 +712,15 @@ class SearchApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ignore_query,
+            'ignore_query', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
         // path params

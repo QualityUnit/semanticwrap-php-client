@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentQueryByVector
+ * DocsSearchFilter
  *
  * PHP version 7.4
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * DocumentQueryByVector Class Doc Comment
+ * DocsSearchFilter Class Doc Comment
  *
  * @category Class
+ * @description The filter to apply to the query
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocsSearchFilter implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentQueryByVector';
+    protected static $openAPIModelName = 'DocsSearch_filter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +58,11 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'vector' => 'float[]',
-        'group_by' => 'string',
-        'model' => '\OpenAPI\Client\Model\DocumentQueryModel',
-        'filter' => '\OpenAPI\Client\Model\DocumentQueryFilter'
+        'fields' => 'string[]',
+        'query' => 'object',
+        'sort' => 'object[]',
+        'limit' => 'int',
+        'fetching_accuracy' => 'float'
     ];
 
     /**
@@ -71,10 +73,11 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'vector' => null,
-        'group_by' => null,
-        'model' => null,
-        'filter' => null
+        'fields' => null,
+        'query' => null,
+        'sort' => null,
+        'limit' => null,
+        'fetching_accuracy' => null
     ];
 
     /**
@@ -83,10 +86,11 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'vector' => false,
-		'group_by' => false,
-		'model' => false,
-		'filter' => false
+        'fields' => false,
+		'query' => false,
+		'sort' => false,
+		'limit' => false,
+		'fetching_accuracy' => false
     ];
 
     /**
@@ -175,10 +179,11 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'vector' => 'vector',
-        'group_by' => 'group_by',
-        'model' => 'model',
-        'filter' => 'filter'
+        'fields' => 'fields',
+        'query' => 'query',
+        'sort' => 'sort',
+        'limit' => 'limit',
+        'fetching_accuracy' => 'fetching_accuracy'
     ];
 
     /**
@@ -187,10 +192,11 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'vector' => 'setVector',
-        'group_by' => 'setGroupBy',
-        'model' => 'setModel',
-        'filter' => 'setFilter'
+        'fields' => 'setFields',
+        'query' => 'setQuery',
+        'sort' => 'setSort',
+        'limit' => 'setLimit',
+        'fetching_accuracy' => 'setFetchingAccuracy'
     ];
 
     /**
@@ -199,10 +205,11 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'vector' => 'getVector',
-        'group_by' => 'getGroupBy',
-        'model' => 'getModel',
-        'filter' => 'getFilter'
+        'fields' => 'getFields',
+        'query' => 'getQuery',
+        'sort' => 'getSort',
+        'limit' => 'getLimit',
+        'fetching_accuracy' => 'getFetchingAccuracy'
     ];
 
     /**
@@ -262,10 +269,11 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('vector', $data ?? [], null);
-        $this->setIfExists('group_by', $data ?? [], null);
-        $this->setIfExists('model', $data ?? [], null);
-        $this->setIfExists('filter', $data ?? [], null);
+        $this->setIfExists('fields', $data ?? [], null);
+        $this->setIfExists('query', $data ?? [], null);
+        $this->setIfExists('sort', $data ?? [], null);
+        $this->setIfExists('limit', $data ?? [], null);
+        $this->setIfExists('fetching_accuracy', $data ?? [], null);
     }
 
     /**
@@ -295,9 +303,6 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['vector'] === null) {
-            $invalidProperties[] = "'vector' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -314,109 +319,136 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets vector
+     * Gets fields
      *
-     * @return float[]
+     * @return string[]|null
      */
-    public function getVector()
+    public function getFields()
     {
-        return $this->container['vector'];
+        return $this->container['fields'];
     }
 
     /**
-     * Sets vector
+     * Sets fields
      *
-     * @param float[] $vector vector
+     * @param string[]|null $fields List of fields to return
      *
      * @return self
      */
-    public function setVector($vector)
+    public function setFields($fields)
     {
-        if (is_null($vector)) {
-            throw new \InvalidArgumentException('non-nullable vector cannot be null');
+        if (is_null($fields)) {
+            throw new \InvalidArgumentException('non-nullable fields cannot be null');
         }
-        $this->container['vector'] = $vector;
+        $this->container['fields'] = $fields;
 
         return $this;
     }
 
     /**
-     * Gets group_by
+     * Gets query
      *
-     * @return string|null
+     * @return object|null
      */
-    public function getGroupBy()
+    public function getQuery()
     {
-        return $this->container['group_by'];
+        return $this->container['query'];
     }
 
     /**
-     * Sets group_by
+     * Sets query
      *
-     * @param string|null $group_by group_by
+     * @param object|null $query filter to be applied
      *
      * @return self
      */
-    public function setGroupBy($group_by)
+    public function setQuery($query)
     {
-        if (is_null($group_by)) {
-            throw new \InvalidArgumentException('non-nullable group_by cannot be null');
+        if (is_null($query)) {
+            throw new \InvalidArgumentException('non-nullable query cannot be null');
         }
-        $this->container['group_by'] = $group_by;
+        $this->container['query'] = $query;
 
         return $this;
     }
 
     /**
-     * Gets model
+     * Gets sort
      *
-     * @return \OpenAPI\Client\Model\DocumentQueryModel|null
+     * @return object[]|null
      */
-    public function getModel()
+    public function getSort()
     {
-        return $this->container['model'];
+        return $this->container['sort'];
     }
 
     /**
-     * Sets model
+     * Sets sort
      *
-     * @param \OpenAPI\Client\Model\DocumentQueryModel|null $model model
+     * @param object[]|null $sort List of sort criteria
      *
      * @return self
      */
-    public function setModel($model)
+    public function setSort($sort)
     {
-        if (is_null($model)) {
-            throw new \InvalidArgumentException('non-nullable model cannot be null');
+        if (is_null($sort)) {
+            throw new \InvalidArgumentException('non-nullable sort cannot be null');
         }
-        $this->container['model'] = $model;
+        $this->container['sort'] = $sort;
 
         return $this;
     }
 
     /**
-     * Gets filter
+     * Gets limit
      *
-     * @return \OpenAPI\Client\Model\DocumentQueryFilter|null
+     * @return int|null
      */
-    public function getFilter()
+    public function getLimit()
     {
-        return $this->container['filter'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets filter
+     * Sets limit
      *
-     * @param \OpenAPI\Client\Model\DocumentQueryFilter|null $filter filter
+     * @param int|null $limit limit
      *
      * @return self
      */
-    public function setFilter($filter)
+    public function setLimit($limit)
     {
-        if (is_null($filter)) {
-            throw new \InvalidArgumentException('non-nullable filter cannot be null');
+        if (is_null($limit)) {
+            throw new \InvalidArgumentException('non-nullable limit cannot be null');
         }
-        $this->container['filter'] = $filter;
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets fetching_accuracy
+     *
+     * @return float|null
+     */
+    public function getFetchingAccuracy()
+    {
+        return $this->container['fetching_accuracy'];
+    }
+
+    /**
+     * Sets fetching_accuracy
+     *
+     * @param float|null $fetching_accuracy fetching_accuracy
+     *
+     * @return self
+     */
+    public function setFetchingAccuracy($fetching_accuracy)
+    {
+        if (is_null($fetching_accuracy)) {
+            throw new \InvalidArgumentException('non-nullable fetching_accuracy cannot be null');
+        }
+        $this->container['fetching_accuracy'] = $fetching_accuracy;
 
         return $this;
     }

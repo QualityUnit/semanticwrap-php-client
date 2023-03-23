@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentQueryByVector
+ * DocsSearch
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * DocumentQueryByVector Class Doc Comment
+ * DocsSearch Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -40,7 +40,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocsSearch implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentQueryByVector';
+    protected static $openAPIModelName = 'DocsSearch';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'vector' => 'float[]',
-        'group_by' => 'string',
-        'model' => '\OpenAPI\Client\Model\DocumentQueryModel',
-        'filter' => '\OpenAPI\Client\Model\DocumentQueryFilter'
+        'filter' => '\OpenAPI\Client\Model\DocsSearchFilter',
+        'model' => '\OpenAPI\Client\Model\AIModel'
     ];
 
     /**
@@ -71,10 +69,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'vector' => null,
-        'group_by' => null,
-        'model' => null,
-        'filter' => null
+        'filter' => null,
+        'model' => null
     ];
 
     /**
@@ -83,10 +79,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'vector' => false,
-		'group_by' => false,
-		'model' => false,
-		'filter' => false
+        'filter' => false,
+		'model' => false
     ];
 
     /**
@@ -175,10 +169,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'vector' => 'vector',
-        'group_by' => 'group_by',
-        'model' => 'model',
-        'filter' => 'filter'
+        'filter' => 'filter',
+        'model' => 'model'
     ];
 
     /**
@@ -187,10 +179,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'vector' => 'setVector',
-        'group_by' => 'setGroupBy',
-        'model' => 'setModel',
-        'filter' => 'setFilter'
+        'filter' => 'setFilter',
+        'model' => 'setModel'
     ];
 
     /**
@@ -199,10 +189,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'vector' => 'getVector',
-        'group_by' => 'getGroupBy',
-        'model' => 'getModel',
-        'filter' => 'getFilter'
+        'filter' => 'getFilter',
+        'model' => 'getModel'
     ];
 
     /**
@@ -262,10 +250,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('vector', $data ?? [], null);
-        $this->setIfExists('group_by', $data ?? [], null);
-        $this->setIfExists('model', $data ?? [], null);
         $this->setIfExists('filter', $data ?? [], null);
+        $this->setIfExists('model', $data ?? [], null);
     }
 
     /**
@@ -295,8 +281,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['vector'] === null) {
-            $invalidProperties[] = "'vector' can't be null";
+        if ($this->container['filter'] === null) {
+            $invalidProperties[] = "'filter' can't be null";
         }
         return $invalidProperties;
     }
@@ -314,90 +300,9 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets vector
-     *
-     * @return float[]
-     */
-    public function getVector()
-    {
-        return $this->container['vector'];
-    }
-
-    /**
-     * Sets vector
-     *
-     * @param float[] $vector vector
-     *
-     * @return self
-     */
-    public function setVector($vector)
-    {
-        if (is_null($vector)) {
-            throw new \InvalidArgumentException('non-nullable vector cannot be null');
-        }
-        $this->container['vector'] = $vector;
-
-        return $this;
-    }
-
-    /**
-     * Gets group_by
-     *
-     * @return string|null
-     */
-    public function getGroupBy()
-    {
-        return $this->container['group_by'];
-    }
-
-    /**
-     * Sets group_by
-     *
-     * @param string|null $group_by group_by
-     *
-     * @return self
-     */
-    public function setGroupBy($group_by)
-    {
-        if (is_null($group_by)) {
-            throw new \InvalidArgumentException('non-nullable group_by cannot be null');
-        }
-        $this->container['group_by'] = $group_by;
-
-        return $this;
-    }
-
-    /**
-     * Gets model
-     *
-     * @return \OpenAPI\Client\Model\DocumentQueryModel|null
-     */
-    public function getModel()
-    {
-        return $this->container['model'];
-    }
-
-    /**
-     * Sets model
-     *
-     * @param \OpenAPI\Client\Model\DocumentQueryModel|null $model model
-     *
-     * @return self
-     */
-    public function setModel($model)
-    {
-        if (is_null($model)) {
-            throw new \InvalidArgumentException('non-nullable model cannot be null');
-        }
-        $this->container['model'] = $model;
-
-        return $this;
-    }
-
-    /**
      * Gets filter
      *
-     * @return \OpenAPI\Client\Model\DocumentQueryFilter|null
+     * @return \OpenAPI\Client\Model\DocsSearchFilter
      */
     public function getFilter()
     {
@@ -407,7 +312,7 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets filter
      *
-     * @param \OpenAPI\Client\Model\DocumentQueryFilter|null $filter filter
+     * @param \OpenAPI\Client\Model\DocsSearchFilter $filter filter
      *
      * @return self
      */
@@ -417,6 +322,33 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable filter cannot be null');
         }
         $this->container['filter'] = $filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets model
+     *
+     * @return \OpenAPI\Client\Model\AIModel|null
+     */
+    public function getModel()
+    {
+        return $this->container['model'];
+    }
+
+    /**
+     * Sets model
+     *
+     * @param \OpenAPI\Client\Model\AIModel|null $model model
+     *
+     * @return self
+     */
+    public function setModel($model)
+    {
+        if (is_null($model)) {
+            throw new \InvalidArgumentException('non-nullable model cannot be null');
+        }
+        $this->container['model'] = $model;
 
         return $this;
     }

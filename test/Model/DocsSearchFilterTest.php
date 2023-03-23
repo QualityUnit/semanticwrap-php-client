@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentQueryTest
+ * DocsSearchFilterTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DocumentQueryTest Class Doc Comment
+ * DocsSearchFilterTest Class Doc Comment
  *
  * @category    Class
- * @description DocumentQuery
+ * @description The filter to apply to the query
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class DocumentQueryTest extends TestCase
+class DocsSearchFilterTest extends TestCase
 {
 
     /**
@@ -71,9 +71,18 @@ class DocumentQueryTest extends TestCase
     }
 
     /**
-     * Test "DocumentQuery"
+     * Test "DocsSearchFilter"
      */
-    public function testDocumentQuery()
+    public function testDocsSearchFilter()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fields"
+     */
+    public function testPropertyFields()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -89,27 +98,27 @@ class DocumentQueryTest extends TestCase
     }
 
     /**
-     * Test attribute "model"
+     * Test attribute "sort"
      */
-    public function testPropertyModel()
+    public function testPropertySort()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "group_by"
+     * Test attribute "limit"
      */
-    public function testPropertyGroupBy()
+    public function testPropertyLimit()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "filter"
+     * Test attribute "fetching_accuracy"
      */
-    public function testPropertyFilter()
+    public function testPropertyFetchingAccuracy()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

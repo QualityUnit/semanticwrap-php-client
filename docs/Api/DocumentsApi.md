@@ -12,7 +12,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 ## `deleteDocument()`
 
 ```php
-deleteDocument($embedding_class, $embedding_model_name, $index_name, $doc_id): \OpenAPI\Client\Model\Ack
+deleteDocument($index_name, $doc_id, $payload): \OpenAPI\Client\Model\Ack
 ```
 
 Deletes a document
@@ -32,13 +32,12 @@ $apiInstance = new OpenAPI\Client\Api\DocumentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$embedding_class = 'embedding_class_example'; // string | The embedding class used for indexing document
-$embedding_model_name = 'embedding_model_name_example'; // string | The embedding model name used for indexing document
 $index_name = 'index_name_example'; // string
 $doc_id = 'doc_id_example'; // string
+$payload = new \OpenAPI\Client\Model\DocsSearch(); // \OpenAPI\Client\Model\DocsSearch
 
 try {
-    $result = $apiInstance->deleteDocument($embedding_class, $embedding_model_name, $index_name, $doc_id);
+    $result = $apiInstance->deleteDocument($index_name, $doc_id, $payload);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentsApi->deleteDocument: ', $e->getMessage(), PHP_EOL;
@@ -49,10 +48,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **embedding_class** | **string**| The embedding class used for indexing document | |
-| **embedding_model_name** | **string**| The embedding model name used for indexing document | |
 | **index_name** | **string**|  | |
 | **doc_id** | **string**|  | |
+| **payload** | [**\OpenAPI\Client\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
 
 ### Return type
 
@@ -64,7 +62,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -74,7 +72,7 @@ No authorization required
 ## `getDocument()`
 
 ```php
-getDocument($embedding_class, $embedding_model_name, $index_name, $doc_id): \OpenAPI\Client\Model\Document
+getDocument($index_name, $doc_id, $payload): \OpenAPI\Client\Model\Document
 ```
 
 Get a document
@@ -94,13 +92,12 @@ $apiInstance = new OpenAPI\Client\Api\DocumentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$embedding_class = 'embedding_class_example'; // string | The embedding class used for indexing document
-$embedding_model_name = 'embedding_model_name_example'; // string | The embedding model name used for indexing document
 $index_name = 'index_name_example'; // string
 $doc_id = 'doc_id_example'; // string
+$payload = new \OpenAPI\Client\Model\DocsSearch(); // \OpenAPI\Client\Model\DocsSearch
 
 try {
-    $result = $apiInstance->getDocument($embedding_class, $embedding_model_name, $index_name, $doc_id);
+    $result = $apiInstance->getDocument($index_name, $doc_id, $payload);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentsApi->getDocument: ', $e->getMessage(), PHP_EOL;
@@ -111,10 +108,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **embedding_class** | **string**| The embedding class used for indexing document | |
-| **embedding_model_name** | **string**| The embedding model name used for indexing document | |
 | **index_name** | **string**|  | |
 | **doc_id** | **string**|  | |
+| **payload** | [**\OpenAPI\Client\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
 
 ### Return type
 
@@ -126,7 +122,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -136,7 +132,7 @@ No authorization required
 ## `getDocumentByQuery()`
 
 ```php
-getDocumentByQuery($embedding_class, $embedding_model_name, $index_name, $payload): \OpenAPI\Client\Model\Document[]
+getDocumentByQuery($index_name, $payload): \OpenAPI\Client\Model\Document[]
 ```
 
 Get a document by query
@@ -156,13 +152,11 @@ $apiInstance = new OpenAPI\Client\Api\DocumentsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$embedding_class = 'embedding_class_example'; // string | The embedding class used for indexing document
-$embedding_model_name = 'embedding_model_name_example'; // string | The embedding model name used for indexing document
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\QueryFilter(); // \OpenAPI\Client\Model\QueryFilter
+$payload = new \OpenAPI\Client\Model\DocsSearch(); // \OpenAPI\Client\Model\DocsSearch
 
 try {
-    $result = $apiInstance->getDocumentByQuery($embedding_class, $embedding_model_name, $index_name, $payload);
+    $result = $apiInstance->getDocumentByQuery($index_name, $payload);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentsApi->getDocumentByQuery: ', $e->getMessage(), PHP_EOL;
@@ -173,10 +167,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **embedding_class** | **string**| The embedding class used for indexing document | |
-| **embedding_model_name** | **string**| The embedding model name used for indexing document | |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\QueryFilter**](../Model/QueryFilter.md)|  | |
+| **payload** | [**\OpenAPI\Client\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
 
 ### Return type
 

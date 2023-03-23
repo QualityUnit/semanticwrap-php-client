@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **vector** | **float[]** |  |
+**group_by** | **string** |  | [optional]
 **model** | [**\OpenAPI\Client\Model\DocumentQueryModel**](DocumentQueryModel.md) |  | [optional]
 **filter** | [**\OpenAPI\Client\Model\DocumentQueryFilter**](DocumentQueryFilter.md) |  | [optional]
 

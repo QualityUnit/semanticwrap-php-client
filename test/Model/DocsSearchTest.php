@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentQueryTest
+ * DocsSearchTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DocumentQueryTest Class Doc Comment
+ * DocsSearchTest Class Doc Comment
  *
  * @category    Class
- * @description DocumentQuery
+ * @description DocsSearch
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class DocumentQueryTest extends TestCase
+class DocsSearchTest extends TestCase
 {
 
     /**
@@ -71,36 +71,9 @@ class DocumentQueryTest extends TestCase
     }
 
     /**
-     * Test "DocumentQuery"
+     * Test "DocsSearch"
      */
-    public function testDocumentQuery()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "query"
-     */
-    public function testPropertyQuery()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "model"
-     */
-    public function testPropertyModel()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "group_by"
-     */
-    public function testPropertyGroupBy()
+    public function testDocsSearch()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -110,6 +83,15 @@ class DocumentQueryTest extends TestCase
      * Test attribute "filter"
      */
     public function testPropertyFilter()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "model"
+     */
+    public function testPropertyModel()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
