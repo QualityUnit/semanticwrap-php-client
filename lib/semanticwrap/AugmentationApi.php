@@ -132,6 +132,7 @@ class AugmentationApi
      *
      * @param  string $index_name index_name (required)
      * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
      *
@@ -139,9 +140,9 @@ class AugmentationApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AugmentationResponse|\OpenAPI\Client\Model\Error
      */
-    public function memoryfullAugment($index_name, $payload, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
+    public function memoryfullAugment($index_name, $payload, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
     {
-        list($response) = $this->memoryfullAugmentWithHttpInfo($index_name, $payload, $with_source, $contentType);
+        list($response) = $this->memoryfullAugmentWithHttpInfo($index_name, $payload, $ignore_query, $with_source, $contentType);
         return $response;
     }
 
@@ -152,6 +153,7 @@ class AugmentationApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
      *
@@ -159,9 +161,9 @@ class AugmentationApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AugmentationResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function memoryfullAugmentWithHttpInfo($index_name, $payload, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
+    public function memoryfullAugmentWithHttpInfo($index_name, $payload, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
     {
-        $request = $this->memoryfullAugmentRequest($index_name, $payload, $with_source, $contentType);
+        $request = $this->memoryfullAugmentRequest($index_name, $payload, $ignore_query, $with_source, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -277,15 +279,16 @@ class AugmentationApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function memoryfullAugmentAsync($index_name, $payload, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
+    public function memoryfullAugmentAsync($index_name, $payload, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
     {
-        return $this->memoryfullAugmentAsyncWithHttpInfo($index_name, $payload, $with_source, $contentType)
+        return $this->memoryfullAugmentAsyncWithHttpInfo($index_name, $payload, $ignore_query, $with_source, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -300,16 +303,17 @@ class AugmentationApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function memoryfullAugmentAsyncWithHttpInfo($index_name, $payload, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
+    public function memoryfullAugmentAsyncWithHttpInfo($index_name, $payload, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AugmentationResponse';
-        $request = $this->memoryfullAugmentRequest($index_name, $payload, $with_source, $contentType);
+        $request = $this->memoryfullAugmentRequest($index_name, $payload, $ignore_query, $with_source, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -352,13 +356,14 @@ class AugmentationApi
      *
      * @param  string $index_name (required)
      * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload (required)
+     * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function memoryfullAugmentRequest($index_name, $payload, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
+    public function memoryfullAugmentRequest($index_name, $payload, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
     {
 
         // verify the required parameter 'index_name' is set
@@ -377,6 +382,7 @@ class AugmentationApi
 
 
 
+
         $resourcePath = '/augment/memoryfull/{index_name}';
         $formParams = [];
         $queryParams = [];
@@ -384,6 +390,15 @@ class AugmentationApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ignore_query,
+            'ignore_query', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $with_source,

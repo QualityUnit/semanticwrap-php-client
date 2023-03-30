@@ -11,7 +11,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 ## `memoryfullAugment()`
 
 ```php
-memoryfullAugment($index_name, $payload, $with_source): \OpenAPI\Client\Model\AugmentationResponse
+memoryfullAugment($index_name, $payload, $ignore_query, $with_source): \OpenAPI\Client\Model\AugmentationResponse
 ```
 
 Answers a given query from the documents in the index
@@ -33,10 +33,11 @@ $apiInstance = new OpenAPI\Client\Api\AugmentationApi(
 );
 $index_name = 'index_name_example'; // string
 $payload = new \OpenAPI\Client\Model\MemoryfullAugmentationQuery(); // \OpenAPI\Client\Model\MemoryfullAugmentationQuery
+$ignore_query = 'ignore_query_example'; // string | If true, the query is ignored and instead only the elasticsearch filter is applied
 $with_source = 'with_source_example'; // string | If true, the source of the answer is returned
 
 try {
-    $result = $apiInstance->memoryfullAugment($index_name, $payload, $with_source);
+    $result = $apiInstance->memoryfullAugment($index_name, $payload, $ignore_query, $with_source);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AugmentationApi->memoryfullAugment: ', $e->getMessage(), PHP_EOL;
@@ -49,6 +50,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
 | **payload** | [**\OpenAPI\Client\Model\MemoryfullAugmentationQuery**](../Model/MemoryfullAugmentationQuery.md)|  | |
+| **ignore_query** | **string**| If true, the query is ignored and instead only the elasticsearch filter is applied | [optional] |
 | **with_source** | **string**| If true, the source of the answer is returned | [optional] |
 
 ### Return type

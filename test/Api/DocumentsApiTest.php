@@ -84,6 +84,18 @@ class DocumentsApiTest extends TestCase
     }
 
     /**
+     * Test case for deleteDocumentByQuery
+     *
+     * Delete a document by query.
+     *
+     */
+    public function testDeleteDocumentByQuery()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getDocument
      *
      * Get a document.
