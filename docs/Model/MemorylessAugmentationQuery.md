@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**query** | **string** | Question to be answered |
+**query** | **string** | Question to be answered | [optional]
 **prompt** | [**\OpenAPI\Client\Model\MemorylessAugmentationQueryPrompt**](MemorylessAugmentationQueryPrompt.md) |  | [optional]
 **model** | [**\OpenAPI\Client\Model\MemorylessAugmentationQueryModel**](MemorylessAugmentationQueryModel.md) |  | [optional]
 **filter** | [**\OpenAPI\Client\Model\MemorylessAugmentationQueryFilter**](MemorylessAugmentationQueryFilter.md) |  | [optional]

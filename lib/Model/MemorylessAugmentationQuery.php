@@ -309,9 +309,6 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['query'] === null) {
-            $invalidProperties[] = "'query' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -330,7 +327,7 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets query
      *
-     * @return string
+     * @return string|null
      */
     public function getQuery()
     {
@@ -340,7 +337,7 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets query
      *
-     * @param string $query Question to be answered
+     * @param string|null $query Question to be answered
      *
      * @return self
      */
