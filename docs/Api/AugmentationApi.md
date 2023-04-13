@@ -73,7 +73,7 @@ No authorization required
 ## `memorylessAugment()`
 
 ```php
-memorylessAugment($index_name, $payload, $ignore_query, $with_source): \OpenAPI\Client\Model\AugmentationResponse
+memorylessAugment($index_name, $payload, $context_mandatory, $custom_context, $ignore_query, $with_source): \OpenAPI\Client\Model\AugmentationResponse
 ```
 
 Answers a given query from the documents in the index
@@ -95,11 +95,13 @@ $apiInstance = new OpenAPI\Client\Api\AugmentationApi(
 );
 $index_name = 'index_name_example'; // string
 $payload = new \OpenAPI\Client\Model\MemorylessAugmentationQuery(); // \OpenAPI\Client\Model\MemorylessAugmentationQuery
+$context_mandatory = 'context_mandatory_example'; // string | If true, the context is mandatory for the client to set
+$custom_context = 'custom_context_example'; // string | If true, there will be user-defined custom documents fed to llm
 $ignore_query = 'ignore_query_example'; // string | If true, the query is ignored and instead only the elasticsearch filter is applied
 $with_source = 'with_source_example'; // string | If true, the source of the answer is returned
 
 try {
-    $result = $apiInstance->memorylessAugment($index_name, $payload, $ignore_query, $with_source);
+    $result = $apiInstance->memorylessAugment($index_name, $payload, $context_mandatory, $custom_context, $ignore_query, $with_source);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AugmentationApi->memorylessAugment: ', $e->getMessage(), PHP_EOL;
@@ -112,6 +114,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
 | **payload** | [**\OpenAPI\Client\Model\MemorylessAugmentationQuery**](../Model/MemorylessAugmentationQuery.md)|  | |
+| **context_mandatory** | **string**| If true, the context is mandatory for the client to set | [optional] |
+| **custom_context** | **string**| If true, there will be user-defined custom documents fed to llm | [optional] |
 | **ignore_query** | **string**| If true, the query is ignored and instead only the elasticsearch filter is applied | [optional] |
 | **with_source** | **string**| If true, the source of the answer is returned | [optional] |
 

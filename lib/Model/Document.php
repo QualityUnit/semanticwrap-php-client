@@ -60,7 +60,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
         'doc' => 'string',
         'doc_id' => 'string',
         'metadata' => 'object',
-        'vector' => 'float[]'
+        'vector' => 'float[]',
+        'used_by_llm' => 'bool'
     ];
 
     /**
@@ -74,7 +75,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
         'doc' => null,
         'doc_id' => null,
         'metadata' => null,
-        'vector' => null
+        'vector' => null,
+        'used_by_llm' => null
     ];
 
     /**
@@ -86,7 +88,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
         'doc' => false,
 		'doc_id' => false,
 		'metadata' => false,
-		'vector' => false
+		'vector' => false,
+		'used_by_llm' => false
     ];
 
     /**
@@ -178,7 +181,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
         'doc' => 'doc',
         'doc_id' => 'doc_id',
         'metadata' => 'metadata',
-        'vector' => 'vector'
+        'vector' => 'vector',
+        'used_by_llm' => 'used_by_llm'
     ];
 
     /**
@@ -190,7 +194,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
         'doc' => 'setDoc',
         'doc_id' => 'setDocId',
         'metadata' => 'setMetadata',
-        'vector' => 'setVector'
+        'vector' => 'setVector',
+        'used_by_llm' => 'setUsedByLlm'
     ];
 
     /**
@@ -202,7 +207,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
         'doc' => 'getDoc',
         'doc_id' => 'getDocId',
         'metadata' => 'getMetadata',
-        'vector' => 'getVector'
+        'vector' => 'getVector',
+        'used_by_llm' => 'getUsedByLlm'
     ];
 
     /**
@@ -266,6 +272,7 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('doc_id', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('vector', $data ?? [], null);
+        $this->setIfExists('used_by_llm', $data ?? [], null);
     }
 
     /**
@@ -417,6 +424,33 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable vector cannot be null');
         }
         $this->container['vector'] = $vector;
+
+        return $this;
+    }
+
+    /**
+     * Gets used_by_llm
+     *
+     * @return bool|null
+     */
+    public function getUsedByLlm()
+    {
+        return $this->container['used_by_llm'];
+    }
+
+    /**
+     * Sets used_by_llm
+     *
+     * @param bool|null $used_by_llm Whether the document is used by the LLM
+     *
+     * @return self
+     */
+    public function setUsedByLlm($used_by_llm)
+    {
+        if (is_null($used_by_llm)) {
+            throw new \InvalidArgumentException('non-nullable used_by_llm cannot be null');
+        }
+        $this->container['used_by_llm'] = $used_by_llm;
 
         return $this;
     }

@@ -114,4 +114,13 @@ class DocumentTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "used_by_llm"
+     */
+    public function testPropertyUsedByLlm()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }
