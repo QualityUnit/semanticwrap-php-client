@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\semanticwrap;
+namespace Semanticwrap\semanticwrap;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Semanticwrap\ApiException;
+use Semanticwrap\Configuration;
+use Semanticwrap\HeaderSelector;
+use Semanticwrap\ObjectSerializer;
 
 /**
  * AugmentationApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -131,14 +131,14 @@ class AugmentationApi
      * Answers a given query from the documents in the index
      *
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload payload (required)
+     * @param  \Semanticwrap\Model\MemoryfullAugmentationQuery $payload payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AugmentationResponse|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\AugmentationResponse|\Semanticwrap\Model\Error
      */
     public function memoryfullAugment($index_name, $payload, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
     {
@@ -152,14 +152,14 @@ class AugmentationApi
      * Answers a given query from the documents in the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload (required)
+     * @param  \Semanticwrap\Model\MemoryfullAugmentationQuery $payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AugmentationResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\AugmentationResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function memoryfullAugmentWithHttpInfo($index_name, $payload, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
     {
@@ -202,38 +202,38 @@ class AugmentationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AugmentationResponse' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\AugmentationResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AugmentationResponse' !== 'string') {
+                        if ('\Semanticwrap\Model\AugmentationResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AugmentationResponse', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\AugmentationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\AugmentationResponse';
+            $returnType = '\Semanticwrap\Model\AugmentationResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -254,7 +254,7 @@ class AugmentationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AugmentationResponse',
+                        '\Semanticwrap\Model\AugmentationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -262,7 +262,7 @@ class AugmentationApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -278,7 +278,7 @@ class AugmentationApi
      * Answers a given query from the documents in the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload (required)
+     * @param  \Semanticwrap\Model\MemoryfullAugmentationQuery $payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
@@ -302,7 +302,7 @@ class AugmentationApi
      * Answers a given query from the documents in the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload (required)
+     * @param  \Semanticwrap\Model\MemoryfullAugmentationQuery $payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
@@ -312,7 +312,7 @@ class AugmentationApi
      */
     public function memoryfullAugmentAsyncWithHttpInfo($index_name, $payload, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memoryfullAugment'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AugmentationResponse';
+        $returnType = '\Semanticwrap\Model\AugmentationResponse';
         $request = $this->memoryfullAugmentRequest($index_name, $payload, $ignore_query, $with_source, $contentType);
 
         return $this->client
@@ -355,7 +355,7 @@ class AugmentationApi
      * Create request for operation 'memoryfullAugment'
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\MemoryfullAugmentationQuery $payload (required)
+     * @param  \Semanticwrap\Model\MemoryfullAugmentationQuery $payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memoryfullAugment'] to see the possible values for this operation
@@ -486,16 +486,16 @@ class AugmentationApi
      * Answers a given query from the documents in the index
      *
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\MemorylessAugmentationQuery $payload payload (required)
+     * @param  \Semanticwrap\Model\MemorylessAugmentationQuery $payload payload (required)
      * @param  string $context_mandatory If true, the context is mandatory for the client to set (optional)
      * @param  string $custom_context If true, there will be user-defined custom documents fed to llm (optional)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memorylessAugment'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AugmentationResponse|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\AugmentationResponse|\Semanticwrap\Model\Error
      */
     public function memorylessAugment($index_name, $payload, $context_mandatory = null, $custom_context = null, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memorylessAugment'][0])
     {
@@ -509,16 +509,16 @@ class AugmentationApi
      * Answers a given query from the documents in the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\MemorylessAugmentationQuery $payload (required)
+     * @param  \Semanticwrap\Model\MemorylessAugmentationQuery $payload (required)
      * @param  string $context_mandatory If true, the context is mandatory for the client to set (optional)
      * @param  string $custom_context If true, there will be user-defined custom documents fed to llm (optional)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $with_source If true, the source of the answer is returned (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memorylessAugment'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AugmentationResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\AugmentationResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function memorylessAugmentWithHttpInfo($index_name, $payload, $context_mandatory = null, $custom_context = null, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memorylessAugment'][0])
     {
@@ -561,38 +561,38 @@ class AugmentationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AugmentationResponse' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\AugmentationResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AugmentationResponse' !== 'string') {
+                        if ('\Semanticwrap\Model\AugmentationResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AugmentationResponse', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\AugmentationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\AugmentationResponse';
+            $returnType = '\Semanticwrap\Model\AugmentationResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -613,7 +613,7 @@ class AugmentationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AugmentationResponse',
+                        '\Semanticwrap\Model\AugmentationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -621,7 +621,7 @@ class AugmentationApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -637,7 +637,7 @@ class AugmentationApi
      * Answers a given query from the documents in the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\MemorylessAugmentationQuery $payload (required)
+     * @param  \Semanticwrap\Model\MemorylessAugmentationQuery $payload (required)
      * @param  string $context_mandatory If true, the context is mandatory for the client to set (optional)
      * @param  string $custom_context If true, there will be user-defined custom documents fed to llm (optional)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
@@ -663,7 +663,7 @@ class AugmentationApi
      * Answers a given query from the documents in the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\MemorylessAugmentationQuery $payload (required)
+     * @param  \Semanticwrap\Model\MemorylessAugmentationQuery $payload (required)
      * @param  string $context_mandatory If true, the context is mandatory for the client to set (optional)
      * @param  string $custom_context If true, there will be user-defined custom documents fed to llm (optional)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
@@ -675,7 +675,7 @@ class AugmentationApi
      */
     public function memorylessAugmentAsyncWithHttpInfo($index_name, $payload, $context_mandatory = null, $custom_context = null, $ignore_query = null, $with_source = null, string $contentType = self::contentTypes['memorylessAugment'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AugmentationResponse';
+        $returnType = '\Semanticwrap\Model\AugmentationResponse';
         $request = $this->memorylessAugmentRequest($index_name, $payload, $context_mandatory, $custom_context, $ignore_query, $with_source, $contentType);
 
         return $this->client
@@ -718,7 +718,7 @@ class AugmentationApi
      * Create request for operation 'memorylessAugment'
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\MemorylessAugmentationQuery $payload (required)
+     * @param  \Semanticwrap\Model\MemorylessAugmentationQuery $payload (required)
      * @param  string $context_mandatory If true, the context is mandatory for the client to set (optional)
      * @param  string $custom_context If true, there will be user-defined custom documents fed to llm (optional)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)

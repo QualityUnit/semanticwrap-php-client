@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\semanticwrap;
+namespace Semanticwrap\semanticwrap;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Semanticwrap\ApiException;
+use Semanticwrap\Configuration;
+use Semanticwrap\HeaderSelector;
+use Semanticwrap\ObjectSerializer;
 
 /**
  * SearchApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -134,12 +134,12 @@ class SearchApi
      * Get Related Documents from the index with ANN search
      *
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQuery $payload payload (required)
+     * @param  \Semanticwrap\Model\DocumentQuery $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\SearchResponse|\Semanticwrap\Model\Error
      */
     public function search($index_name, $payload, string $contentType = self::contentTypes['search'][0])
     {
@@ -153,12 +153,12 @@ class SearchApi
      * Get Related Documents from the index with ANN search
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQuery $payload (required)
+     * @param  \Semanticwrap\Model\DocumentQuery $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\SearchResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['search'][0])
     {
@@ -201,38 +201,38 @@ class SearchApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\SearchResponse' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\SearchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\SearchResponse' !== 'string') {
+                        if ('\Semanticwrap\Model\SearchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\SearchResponse', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\SearchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\SearchResponse';
+            $returnType = '\Semanticwrap\Model\SearchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -253,7 +253,7 @@ class SearchApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\SearchResponse',
+                        '\Semanticwrap\Model\SearchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -261,7 +261,7 @@ class SearchApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -277,7 +277,7 @@ class SearchApi
      * Get Related Documents from the index with ANN search
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQuery $payload (required)
+     * @param  \Semanticwrap\Model\DocumentQuery $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -299,7 +299,7 @@ class SearchApi
      * Get Related Documents from the index with ANN search
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQuery $payload (required)
+     * @param  \Semanticwrap\Model\DocumentQuery $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -307,7 +307,7 @@ class SearchApi
      */
     public function searchAsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['search'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\SearchResponse';
+        $returnType = '\Semanticwrap\Model\SearchResponse';
         $request = $this->searchRequest($index_name, $payload, $contentType);
 
         return $this->client
@@ -350,7 +350,7 @@ class SearchApi
      * Create request for operation 'search'
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQuery $payload (required)
+     * @param  \Semanticwrap\Model\DocumentQuery $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['search'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -459,13 +459,13 @@ class SearchApi
      * Get Related Documents from the index with ANN search
      *
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload payload (required)
+     * @param  \Semanticwrap\Model\DocumentQueryByVector $payload payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\SearchResponse|\Semanticwrap\Model\Error
      */
     public function searchByVector($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['searchByVector'][0])
     {
@@ -479,13 +479,13 @@ class SearchApi
      * Get Related Documents from the index with ANN search
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload (required)
+     * @param  \Semanticwrap\Model\DocumentQueryByVector $payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\SearchResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchByVectorWithHttpInfo($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['searchByVector'][0])
     {
@@ -528,38 +528,38 @@ class SearchApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\SearchResponse' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\SearchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\SearchResponse' !== 'string') {
+                        if ('\Semanticwrap\Model\SearchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\SearchResponse', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\SearchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\SearchResponse';
+            $returnType = '\Semanticwrap\Model\SearchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -580,7 +580,7 @@ class SearchApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\SearchResponse',
+                        '\Semanticwrap\Model\SearchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -588,7 +588,7 @@ class SearchApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -604,7 +604,7 @@ class SearchApi
      * Get Related Documents from the index with ANN search
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload (required)
+     * @param  \Semanticwrap\Model\DocumentQueryByVector $payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
@@ -627,7 +627,7 @@ class SearchApi
      * Get Related Documents from the index with ANN search
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload (required)
+     * @param  \Semanticwrap\Model\DocumentQueryByVector $payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
@@ -636,7 +636,7 @@ class SearchApi
      */
     public function searchByVectorAsyncWithHttpInfo($index_name, $payload, $ignore_query = null, string $contentType = self::contentTypes['searchByVector'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\SearchResponse';
+        $returnType = '\Semanticwrap\Model\SearchResponse';
         $request = $this->searchByVectorRequest($index_name, $payload, $ignore_query, $contentType);
 
         return $this->client
@@ -679,7 +679,7 @@ class SearchApi
      * Create request for operation 'searchByVector'
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocumentQueryByVector $payload (required)
+     * @param  \Semanticwrap\Model\DocumentQueryByVector $payload (required)
      * @param  string $ignore_query If true, the query is ignored and instead only the elasticsearch filter is applied (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchByVector'] to see the possible values for this operation
      *
@@ -800,12 +800,12 @@ class SearchApi
      *
      * @param  string $index_name index_name (required)
      * @param  string $doc_id doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocumentNonQuery $payload payload (required)
+     * @param  \Semanticwrap\Model\DocumentNonQuery $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchDocsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\SearchResponse|\Semanticwrap\Model\Error
      */
     public function searchDocsById($index_name, $doc_id, $payload, string $contentType = self::contentTypes['searchDocsById'][0])
     {
@@ -820,12 +820,12 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocumentNonQuery $payload (required)
+     * @param  \Semanticwrap\Model\DocumentNonQuery $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchDocsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\SearchResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\SearchResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchDocsByIdWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['searchDocsById'][0])
     {
@@ -868,38 +868,38 @@ class SearchApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\SearchResponse' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\SearchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\SearchResponse' !== 'string') {
+                        if ('\Semanticwrap\Model\SearchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\SearchResponse', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\SearchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\SearchResponse';
+            $returnType = '\Semanticwrap\Model\SearchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -920,7 +920,7 @@ class SearchApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\SearchResponse',
+                        '\Semanticwrap\Model\SearchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -928,7 +928,7 @@ class SearchApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -945,7 +945,7 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocumentNonQuery $payload (required)
+     * @param  \Semanticwrap\Model\DocumentNonQuery $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchDocsById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -968,7 +968,7 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocumentNonQuery $payload (required)
+     * @param  \Semanticwrap\Model\DocumentNonQuery $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchDocsById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -976,7 +976,7 @@ class SearchApi
      */
     public function searchDocsByIdAsyncWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['searchDocsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\SearchResponse';
+        $returnType = '\Semanticwrap\Model\SearchResponse';
         $request = $this->searchDocsByIdRequest($index_name, $doc_id, $payload, $contentType);
 
         return $this->client
@@ -1020,7 +1020,7 @@ class SearchApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocumentNonQuery $payload (required)
+     * @param  \Semanticwrap\Model\DocumentNonQuery $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchDocsById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

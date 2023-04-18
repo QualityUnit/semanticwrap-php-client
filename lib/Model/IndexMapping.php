@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * IndexMapping Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class IndexMapping implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'model' => '\OpenAPI\Client\Model\IndexMappingModel',
+        'model' => '\Semanticwrap\Model\IndexMappingModel',
         'text_indexed' => 'bool',
         'mapping' => 'object'
     ];
@@ -306,7 +306,7 @@ class IndexMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets model
      *
-     * @return \OpenAPI\Client\Model\IndexMappingModel|null
+     * @return \Semanticwrap\Model\IndexMappingModel|null
      */
     public function getModel()
     {
@@ -316,7 +316,7 @@ class IndexMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets model
      *
-     * @param \OpenAPI\Client\Model\IndexMappingModel|null $model model
+     * @param \Semanticwrap\Model\IndexMappingModel|null $model model
      *
      * @return self
      */

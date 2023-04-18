@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,14 +25,14 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client;
+namespace Semanticwrap;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -100,7 +100,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'OpenAPI-Generator/1.0.34/PHP';
+    protected $userAgent = 'OpenAPI-Generator/1.0.35/PHP';
 
     /**
      * Debug switch (default set to false)
@@ -429,11 +429,11 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (OpenAPI\Client) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (Semanticwrap) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 1.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 1.0.34' . PHP_EOL;
+        $report .= '    SDK Package Version: 1.0.35' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

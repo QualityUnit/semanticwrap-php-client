@@ -1,4 +1,4 @@
-# OpenAPI\Client\SearchApi
+# Semanticwrap\SearchApi
 
 All URIs are relative to /api/v1, except if the operation defines another base path.
 
@@ -12,7 +12,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 ## `search()`
 
 ```php
-search($index_name, $payload): \OpenAPI\Client\Model\SearchResponse
+search($index_name, $payload): \Semanticwrap\Model\SearchResponse
 ```
 
 Get Related Documents from the index with ANN search
@@ -27,13 +27,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SearchApi(
+$apiInstance = new Semanticwrap\Api\SearchApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\DocumentQuery(); // \OpenAPI\Client\Model\DocumentQuery
+$payload = new \Semanticwrap\Model\DocumentQuery(); // \Semanticwrap\Model\DocumentQuery
 
 try {
     $result = $apiInstance->search($index_name, $payload);
@@ -48,11 +48,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\DocumentQuery**](../Model/DocumentQuery.md)|  | |
+| **payload** | [**\Semanticwrap\Model\DocumentQuery**](../Model/DocumentQuery.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchResponse**](../Model/SearchResponse.md)
+[**\Semanticwrap\Model\SearchResponse**](../Model/SearchResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ No authorization required
 ## `searchByVector()`
 
 ```php
-searchByVector($index_name, $payload, $ignore_query): \OpenAPI\Client\Model\SearchResponse
+searchByVector($index_name, $payload, $ignore_query): \Semanticwrap\Model\SearchResponse
 ```
 
 Get Related Documents from the index with ANN search
@@ -85,13 +85,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SearchApi(
+$apiInstance = new Semanticwrap\Api\SearchApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\DocumentQueryByVector(); // \OpenAPI\Client\Model\DocumentQueryByVector
+$payload = new \Semanticwrap\Model\DocumentQueryByVector(); // \Semanticwrap\Model\DocumentQueryByVector
 $ignore_query = 'ignore_query_example'; // string | If true, the query is ignored and instead only the elasticsearch filter is applied
 
 try {
@@ -107,12 +107,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\DocumentQueryByVector**](../Model/DocumentQueryByVector.md)|  | |
+| **payload** | [**\Semanticwrap\Model\DocumentQueryByVector**](../Model/DocumentQueryByVector.md)|  | |
 | **ignore_query** | **string**| If true, the query is ignored and instead only the elasticsearch filter is applied | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchResponse**](../Model/SearchResponse.md)
+[**\Semanticwrap\Model\SearchResponse**](../Model/SearchResponse.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ No authorization required
 ## `searchDocsById()`
 
 ```php
-searchDocsById($index_name, $doc_id, $payload): \OpenAPI\Client\Model\SearchResponse
+searchDocsById($index_name, $doc_id, $payload): \Semanticwrap\Model\SearchResponse
 ```
 
 Get Related Documents from the index with ANN search for given document id
@@ -145,14 +145,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\SearchApi(
+$apiInstance = new Semanticwrap\Api\SearchApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
 $doc_id = 'doc_id_example'; // string
-$payload = new \OpenAPI\Client\Model\DocumentNonQuery(); // \OpenAPI\Client\Model\DocumentNonQuery
+$payload = new \Semanticwrap\Model\DocumentNonQuery(); // \Semanticwrap\Model\DocumentNonQuery
 
 try {
     $result = $apiInstance->searchDocsById($index_name, $doc_id, $payload);
@@ -168,11 +168,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
 | **doc_id** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\DocumentNonQuery**](../Model/DocumentNonQuery.md)|  | |
+| **payload** | [**\Semanticwrap\Model\DocumentNonQuery**](../Model/DocumentNonQuery.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchResponse**](../Model/SearchResponse.md)
+[**\Semanticwrap\Model\SearchResponse**](../Model/SearchResponse.md)
 
 ### Authorization
 

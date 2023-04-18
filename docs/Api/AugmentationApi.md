@@ -1,4 +1,4 @@
-# OpenAPI\Client\AugmentationApi
+# Semanticwrap\AugmentationApi
 
 All URIs are relative to /api/v1, except if the operation defines another base path.
 
@@ -11,7 +11,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 ## `memoryfullAugment()`
 
 ```php
-memoryfullAugment($index_name, $payload, $ignore_query, $with_source): \OpenAPI\Client\Model\AugmentationResponse
+memoryfullAugment($index_name, $payload, $ignore_query, $with_source): \Semanticwrap\Model\AugmentationResponse
 ```
 
 Answers a given query from the documents in the index
@@ -26,13 +26,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\AugmentationApi(
+$apiInstance = new Semanticwrap\Api\AugmentationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\MemoryfullAugmentationQuery(); // \OpenAPI\Client\Model\MemoryfullAugmentationQuery
+$payload = new \Semanticwrap\Model\MemoryfullAugmentationQuery(); // \Semanticwrap\Model\MemoryfullAugmentationQuery
 $ignore_query = 'ignore_query_example'; // string | If true, the query is ignored and instead only the elasticsearch filter is applied
 $with_source = 'with_source_example'; // string | If true, the source of the answer is returned
 
@@ -49,13 +49,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\MemoryfullAugmentationQuery**](../Model/MemoryfullAugmentationQuery.md)|  | |
+| **payload** | [**\Semanticwrap\Model\MemoryfullAugmentationQuery**](../Model/MemoryfullAugmentationQuery.md)|  | |
 | **ignore_query** | **string**| If true, the query is ignored and instead only the elasticsearch filter is applied | [optional] |
 | **with_source** | **string**| If true, the source of the answer is returned | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\AugmentationResponse**](../Model/AugmentationResponse.md)
+[**\Semanticwrap\Model\AugmentationResponse**](../Model/AugmentationResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ No authorization required
 ## `memorylessAugment()`
 
 ```php
-memorylessAugment($index_name, $payload, $context_mandatory, $custom_context, $ignore_query, $with_source): \OpenAPI\Client\Model\AugmentationResponse
+memorylessAugment($index_name, $payload, $context_mandatory, $custom_context, $ignore_query, $with_source): \Semanticwrap\Model\AugmentationResponse
 ```
 
 Answers a given query from the documents in the index
@@ -88,13 +88,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\AugmentationApi(
+$apiInstance = new Semanticwrap\Api\AugmentationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\MemorylessAugmentationQuery(); // \OpenAPI\Client\Model\MemorylessAugmentationQuery
+$payload = new \Semanticwrap\Model\MemorylessAugmentationQuery(); // \Semanticwrap\Model\MemorylessAugmentationQuery
 $context_mandatory = 'context_mandatory_example'; // string | If true, the context is mandatory for the client to set
 $custom_context = 'custom_context_example'; // string | If true, there will be user-defined custom documents fed to llm
 $ignore_query = 'ignore_query_example'; // string | If true, the query is ignored and instead only the elasticsearch filter is applied
@@ -113,7 +113,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\MemorylessAugmentationQuery**](../Model/MemorylessAugmentationQuery.md)|  | |
+| **payload** | [**\Semanticwrap\Model\MemorylessAugmentationQuery**](../Model/MemorylessAugmentationQuery.md)|  | |
 | **context_mandatory** | **string**| If true, the context is mandatory for the client to set | [optional] |
 | **custom_context** | **string**| If true, there will be user-defined custom documents fed to llm | [optional] |
 | **ignore_query** | **string**| If true, the query is ignored and instead only the elasticsearch filter is applied | [optional] |
@@ -121,7 +121,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\AugmentationResponse**](../Model/AugmentationResponse.md)
+[**\Semanticwrap\Model\AugmentationResponse**](../Model/AugmentationResponse.md)
 
 ### Authorization
 

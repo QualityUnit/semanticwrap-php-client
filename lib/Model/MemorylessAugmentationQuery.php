@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * MemorylessAugmentationQuery Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'query' => 'string',
-        'prompt' => '\OpenAPI\Client\Model\MemorylessAugmentationQueryPrompt',
-        'model' => '\OpenAPI\Client\Model\MemorylessAugmentationQueryModel',
-        'filter' => '\OpenAPI\Client\Model\MemorylessAugmentationQueryFilter',
+        'prompt' => '\Semanticwrap\Model\MemorylessAugmentationQueryPrompt',
+        'model' => '\Semanticwrap\Model\MemorylessAugmentationQueryModel',
+        'filter' => '\Semanticwrap\Model\MemorylessAugmentationQueryFilter',
         'max_input_tokens' => 'int',
         'split_strategy' => 'string'
     ];
@@ -354,7 +354,7 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets prompt
      *
-     * @return \OpenAPI\Client\Model\MemorylessAugmentationQueryPrompt|null
+     * @return \Semanticwrap\Model\MemorylessAugmentationQueryPrompt|null
      */
     public function getPrompt()
     {
@@ -364,7 +364,7 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets prompt
      *
-     * @param \OpenAPI\Client\Model\MemorylessAugmentationQueryPrompt|null $prompt prompt
+     * @param \Semanticwrap\Model\MemorylessAugmentationQueryPrompt|null $prompt prompt
      *
      * @return self
      */
@@ -381,7 +381,7 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets model
      *
-     * @return \OpenAPI\Client\Model\MemorylessAugmentationQueryModel|null
+     * @return \Semanticwrap\Model\MemorylessAugmentationQueryModel|null
      */
     public function getModel()
     {
@@ -391,7 +391,7 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets model
      *
-     * @param \OpenAPI\Client\Model\MemorylessAugmentationQueryModel|null $model model
+     * @param \Semanticwrap\Model\MemorylessAugmentationQueryModel|null $model model
      *
      * @return self
      */
@@ -408,7 +408,7 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets filter
      *
-     * @return \OpenAPI\Client\Model\MemorylessAugmentationQueryFilter|null
+     * @return \Semanticwrap\Model\MemorylessAugmentationQueryFilter|null
      */
     public function getFilter()
     {
@@ -418,7 +418,7 @@ class MemorylessAugmentationQuery implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets filter
      *
-     * @param \OpenAPI\Client\Model\MemorylessAugmentationQueryFilter|null $filter filter
+     * @param \Semanticwrap\Model\MemorylessAugmentationQueryFilter|null $filter filter
      *
      * @return self
      */

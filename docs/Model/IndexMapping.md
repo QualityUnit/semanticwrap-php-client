@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**model** | [**\OpenAPI\Client\Model\IndexMappingModel**](IndexMappingModel.md) |  | [optional]
+**model** | [**\Semanticwrap\Model\IndexMappingModel**](IndexMappingModel.md) |  | [optional]
 **text_indexed** | **bool** | Whether to index the text or not | [optional]
 **mapping** | **object** | The metadata mapping | [optional]
 

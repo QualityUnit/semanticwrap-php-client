@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\semanticwrap;
+namespace Semanticwrap\semanticwrap;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Semanticwrap\ApiException;
+use Semanticwrap\Configuration;
+use Semanticwrap\HeaderSelector;
+use Semanticwrap\ObjectSerializer;
 
 /**
  * DocumentsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -138,12 +138,12 @@ class DocumentsApi
      *
      * @param  string $index_name index_name (required)
      * @param  string $doc_id doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Ack|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\Ack|\Semanticwrap\Model\Error|\Semanticwrap\Model\Error
      */
     public function deleteDocument($index_name, $doc_id, $payload, string $contentType = self::contentTypes['deleteDocument'][0])
     {
@@ -158,12 +158,12 @@ class DocumentsApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Ack|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\Ack|\Semanticwrap\Model\Error|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDocumentWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['deleteDocument'][0])
     {
@@ -206,53 +206,53 @@ class DocumentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Ack' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Ack' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Ack' !== 'string') {
+                        if ('\Semanticwrap\Model\Ack' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Ack', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Ack', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Ack';
+            $returnType = '\Semanticwrap\Model\Ack';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -273,7 +273,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Ack',
+                        '\Semanticwrap\Model\Ack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -281,7 +281,7 @@ class DocumentsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -289,7 +289,7 @@ class DocumentsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -306,7 +306,7 @@ class DocumentsApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -329,7 +329,7 @@ class DocumentsApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -337,7 +337,7 @@ class DocumentsApi
      */
     public function deleteDocumentAsyncWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['deleteDocument'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Ack';
+        $returnType = '\Semanticwrap\Model\Ack';
         $request = $this->deleteDocumentRequest($index_name, $doc_id, $payload, $contentType);
 
         return $this->client
@@ -381,7 +381,7 @@ class DocumentsApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -505,12 +505,12 @@ class DocumentsApi
      * Delete a document by query
      *
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocumentByQuery'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Ack|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\Ack|\Semanticwrap\Model\Error
      */
     public function deleteDocumentByQuery($index_name, $payload, string $contentType = self::contentTypes['deleteDocumentByQuery'][0])
     {
@@ -524,12 +524,12 @@ class DocumentsApi
      * Delete a document by query
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocumentByQuery'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Ack|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\Ack|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDocumentByQueryWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['deleteDocumentByQuery'][0])
     {
@@ -572,38 +572,38 @@ class DocumentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Ack' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Ack' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Ack' !== 'string') {
+                        if ('\Semanticwrap\Model\Ack' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Ack', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Ack', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Ack';
+            $returnType = '\Semanticwrap\Model\Ack';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -624,7 +624,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Ack',
+                        '\Semanticwrap\Model\Ack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -632,7 +632,7 @@ class DocumentsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -648,7 +648,7 @@ class DocumentsApi
      * Delete a document by query
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -670,7 +670,7 @@ class DocumentsApi
      * Delete a document by query
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -678,7 +678,7 @@ class DocumentsApi
      */
     public function deleteDocumentByQueryAsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['deleteDocumentByQuery'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Ack';
+        $returnType = '\Semanticwrap\Model\Ack';
         $request = $this->deleteDocumentByQueryRequest($index_name, $payload, $contentType);
 
         return $this->client
@@ -721,7 +721,7 @@ class DocumentsApi
      * Create request for operation 'deleteDocumentByQuery'
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -831,12 +831,12 @@ class DocumentsApi
      *
      * @param  string $index_name index_name (required)
      * @param  string $doc_id doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Document|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\Document|\Semanticwrap\Model\Error|\Semanticwrap\Model\Error
      */
     public function getDocument($index_name, $doc_id, $payload, string $contentType = self::contentTypes['getDocument'][0])
     {
@@ -851,12 +851,12 @@ class DocumentsApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Document|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\Document|\Semanticwrap\Model\Error|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDocumentWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['getDocument'][0])
     {
@@ -899,53 +899,53 @@ class DocumentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Document' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Document' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Document' !== 'string') {
+                        if ('\Semanticwrap\Model\Document' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Document', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Document', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Document';
+            $returnType = '\Semanticwrap\Model\Document';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -966,7 +966,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Document',
+                        '\Semanticwrap\Model\Document',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -974,7 +974,7 @@ class DocumentsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -982,7 +982,7 @@ class DocumentsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -999,7 +999,7 @@ class DocumentsApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1022,7 +1022,7 @@ class DocumentsApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1030,7 +1030,7 @@ class DocumentsApi
      */
     public function getDocumentAsyncWithHttpInfo($index_name, $doc_id, $payload, string $contentType = self::contentTypes['getDocument'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Document';
+        $returnType = '\Semanticwrap\Model\Document';
         $request = $this->getDocumentRequest($index_name, $doc_id, $payload, $contentType);
 
         return $this->client
@@ -1074,7 +1074,7 @@ class DocumentsApi
      *
      * @param  string $index_name (required)
      * @param  string $doc_id (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocument'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1198,12 +1198,12 @@ class DocumentsApi
      * Get a document by query
      *
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Document[]|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\Document[]|\Semanticwrap\Model\Error
      */
     public function getDocumentByQuery($index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
     {
@@ -1217,12 +1217,12 @@ class DocumentsApi
      * Get a document by query
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Document[]|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\Document[]|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDocumentByQueryWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
     {
@@ -1265,38 +1265,38 @@ class DocumentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Document[]' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Document[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Document[]' !== 'string') {
+                        if ('\Semanticwrap\Model\Document[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Document[]', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Document[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Document[]';
+            $returnType = '\Semanticwrap\Model\Document[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1317,7 +1317,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Document[]',
+                        '\Semanticwrap\Model\Document[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1325,7 +1325,7 @@ class DocumentsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1341,7 +1341,7 @@ class DocumentsApi
      * Get a document by query
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1363,7 +1363,7 @@ class DocumentsApi
      * Get a document by query
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1371,7 +1371,7 @@ class DocumentsApi
      */
     public function getDocumentByQueryAsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['getDocumentByQuery'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Document[]';
+        $returnType = '\Semanticwrap\Model\Document[]';
         $request = $this->getDocumentByQueryRequest($index_name, $payload, $contentType);
 
         return $this->client
@@ -1414,7 +1414,7 @@ class DocumentsApi
      * Create request for operation 'getDocumentByQuery'
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\DocsSearch $payload (required)
+     * @param  \Semanticwrap\Model\DocsSearch $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocumentByQuery'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

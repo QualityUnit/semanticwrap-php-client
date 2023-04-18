@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * BulkIndex Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class BulkIndex implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'documents' => '\OpenAPI\Client\Model\Document[]',
-        'model' => '\OpenAPI\Client\Model\AIModel'
+        'documents' => '\Semanticwrap\Model\Document[]',
+        'model' => '\Semanticwrap\Model\AIModel'
     ];
 
     /**
@@ -302,7 +302,7 @@ class BulkIndex implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets documents
      *
-     * @return \OpenAPI\Client\Model\Document[]
+     * @return \Semanticwrap\Model\Document[]
      */
     public function getDocuments()
     {
@@ -312,7 +312,7 @@ class BulkIndex implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets documents
      *
-     * @param \OpenAPI\Client\Model\Document[] $documents The documents to index
+     * @param \Semanticwrap\Model\Document[] $documents The documents to index
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class BulkIndex implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets model
      *
-     * @return \OpenAPI\Client\Model\AIModel|null
+     * @return \Semanticwrap\Model\AIModel|null
      */
     public function getModel()
     {
@@ -339,7 +339,7 @@ class BulkIndex implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets model
      *
-     * @param \OpenAPI\Client\Model\AIModel|null $model model
+     * @param \Semanticwrap\Model\AIModel|null $model model
      *
      * @return self
      */

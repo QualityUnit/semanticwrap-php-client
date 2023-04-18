@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * LlmResponse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'response' => 'string',
-        'sources' => '\OpenAPI\Client\Model\Document[]'
+        'sources' => '\Semanticwrap\Model\Document[]'
     ];
 
     /**
@@ -329,7 +329,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sources
      *
-     * @return \OpenAPI\Client\Model\Document[]|null
+     * @return \Semanticwrap\Model\Document[]|null
      */
     public function getSources()
     {
@@ -339,7 +339,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sources
      *
-     * @param \OpenAPI\Client\Model\Document[]|null $sources The sources
+     * @param \Semanticwrap\Model\Document[]|null $sources The sources
      *
      * @return self
      */

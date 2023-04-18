@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * IndexResponse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class IndexResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\OpenAPI\Client\Model\Document[]',
-        'timing' => '\OpenAPI\Client\Model\IndexResponseTiming'
+        'result' => '\Semanticwrap\Model\Document[]',
+        'timing' => '\Semanticwrap\Model\IndexResponseTiming'
     ];
 
     /**
@@ -305,7 +305,7 @@ class IndexResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets result
      *
-     * @return \OpenAPI\Client\Model\Document[]
+     * @return \Semanticwrap\Model\Document[]
      */
     public function getResult()
     {
@@ -315,7 +315,7 @@ class IndexResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets result
      *
-     * @param \OpenAPI\Client\Model\Document[] $result The indexed document
+     * @param \Semanticwrap\Model\Document[] $result The indexed document
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class IndexResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets timing
      *
-     * @return \OpenAPI\Client\Model\IndexResponseTiming
+     * @return \Semanticwrap\Model\IndexResponseTiming
      */
     public function getTiming()
     {
@@ -342,7 +342,7 @@ class IndexResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets timing
      *
-     * @param \OpenAPI\Client\Model\IndexResponseTiming $timing timing
+     * @param \Semanticwrap\Model\IndexResponseTiming $timing timing
      *
      * @return self
      */

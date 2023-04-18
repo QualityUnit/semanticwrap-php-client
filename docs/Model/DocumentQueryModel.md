@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **embed_instruction** | **string** | The instruction for embedding | [optional]
 **query_instruction** | **string** | The instruction for querying | [optional]
 **self_hosted_url** | **string** | The url for self hosted embedding_model | [optional]
-**auth_security** | [**\OpenAPI\Client\Model\AuthSecurity**](AuthSecurity.md) |  | [optional]
+**auth_security** | [**\Semanticwrap\Model\AuthSecurity**](AuthSecurity.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

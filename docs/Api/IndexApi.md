@@ -1,4 +1,4 @@
-# OpenAPI\Client\IndexApi
+# Semanticwrap\IndexApi
 
 All URIs are relative to /api/v1, except if the operation defines another base path.
 
@@ -11,7 +11,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 ## `createIndex()`
 
 ```php
-createIndex($index_name, $payload): \OpenAPI\Client\Model\IndexMapping
+createIndex($index_name, $payload): \Semanticwrap\Model\IndexMapping
 ```
 
 Create a new index if it does not exist
@@ -26,13 +26,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\IndexApi(
+$apiInstance = new Semanticwrap\Api\IndexApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\IndexMapping(); // \OpenAPI\Client\Model\IndexMapping
+$payload = new \Semanticwrap\Model\IndexMapping(); // \Semanticwrap\Model\IndexMapping
 
 try {
     $result = $apiInstance->createIndex($index_name, $payload);
@@ -47,11 +47,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\IndexMapping**](../Model/IndexMapping.md)|  | |
+| **payload** | [**\Semanticwrap\Model\IndexMapping**](../Model/IndexMapping.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexMapping**](../Model/IndexMapping.md)
+[**\Semanticwrap\Model\IndexMapping**](../Model/IndexMapping.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ No authorization required
 ## `indexDocuments()`
 
 ```php
-indexDocuments($index_name, $payload): \OpenAPI\Client\Model\IndexResponse
+indexDocuments($index_name, $payload): \Semanticwrap\Model\IndexResponse
 ```
 
 Adds new documents to the index
@@ -84,13 +84,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\IndexApi(
+$apiInstance = new Semanticwrap\Api\IndexApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\BulkIndex(); // \OpenAPI\Client\Model\BulkIndex
+$payload = new \Semanticwrap\Model\BulkIndex(); // \Semanticwrap\Model\BulkIndex
 
 try {
     $result = $apiInstance->indexDocuments($index_name, $payload);
@@ -105,11 +105,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\BulkIndex**](../Model/BulkIndex.md)|  | |
+| **payload** | [**\Semanticwrap\Model\BulkIndex**](../Model/BulkIndex.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexResponse**](../Model/IndexResponse.md)
+[**\Semanticwrap\Model\IndexResponse**](../Model/IndexResponse.md)
 
 ### Authorization
 

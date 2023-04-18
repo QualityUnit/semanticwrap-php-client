@@ -1,4 +1,4 @@
-# OpenAPI\Client\DocumentsApi
+# Semanticwrap\DocumentsApi
 
 All URIs are relative to /api/v1, except if the operation defines another base path.
 
@@ -13,7 +13,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 ## `deleteDocument()`
 
 ```php
-deleteDocument($index_name, $doc_id, $payload): \OpenAPI\Client\Model\Ack
+deleteDocument($index_name, $doc_id, $payload): \Semanticwrap\Model\Ack
 ```
 
 Deletes a document
@@ -28,14 +28,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DocumentsApi(
+$apiInstance = new Semanticwrap\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
 $doc_id = 'doc_id_example'; // string
-$payload = new \OpenAPI\Client\Model\DocsSearch(); // \OpenAPI\Client\Model\DocsSearch
+$payload = new \Semanticwrap\Model\DocsSearch(); // \Semanticwrap\Model\DocsSearch
 
 try {
     $result = $apiInstance->deleteDocument($index_name, $doc_id, $payload);
@@ -51,11 +51,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
 | **doc_id** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
+| **payload** | [**\Semanticwrap\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Ack**](../Model/Ack.md)
+[**\Semanticwrap\Model\Ack**](../Model/Ack.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ No authorization required
 ## `deleteDocumentByQuery()`
 
 ```php
-deleteDocumentByQuery($index_name, $payload): \OpenAPI\Client\Model\Ack
+deleteDocumentByQuery($index_name, $payload): \Semanticwrap\Model\Ack
 ```
 
 Delete a document by query
@@ -88,13 +88,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DocumentsApi(
+$apiInstance = new Semanticwrap\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\DocsSearch(); // \OpenAPI\Client\Model\DocsSearch
+$payload = new \Semanticwrap\Model\DocsSearch(); // \Semanticwrap\Model\DocsSearch
 
 try {
     $result = $apiInstance->deleteDocumentByQuery($index_name, $payload);
@@ -109,11 +109,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
+| **payload** | [**\Semanticwrap\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Ack**](../Model/Ack.md)
+[**\Semanticwrap\Model\Ack**](../Model/Ack.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ No authorization required
 ## `getDocument()`
 
 ```php
-getDocument($index_name, $doc_id, $payload): \OpenAPI\Client\Model\Document
+getDocument($index_name, $doc_id, $payload): \Semanticwrap\Model\Document
 ```
 
 Get a document
@@ -146,14 +146,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DocumentsApi(
+$apiInstance = new Semanticwrap\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
 $doc_id = 'doc_id_example'; // string
-$payload = new \OpenAPI\Client\Model\DocsSearch(); // \OpenAPI\Client\Model\DocsSearch
+$payload = new \Semanticwrap\Model\DocsSearch(); // \Semanticwrap\Model\DocsSearch
 
 try {
     $result = $apiInstance->getDocument($index_name, $doc_id, $payload);
@@ -169,11 +169,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
 | **doc_id** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
+| **payload** | [**\Semanticwrap\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Document**](../Model/Document.md)
+[**\Semanticwrap\Model\Document**](../Model/Document.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ No authorization required
 ## `getDocumentByQuery()`
 
 ```php
-getDocumentByQuery($index_name, $payload): \OpenAPI\Client\Model\Document[]
+getDocumentByQuery($index_name, $payload): \Semanticwrap\Model\Document[]
 ```
 
 Get a document by query
@@ -206,13 +206,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\DocumentsApi(
+$apiInstance = new Semanticwrap\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index_name = 'index_name_example'; // string
-$payload = new \OpenAPI\Client\Model\DocsSearch(); // \OpenAPI\Client\Model\DocsSearch
+$payload = new \Semanticwrap\Model\DocsSearch(); // \Semanticwrap\Model\DocsSearch
 
 try {
     $result = $apiInstance->getDocumentByQuery($index_name, $payload);
@@ -227,11 +227,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index_name** | **string**|  | |
-| **payload** | [**\OpenAPI\Client\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
+| **payload** | [**\Semanticwrap\Model\DocsSearch**](../Model/DocsSearch.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Document[]**](../Model/Document.md)
+[**\Semanticwrap\Model\Document[]**](../Model/Document.md)
 
 ### Authorization
 

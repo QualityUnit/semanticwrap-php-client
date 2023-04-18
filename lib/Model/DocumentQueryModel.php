@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * DocumentQueryModel Class Doc Comment
  *
  * @category Class
  * @description The model to use for the query
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,7 +65,7 @@ class DocumentQueryModel implements ModelInterface, ArrayAccess, \JsonSerializab
         'embed_instruction' => 'string',
         'query_instruction' => 'string',
         'self_hosted_url' => 'string',
-        'auth_security' => '\OpenAPI\Client\Model\AuthSecurity'
+        'auth_security' => '\Semanticwrap\Model\AuthSecurity'
     ];
 
     /**
@@ -531,7 +531,7 @@ class DocumentQueryModel implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets auth_security
      *
-     * @return \OpenAPI\Client\Model\AuthSecurity|null
+     * @return \Semanticwrap\Model\AuthSecurity|null
      */
     public function getAuthSecurity()
     {
@@ -541,7 +541,7 @@ class DocumentQueryModel implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets auth_security
      *
-     * @param \OpenAPI\Client\Model\AuthSecurity|null $auth_security auth_security
+     * @param \Semanticwrap\Model\AuthSecurity|null $auth_security auth_security
      *
      * @return self
      */

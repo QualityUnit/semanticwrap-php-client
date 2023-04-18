@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\semanticwrap;
+namespace Semanticwrap\semanticwrap;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Semanticwrap\ApiException;
+use Semanticwrap\Configuration;
+use Semanticwrap\HeaderSelector;
+use Semanticwrap\ObjectSerializer;
 
 /**
  * IndexApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -131,12 +131,12 @@ class IndexApi
      * Create a new index if it does not exist
      *
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\IndexMapping $payload payload (required)
+     * @param  \Semanticwrap\Model\IndexMapping $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createIndex'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexMapping|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\IndexMapping|\Semanticwrap\Model\Error
      */
     public function createIndex($index_name, $payload, string $contentType = self::contentTypes['createIndex'][0])
     {
@@ -150,12 +150,12 @@ class IndexApi
      * Create a new index if it does not exist
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\IndexMapping $payload (required)
+     * @param  \Semanticwrap\Model\IndexMapping $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createIndex'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexMapping|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\IndexMapping|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function createIndexWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['createIndex'][0])
     {
@@ -198,38 +198,38 @@ class IndexApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\IndexMapping' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\IndexMapping' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\IndexMapping' !== 'string') {
+                        if ('\Semanticwrap\Model\IndexMapping' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\IndexMapping', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\IndexMapping', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\IndexMapping';
+            $returnType = '\Semanticwrap\Model\IndexMapping';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -250,7 +250,7 @@ class IndexApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexMapping',
+                        '\Semanticwrap\Model\IndexMapping',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -258,7 +258,7 @@ class IndexApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -274,7 +274,7 @@ class IndexApi
      * Create a new index if it does not exist
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\IndexMapping $payload (required)
+     * @param  \Semanticwrap\Model\IndexMapping $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -296,7 +296,7 @@ class IndexApi
      * Create a new index if it does not exist
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\IndexMapping $payload (required)
+     * @param  \Semanticwrap\Model\IndexMapping $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -304,7 +304,7 @@ class IndexApi
      */
     public function createIndexAsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['createIndex'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexMapping';
+        $returnType = '\Semanticwrap\Model\IndexMapping';
         $request = $this->createIndexRequest($index_name, $payload, $contentType);
 
         return $this->client
@@ -347,7 +347,7 @@ class IndexApi
      * Create request for operation 'createIndex'
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\IndexMapping $payload (required)
+     * @param  \Semanticwrap\Model\IndexMapping $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -456,12 +456,12 @@ class IndexApi
      * Adds new documents to the index
      *
      * @param  string $index_name index_name (required)
-     * @param  \OpenAPI\Client\Model\BulkIndex $payload payload (required)
+     * @param  \Semanticwrap\Model\BulkIndex $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['indexDocuments'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexResponse|\OpenAPI\Client\Model\Error
+     * @return \Semanticwrap\Model\IndexResponse|\Semanticwrap\Model\Error
      */
     public function indexDocuments($index_name, $payload, string $contentType = self::contentTypes['indexDocuments'][0])
     {
@@ -475,12 +475,12 @@ class IndexApi
      * Adds new documents to the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\BulkIndex $payload (required)
+     * @param  \Semanticwrap\Model\BulkIndex $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['indexDocuments'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexResponse|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\IndexResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function indexDocumentsWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['indexDocuments'][0])
     {
@@ -523,38 +523,38 @@ class IndexApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\IndexResponse' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\IndexResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\IndexResponse' !== 'string') {
+                        if ('\Semanticwrap\Model\IndexResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\IndexResponse', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\IndexResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Semanticwrap\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\IndexResponse';
+            $returnType = '\Semanticwrap\Model\IndexResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -575,7 +575,7 @@ class IndexApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexResponse',
+                        '\Semanticwrap\Model\IndexResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -583,7 +583,7 @@ class IndexApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Semanticwrap\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -599,7 +599,7 @@ class IndexApi
      * Adds new documents to the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\BulkIndex $payload (required)
+     * @param  \Semanticwrap\Model\BulkIndex $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['indexDocuments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -621,7 +621,7 @@ class IndexApi
      * Adds new documents to the index
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\BulkIndex $payload (required)
+     * @param  \Semanticwrap\Model\BulkIndex $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['indexDocuments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -629,7 +629,7 @@ class IndexApi
      */
     public function indexDocumentsAsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['indexDocuments'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexResponse';
+        $returnType = '\Semanticwrap\Model\IndexResponse';
         $request = $this->indexDocumentsRequest($index_name, $payload, $contentType);
 
         return $this->client
@@ -672,7 +672,7 @@ class IndexApi
      * Create request for operation 'indexDocuments'
      *
      * @param  string $index_name (required)
-     * @param  \OpenAPI\Client\Model\BulkIndex $payload (required)
+     * @param  \Semanticwrap\Model\BulkIndex $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['indexDocuments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

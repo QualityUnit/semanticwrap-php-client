@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * DocumentQueryByVector Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'vector' => 'float[]',
         'group_by' => 'string',
-        'model' => '\OpenAPI\Client\Model\DocumentQueryModel',
-        'filter' => '\OpenAPI\Client\Model\DocumentQueryFilter'
+        'model' => '\Semanticwrap\Model\DocumentQueryModel',
+        'filter' => '\Semanticwrap\Model\DocumentQueryFilter'
     ];
 
     /**
@@ -370,7 +370,7 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets model
      *
-     * @return \OpenAPI\Client\Model\DocumentQueryModel|null
+     * @return \Semanticwrap\Model\DocumentQueryModel|null
      */
     public function getModel()
     {
@@ -380,7 +380,7 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets model
      *
-     * @param \OpenAPI\Client\Model\DocumentQueryModel|null $model model
+     * @param \Semanticwrap\Model\DocumentQueryModel|null $model model
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets filter
      *
-     * @return \OpenAPI\Client\Model\DocumentQueryFilter|null
+     * @return \Semanticwrap\Model\DocumentQueryFilter|null
      */
     public function getFilter()
     {
@@ -407,7 +407,7 @@ class DocumentQueryByVector implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets filter
      *
-     * @param \OpenAPI\Client\Model\DocumentQueryFilter|null $filter filter
+     * @param \Semanticwrap\Model\DocumentQueryFilter|null $filter filter
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * DocumentNonQuery Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class DocumentNonQuery implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'model' => '\OpenAPI\Client\Model\DocumentQueryModel',
-        'filter' => '\OpenAPI\Client\Model\DocumentQueryFilter'
+        'model' => '\Semanticwrap\Model\DocumentQueryModel',
+        'filter' => '\Semanticwrap\Model\DocumentQueryFilter'
     ];
 
     /**
@@ -299,7 +299,7 @@ class DocumentNonQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets model
      *
-     * @return \OpenAPI\Client\Model\DocumentQueryModel|null
+     * @return \Semanticwrap\Model\DocumentQueryModel|null
      */
     public function getModel()
     {
@@ -309,7 +309,7 @@ class DocumentNonQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets model
      *
-     * @param \OpenAPI\Client\Model\DocumentQueryModel|null $model model
+     * @param \Semanticwrap\Model\DocumentQueryModel|null $model model
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class DocumentNonQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets filter
      *
-     * @return \OpenAPI\Client\Model\DocumentQueryFilter|null
+     * @return \Semanticwrap\Model\DocumentQueryFilter|null
      */
     public function getFilter()
     {
@@ -336,7 +336,7 @@ class DocumentNonQuery implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets filter
      *
-     * @param \OpenAPI\Client\Model\DocumentQueryFilter|null $filter filter
+     * @param \Semanticwrap\Model\DocumentQueryFilter|null $filter filter
      *
      * @return self
      */

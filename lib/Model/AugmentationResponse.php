@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * AugmentationResponse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class AugmentationResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\OpenAPI\Client\Model\AugmentationResponseResult',
-        'timing' => '\OpenAPI\Client\Model\AugmentationResponseTiming'
+        'result' => '\Semanticwrap\Model\AugmentationResponseResult',
+        'timing' => '\Semanticwrap\Model\AugmentationResponseTiming'
     ];
 
     /**
@@ -305,7 +305,7 @@ class AugmentationResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets result
      *
-     * @return \OpenAPI\Client\Model\AugmentationResponseResult
+     * @return \Semanticwrap\Model\AugmentationResponseResult
      */
     public function getResult()
     {
@@ -315,7 +315,7 @@ class AugmentationResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets result
      *
-     * @param \OpenAPI\Client\Model\AugmentationResponseResult $result result
+     * @param \Semanticwrap\Model\AugmentationResponseResult $result result
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class AugmentationResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets timing
      *
-     * @return \OpenAPI\Client\Model\AugmentationResponseTiming
+     * @return \Semanticwrap\Model\AugmentationResponseTiming
      */
     public function getTiming()
     {
@@ -342,7 +342,7 @@ class AugmentationResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets timing
      *
-     * @param \OpenAPI\Client\Model\AugmentationResponseTiming $timing timing
+     * @param \Semanticwrap\Model\AugmentationResponseTiming $timing timing
      *
      * @return self
      */

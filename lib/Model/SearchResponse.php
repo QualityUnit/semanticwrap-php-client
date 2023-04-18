@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Semanticwrap\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Semanticwrap\ObjectSerializer;
 
 /**
  * SearchResponse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class SearchResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\OpenAPI\Client\Model\RelatedDocs[]',
-        'timing' => '\OpenAPI\Client\Model\IndexResponseTiming'
+        'result' => '\Semanticwrap\Model\RelatedDocs[]',
+        'timing' => '\Semanticwrap\Model\IndexResponseTiming'
     ];
 
     /**
@@ -302,7 +302,7 @@ class SearchResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets result
      *
-     * @return \OpenAPI\Client\Model\RelatedDocs[]
+     * @return \Semanticwrap\Model\RelatedDocs[]
      */
     public function getResult()
     {
@@ -312,7 +312,7 @@ class SearchResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets result
      *
-     * @param \OpenAPI\Client\Model\RelatedDocs[] $result result
+     * @param \Semanticwrap\Model\RelatedDocs[] $result result
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class SearchResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets timing
      *
-     * @return \OpenAPI\Client\Model\IndexResponseTiming|null
+     * @return \Semanticwrap\Model\IndexResponseTiming|null
      */
     public function getTiming()
     {
@@ -339,7 +339,7 @@ class SearchResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets timing
      *
-     * @param \OpenAPI\Client\Model\IndexResponseTiming|null $timing timing
+     * @param \Semanticwrap\Model\IndexResponseTiming|null $timing timing
      *
      * @return self
      */
