@@ -72,18 +72,6 @@ class VideoApiTest extends TestCase
     }
 
     /**
-     * Test case for getYoutubeMicrodata
-     *
-     * Get video microdata from Youtube API.
-     *
-     */
-    public function testGetYoutubeMicrodata()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for getYoutubeTranscript
      *
      * Get video transcript.

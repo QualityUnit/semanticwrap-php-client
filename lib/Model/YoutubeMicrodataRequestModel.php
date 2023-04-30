@@ -57,7 +57,6 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'yt_api_key' => 'string',
         'openai_api_key' => 'string'
     ];
 
@@ -69,7 +68,6 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'yt_api_key' => null,
         'openai_api_key' => null
     ];
 
@@ -79,8 +77,7 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'yt_api_key' => false,
-		'openai_api_key' => false
+        'openai_api_key' => false
     ];
 
     /**
@@ -169,7 +166,6 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'yt_api_key' => 'yt_api_key',
         'openai_api_key' => 'openai_api_key'
     ];
 
@@ -179,7 +175,6 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'yt_api_key' => 'setYtApiKey',
         'openai_api_key' => 'setOpenaiApiKey'
     ];
 
@@ -189,7 +184,6 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'yt_api_key' => 'getYtApiKey',
         'openai_api_key' => 'getOpenaiApiKey'
     ];
 
@@ -250,7 +244,6 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('yt_api_key', $data ?? [], null);
         $this->setIfExists('openai_api_key', $data ?? [], null);
     }
 
@@ -281,6 +274,9 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if ($this->container['openai_api_key'] === null) {
+            $invalidProperties[] = "'openai_api_key' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -297,36 +293,9 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets yt_api_key
-     *
-     * @return string|null
-     */
-    public function getYtApiKey()
-    {
-        return $this->container['yt_api_key'];
-    }
-
-    /**
-     * Sets yt_api_key
-     *
-     * @param string|null $yt_api_key Youtube API Key
-     *
-     * @return self
-     */
-    public function setYtApiKey($yt_api_key)
-    {
-        if (is_null($yt_api_key)) {
-            throw new \InvalidArgumentException('non-nullable yt_api_key cannot be null');
-        }
-        $this->container['yt_api_key'] = $yt_api_key;
-
-        return $this;
-    }
-
-    /**
      * Gets openai_api_key
      *
-     * @return string|null
+     * @return string
      */
     public function getOpenaiApiKey()
     {
@@ -336,7 +305,7 @@ class YoutubeMicrodataRequestModel implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets openai_api_key
      *
-     * @param string|null $openai_api_key OpenAI API Key
+     * @param string $openai_api_key OpenAI API Key
      *
      * @return self
      */

@@ -4,67 +4,8 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getYoutubeMicrodata()**](VideoApi.md#getYoutubeMicrodata) | **POST** /video/youtube_microdata/{video_id} | Get video microdata from Youtube API |
 | [**getYoutubeTranscript()**](VideoApi.md#getYoutubeTranscript) | **POST** /video/youtube_transcript/{video_id} | Get video transcript |
 
-
-## `getYoutubeMicrodata()`
-
-```php
-getYoutubeMicrodata($video_id, $payload): \Semanticwrap\Model\YoutubeMicrodataResponseModel
-```
-
-Get video microdata from Youtube API
-
-get youtube video microdata
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Semanticwrap\Api\VideoApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$video_id = 'video_id_example'; // string
-$payload = new \Semanticwrap\Model\YoutubeMicrodataRequestModel(); // \Semanticwrap\Model\YoutubeMicrodataRequestModel
-
-try {
-    $result = $apiInstance->getYoutubeMicrodata($video_id, $payload);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling VideoApi->getYoutubeMicrodata: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **video_id** | **string**|  | |
-| **payload** | [**\Semanticwrap\Model\YoutubeMicrodataRequestModel**](../Model/YoutubeMicrodataRequestModel.md)|  | |
-
-### Return type
-
-[**\Semanticwrap\Model\YoutubeMicrodataResponseModel**](../Model/YoutubeMicrodataResponseModel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
 
 ## `getYoutubeTranscript()`
 

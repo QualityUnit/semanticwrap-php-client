@@ -41,7 +41,6 @@ docs/Model/RelatedDocs.md
 docs/Model/SearchResponse.md
 docs/Model/TimingModel.md
 docs/Model/YoutubeMicrodataRequestModel.md
-docs/Model/YoutubeMicrodataResponseModel.md
 docs/Model/YoutubeTranscriptResponseModel.md
 git_push.sh
 lib/ApiException.php
@@ -80,7 +79,6 @@ lib/Model/RelatedDocs.php
 lib/Model/SearchResponse.php
 lib/Model/TimingModel.php
 lib/Model/YoutubeMicrodataRequestModel.php
-lib/Model/YoutubeMicrodataResponseModel.php
 lib/Model/YoutubeTranscriptResponseModel.php
 lib/ObjectSerializer.php
 lib/semanticwrap/AugmentationApi.php
@@ -126,5 +124,4 @@ test/Model/RelatedDocsTest.php
 test/Model/SearchResponseTest.php
 test/Model/TimingModelTest.php
 test/Model/YoutubeMicrodataRequestModelTest.php
-test/Model/YoutubeMicrodataResponseModelTest.php
 test/Model/YoutubeTranscriptResponseModelTest.php

@@ -80,15 +80,6 @@ class YoutubeMicrodataRequestModelTest extends TestCase
     }
 
     /**
-     * Test attribute "yt_api_key"
-     */
-    public function testPropertyYtApiKey()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "openai_api_key"
      */
     public function testPropertyOpenaiApiKey()
