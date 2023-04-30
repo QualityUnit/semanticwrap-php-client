@@ -8,6 +8,7 @@ docs/Api/AugmentationApi.md
 docs/Api/DocumentsApi.md
 docs/Api/IndexApi.md
 docs/Api/SearchApi.md
+docs/Api/VideoApi.md
 docs/Model/AIModel.md
 docs/Model/Ack.md
 docs/Model/AugmentationResponse.md
@@ -39,6 +40,9 @@ docs/Model/QueryFilter.md
 docs/Model/RelatedDocs.md
 docs/Model/SearchResponse.md
 docs/Model/TimingModel.md
+docs/Model/YoutubeMicrodataRequestModel.md
+docs/Model/YoutubeMicrodataResponseModel.md
+docs/Model/YoutubeTranscriptResponseModel.md
 git_push.sh
 lib/ApiException.php
 lib/Configuration.php
@@ -75,16 +79,21 @@ lib/Model/QueryFilter.php
 lib/Model/RelatedDocs.php
 lib/Model/SearchResponse.php
 lib/Model/TimingModel.php
+lib/Model/YoutubeMicrodataRequestModel.php
+lib/Model/YoutubeMicrodataResponseModel.php
+lib/Model/YoutubeTranscriptResponseModel.php
 lib/ObjectSerializer.php
 lib/semanticwrap/AugmentationApi.php
 lib/semanticwrap/DocumentsApi.php
 lib/semanticwrap/IndexApi.php
 lib/semanticwrap/SearchApi.php
+lib/semanticwrap/VideoApi.php
 phpunit.xml.dist
 test/Api/AugmentationApiTest.php
 test/Api/DocumentsApiTest.php
 test/Api/IndexApiTest.php
 test/Api/SearchApiTest.php
+test/Api/VideoApiTest.php
 test/Model/AIModelTest.php
 test/Model/AckTest.php
 test/Model/AugmentationResponseResultTest.php
@@ -116,3 +125,6 @@ test/Model/QueryFilterTest.php
 test/Model/RelatedDocsTest.php
 test/Model/SearchResponseTest.php
 test/Model/TimingModelTest.php
+test/Model/YoutubeMicrodataRequestModelTest.php
+test/Model/YoutubeMicrodataResponseModelTest.php
+test/Model/YoutubeTranscriptResponseModelTest.php
