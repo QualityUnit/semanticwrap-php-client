@@ -5,7 +5,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**deleteDocument()**](DocumentsApi.md#deleteDocument) | **DELETE** /doc/{index_name}/{doc_id} | Deletes a document |
-| [**deleteDocumentByQuery()**](DocumentsApi.md#deleteDocumentByQuery) | **DELETE** /doc/{index_name} | Delete a document by query |
+| [**deleteDocumentByQuery()**](DocumentsApi.md#deleteDocumentByQuery) | **POST** /doc/delete_by_query/{index_name} | Delete a document by query |
 | [**getDocument()**](DocumentsApi.md#getDocument) | **GET** /doc/{index_name}/{doc_id} | Get a document |
 | [**getDocumentByQuery()**](DocumentsApi.md#getDocumentByQuery) | **POST** /doc/{index_name} | Get a document by query |
 

@@ -745,7 +745,7 @@ class DocumentsApi
         }
 
 
-        $resourcePath = '/doc/{index_name}';
+        $resourcePath = '/doc/delete_by_query/{index_name}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -817,7 +817,7 @@ class DocumentsApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'DELETE',
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
