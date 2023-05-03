@@ -57,7 +57,10 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transcript' => 'string'
+        'transcript' => 'string',
+        'yt_id' => 'string',
+        'status' => 'string',
+        'message' => 'string'
     ];
 
     /**
@@ -68,7 +71,10 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'transcript' => null
+        'transcript' => null,
+        'yt_id' => null,
+        'status' => null,
+        'message' => null
     ];
 
     /**
@@ -77,7 +83,10 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'transcript' => false
+        'transcript' => false,
+		'yt_id' => false,
+		'status' => false,
+		'message' => false
     ];
 
     /**
@@ -166,7 +175,10 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'transcript' => 'transcript'
+        'transcript' => 'transcript',
+        'yt_id' => 'yt_id',
+        'status' => 'status',
+        'message' => 'message'
     ];
 
     /**
@@ -175,7 +187,10 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'transcript' => 'setTranscript'
+        'transcript' => 'setTranscript',
+        'yt_id' => 'setYtId',
+        'status' => 'setStatus',
+        'message' => 'setMessage'
     ];
 
     /**
@@ -184,7 +199,10 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'transcript' => 'getTranscript'
+        'transcript' => 'getTranscript',
+        'yt_id' => 'getYtId',
+        'status' => 'getStatus',
+        'message' => 'getMessage'
     ];
 
     /**
@@ -245,6 +263,9 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->setIfExists('transcript', $data ?? [], null);
+        $this->setIfExists('yt_id', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('message', $data ?? [], null);
     }
 
     /**
@@ -274,8 +295,11 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['transcript'] === null) {
-            $invalidProperties[] = "'transcript' can't be null";
+        if ($this->container['yt_id'] === null) {
+            $invalidProperties[] = "'yt_id' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
         }
         return $invalidProperties;
     }
@@ -295,7 +319,7 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets transcript
      *
-     * @return string
+     * @return string|null
      */
     public function getTranscript()
     {
@@ -305,7 +329,7 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets transcript
      *
-     * @param string $transcript The YT video transcript
+     * @param string|null $transcript The YT video transcript
      *
      * @return self
      */
@@ -315,6 +339,87 @@ class YoutubeTranscriptResponseModel implements ModelInterface, ArrayAccess, \Js
             throw new \InvalidArgumentException('non-nullable transcript cannot be null');
         }
         $this->container['transcript'] = $transcript;
+
+        return $this;
+    }
+
+    /**
+     * Gets yt_id
+     *
+     * @return string
+     */
+    public function getYtId()
+    {
+        return $this->container['yt_id'];
+    }
+
+    /**
+     * Sets yt_id
+     *
+     * @param string $yt_id The YT video id
+     *
+     * @return self
+     */
+    public function setYtId($yt_id)
+    {
+        if (is_null($yt_id)) {
+            throw new \InvalidArgumentException('non-nullable yt_id cannot be null');
+        }
+        $this->container['yt_id'] = $yt_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status The status of the request
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     *
+     * @return string|null
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string|null $message The message of the request
+     *
+     * @return self
+     */
+    public function setMessage($message)
+    {
+        if (is_null($message)) {
+            throw new \InvalidArgumentException('non-nullable message cannot be null');
+        }
+        $this->container['message'] = $message;
 
         return $this;
     }

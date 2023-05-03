@@ -87,4 +87,31 @@ class YoutubeTranscriptResponseModelTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "yt_id"
+     */
+    public function testPropertyYtId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "message"
+     */
+    public function testPropertyMessage()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

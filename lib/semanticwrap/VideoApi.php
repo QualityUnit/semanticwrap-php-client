@@ -133,7 +133,7 @@ class VideoApi
      *
      * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Semanticwrap\Model\YoutubeTranscriptResponseModel|\Semanticwrap\Model\Error
+     * @return \Semanticwrap\Model\YoutubeTranscriptResponseModel|\Semanticwrap\Model\Ack|\Semanticwrap\Model\Error
      */
     public function getYoutubeTranscript($video_id, $payload, string $contentType = self::contentTypes['getYoutubeTranscript'][0])
     {
@@ -152,7 +152,7 @@ class VideoApi
      *
      * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Semanticwrap\Model\YoutubeTranscriptResponseModel|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\YoutubeTranscriptResponseModel|\Semanticwrap\Model\Ack|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function getYoutubeTranscriptWithHttpInfo($video_id, $payload, string $contentType = self::contentTypes['getYoutubeTranscript'][0])
     {
@@ -209,6 +209,21 @@ class VideoApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 202:
+                    if ('\Semanticwrap\Model\Ack' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Semanticwrap\Model\Ack' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\Ack', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 case 400:
                     if ('\Semanticwrap\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -248,6 +263,14 @@ class VideoApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Semanticwrap\Model\YoutubeTranscriptResponseModel',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 202:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Semanticwrap\Model\Ack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
