@@ -8,6 +8,7 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 | [**deleteDocumentByQuery()**](DocumentsApi.md#deleteDocumentByQuery) | **POST** /doc/delete_by_query/{index_name} | Delete a document by query |
 | [**getDocument()**](DocumentsApi.md#getDocument) | **GET** /doc/{index_name}/{doc_id} | Get a document |
 | [**getDocumentByQuery()**](DocumentsApi.md#getDocumentByQuery) | **POST** /doc/{index_name} | Get a document by query |
+| [**updateDocumentByQuery()**](DocumentsApi.md#updateDocumentByQuery) | **POST** /doc/_update_by_query/{index_name} | Update a document by query |
 
 
 ## `deleteDocument()`
@@ -232,6 +233,64 @@ try {
 ### Return type
 
 [**\Semanticwrap\Model\Document[]**](../Model/Document.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateDocumentByQuery()`
+
+```php
+updateDocumentByQuery($index_name, $payload): \Semanticwrap\Model\Ack
+```
+
+Update a document by query
+
+Update a document by query
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Semanticwrap\Api\DocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$index_name = 'index_name_example'; // string
+$payload = new \Semanticwrap\Model\UpdateDoc(); // \Semanticwrap\Model\UpdateDoc
+
+try {
+    $result = $apiInstance->updateDocumentByQuery($index_name, $payload);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DocumentsApi->updateDocumentByQuery: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **index_name** | **string**|  | |
+| **payload** | [**\Semanticwrap\Model\UpdateDoc**](../Model/UpdateDoc.md)|  | |
+
+### Return type
+
+[**\Semanticwrap\Model\Ack**](../Model/Ack.md)
 
 ### Authorization
 

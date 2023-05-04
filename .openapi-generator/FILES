@@ -40,6 +40,7 @@ docs/Model/QueryFilter.md
 docs/Model/RelatedDocs.md
 docs/Model/SearchResponse.md
 docs/Model/TimingModel.md
+docs/Model/UpdateDoc.md
 docs/Model/YoutubeMicrodataRequestModel.md
 docs/Model/YoutubeTranscriptResponseModel.md
 git_push.sh
@@ -78,6 +79,7 @@ lib/Model/QueryFilter.php
 lib/Model/RelatedDocs.php
 lib/Model/SearchResponse.php
 lib/Model/TimingModel.php
+lib/Model/UpdateDoc.php
 lib/Model/YoutubeMicrodataRequestModel.php
 lib/Model/YoutubeTranscriptResponseModel.php
 lib/ObjectSerializer.php
@@ -123,5 +125,6 @@ test/Model/QueryFilterTest.php
 test/Model/RelatedDocsTest.php
 test/Model/SearchResponseTest.php
 test/Model/TimingModelTest.php
+test/Model/UpdateDocTest.php
 test/Model/YoutubeMicrodataRequestModelTest.php
 test/Model/YoutubeTranscriptResponseModelTest.php
