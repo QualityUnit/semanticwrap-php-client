@@ -114,4 +114,13 @@ class IndexResponseTimingTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "model_name"
+     */
+    public function testPropertyModelName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

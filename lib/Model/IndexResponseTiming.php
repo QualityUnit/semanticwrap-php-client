@@ -61,7 +61,8 @@ class IndexResponseTiming implements ModelInterface, ArrayAccess, \JsonSerializa
         'vector_timing' => 'int',
         'augment_timing' => 'int',
         'embedding_token_count' => 'int',
-        'augmenting_token_count' => 'int'
+        'augmenting_token_count' => 'int',
+        'model_name' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class IndexResponseTiming implements ModelInterface, ArrayAccess, \JsonSerializa
         'vector_timing' => null,
         'augment_timing' => null,
         'embedding_token_count' => null,
-        'augmenting_token_count' => null
+        'augmenting_token_count' => null,
+        'model_name' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class IndexResponseTiming implements ModelInterface, ArrayAccess, \JsonSerializa
         'vector_timing' => false,
 		'augment_timing' => false,
 		'embedding_token_count' => false,
-		'augmenting_token_count' => false
+		'augmenting_token_count' => false,
+		'model_name' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class IndexResponseTiming implements ModelInterface, ArrayAccess, \JsonSerializa
         'vector_timing' => 'vector_timing',
         'augment_timing' => 'augment_timing',
         'embedding_token_count' => 'embedding_token_count',
-        'augmenting_token_count' => 'augmenting_token_count'
+        'augmenting_token_count' => 'augmenting_token_count',
+        'model_name' => 'model_name'
     ];
 
     /**
@@ -191,7 +195,8 @@ class IndexResponseTiming implements ModelInterface, ArrayAccess, \JsonSerializa
         'vector_timing' => 'setVectorTiming',
         'augment_timing' => 'setAugmentTiming',
         'embedding_token_count' => 'setEmbeddingTokenCount',
-        'augmenting_token_count' => 'setAugmentingTokenCount'
+        'augmenting_token_count' => 'setAugmentingTokenCount',
+        'model_name' => 'setModelName'
     ];
 
     /**
@@ -203,7 +208,8 @@ class IndexResponseTiming implements ModelInterface, ArrayAccess, \JsonSerializa
         'vector_timing' => 'getVectorTiming',
         'augment_timing' => 'getAugmentTiming',
         'embedding_token_count' => 'getEmbeddingTokenCount',
-        'augmenting_token_count' => 'getAugmentingTokenCount'
+        'augmenting_token_count' => 'getAugmentingTokenCount',
+        'model_name' => 'getModelName'
     ];
 
     /**
@@ -267,6 +273,7 @@ class IndexResponseTiming implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('augment_timing', $data ?? [], null);
         $this->setIfExists('embedding_token_count', $data ?? [], null);
         $this->setIfExists('augmenting_token_count', $data ?? [], null);
+        $this->setIfExists('model_name', $data ?? [], null);
     }
 
     /**
@@ -415,6 +422,33 @@ class IndexResponseTiming implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable augmenting_token_count cannot be null');
         }
         $this->container['augmenting_token_count'] = $augmenting_token_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets model_name
+     *
+     * @return string|null
+     */
+    public function getModelName()
+    {
+        return $this->container['model_name'];
+    }
+
+    /**
+     * Sets model_name
+     *
+     * @param string|null $model_name The name of the model
+     *
+     * @return self
+     */
+    public function setModelName($model_name)
+    {
+        if (is_null($model_name)) {
+            throw new \InvalidArgumentException('non-nullable model_name cannot be null');
+        }
+        $this->container['model_name'] = $model_name;
 
         return $this;
     }
