@@ -1,6 +1,6 @@
 <?php
 /**
- * AugmentationApiTest
+ * ProcessApiTest
  * PHP version 7.4
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Semanticwrap\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AugmentationApiTest Class Doc Comment
+ * ProcessApiTest Class Doc Comment
  *
  * @category Class
  * @package  Semanticwrap
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class AugmentationApiTest extends TestCase
+class ProcessApiTest extends TestCase
 {
 
     /**
@@ -72,48 +72,12 @@ class AugmentationApiTest extends TestCase
     }
 
     /**
-     * Test case for augmentByUrls
+     * Test case for getAsyncProcessResult
      *
-     * Answers a given query from the documents in the index.
-     *
-     */
-    public function testAugmentByUrls()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for complexAugment
-     *
-     * Answers a given query from the documents in the index.
+     * Get result of async process.
      *
      */
-    public function testComplexAugment()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for memoryfullAugment
-     *
-     * Answers a given query from the documents in the index.
-     *
-     */
-    public function testMemoryfullAugment()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for memorylessAugment
-     *
-     * Answers a given query from the documents in the index.
-     *
-     */
-    public function testMemorylessAugment()
+    public function testGetAsyncProcessResult()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

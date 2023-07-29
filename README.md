@@ -55,16 +55,13 @@ $apiInstance = new Semanticwrap\Api\AugmentationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$index_name = 'index_name_example'; // string
-$payload = new \Semanticwrap\Model\MemoryfullAugmentationQuery(); // \Semanticwrap\Model\MemoryfullAugmentationQuery
-$ignore_query = 'ignore_query_example'; // string | If true, the query is ignored and instead only the elasticsearch filter is applied
-$with_source = 'with_source_example'; // string | If true, the source of the answer is returned
+$payload = new \Semanticwrap\Model\UrlCrawlingAugmentationQuery(); // \Semanticwrap\Model\UrlCrawlingAugmentationQuery
 
 try {
-    $result = $apiInstance->memoryfullAugment($index_name, $payload, $ignore_query, $with_source);
+    $result = $apiInstance->augmentByUrls($payload);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AugmentationApi->memoryfullAugment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AugmentationApi->augmentByUrls: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -75,6 +72,8 @@ All URIs are relative to */api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AugmentationApi* | [**augmentByUrls**](docs/Api/AugmentationApi.md#augmentbyurls) | **POST** /augment/complex-chain/urls | Answers a given query from the documents in the index
+*AugmentationApi* | [**complexAugment**](docs/Api/AugmentationApi.md#complexaugment) | **POST** /augment/complex-chain/docs | Answers a given query from the documents in the index
 *AugmentationApi* | [**memoryfullAugment**](docs/Api/AugmentationApi.md#memoryfullaugment) | **POST** /augment/memoryfull/{index_name} | Answers a given query from the documents in the index
 *AugmentationApi* | [**memorylessAugment**](docs/Api/AugmentationApi.md#memorylessaugment) | **POST** /augment/memoryless/{index_name} | Answers a given query from the documents in the index
 *DocumentsApi* | [**deleteDocument**](docs/Api/DocumentsApi.md#deletedocument) | **DELETE** /doc/{index_name}/{doc_id} | Deletes a document
@@ -84,6 +83,7 @@ Class | Method | HTTP request | Description
 *DocumentsApi* | [**updateDocumentByQuery**](docs/Api/DocumentsApi.md#updatedocumentbyquery) | **POST** /doc/_update_by_query/{index_name} | Update a document by query
 *IndexApi* | [**createIndex**](docs/Api/IndexApi.md#createindex) | **PUT** /index/_mapping/{index_name} | Create a new index if it does not exist
 *IndexApi* | [**indexDocuments**](docs/Api/IndexApi.md#indexdocuments) | **POST** /index/bulk/{index_name} | Adds new documents to the index
+*ProcessApi* | [**getAsyncProcessResult**](docs/Api/ProcessApi.md#getasyncprocessresult) | **GET** /async_process/{process_id} | Get result of async process
 *SearchApi* | [**search**](docs/Api/SearchApi.md#search) | **POST** /search/{index_name} | Get Related Documents from the index with ANN search
 *SearchApi* | [**searchByVector**](docs/Api/SearchApi.md#searchbyvector) | **POST** /search/vector/{index_name} | Get Related Documents from the index with ANN search
 *SearchApi* | [**searchDocsById**](docs/Api/SearchApi.md#searchdocsbyid) | **POST** /search/{index_name}/{doc_id} | Get Related Documents from the index with ANN search for given document id
@@ -93,11 +93,13 @@ Class | Method | HTTP request | Description
 
 - [AIModel](docs/Model/AIModel.md)
 - [Ack](docs/Model/Ack.md)
+- [AsyncProcessResponse](docs/Model/AsyncProcessResponse.md)
 - [AugmentationResponse](docs/Model/AugmentationResponse.md)
 - [AugmentationResponseResult](docs/Model/AugmentationResponseResult.md)
 - [AugmentationResponseTiming](docs/Model/AugmentationResponseTiming.md)
 - [AuthSecurity](docs/Model/AuthSecurity.md)
 - [BulkIndex](docs/Model/BulkIndex.md)
+- [ComplexAugmentationWithDocs](docs/Model/ComplexAugmentationWithDocs.md)
 - [DocsSearch](docs/Model/DocsSearch.md)
 - [DocsSearchFilter](docs/Model/DocsSearchFilter.md)
 - [Document](docs/Model/Document.md)
@@ -111,6 +113,8 @@ Class | Method | HTTP request | Description
 - [IndexMappingModel](docs/Model/IndexMappingModel.md)
 - [IndexResponse](docs/Model/IndexResponse.md)
 - [IndexResponseTiming](docs/Model/IndexResponseTiming.md)
+- [LlmBulkResponse](docs/Model/LlmBulkResponse.md)
+- [LlmBulkResponseTiming](docs/Model/LlmBulkResponseTiming.md)
 - [LlmResponse](docs/Model/LlmResponse.md)
 - [MemoryfullAugmentationQuery](docs/Model/MemoryfullAugmentationQuery.md)
 - [MemorylessAugmentationQuery](docs/Model/MemorylessAugmentationQuery.md)
@@ -123,6 +127,7 @@ Class | Method | HTTP request | Description
 - [SearchResponse](docs/Model/SearchResponse.md)
 - [TimingModel](docs/Model/TimingModel.md)
 - [UpdateDoc](docs/Model/UpdateDoc.md)
+- [UrlCrawlingAugmentationQuery](docs/Model/UrlCrawlingAugmentationQuery.md)
 - [YoutubeMicrodataRequestModel](docs/Model/YoutubeMicrodataRequestModel.md)
 - [YoutubeTranscriptResponseModel](docs/Model/YoutubeTranscriptResponseModel.md)
 
@@ -146,5 +151,5 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `1.0`
-    - Package version: `1.0.44`
+    - Package version: `1.0.45`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
