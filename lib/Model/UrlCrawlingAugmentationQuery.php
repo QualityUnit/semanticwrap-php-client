@@ -61,7 +61,6 @@ class UrlCrawlingAugmentationQuery implements ModelInterface, ArrayAccess, \Json
         'take_top_chunks' => 'int',
         'model' => '\Semanticwrap\Model\MemorylessAugmentationQueryModel',
         'urls' => 'string[]',
-        'max_input_tokens' => 'int',
         'merge_strategy' => 'string'
     ];
 
@@ -77,7 +76,6 @@ class UrlCrawlingAugmentationQuery implements ModelInterface, ArrayAccess, \Json
         'take_top_chunks' => null,
         'model' => null,
         'urls' => null,
-        'max_input_tokens' => null,
         'merge_strategy' => null
     ];
 
@@ -91,7 +89,6 @@ class UrlCrawlingAugmentationQuery implements ModelInterface, ArrayAccess, \Json
 		'take_top_chunks' => false,
 		'model' => false,
 		'urls' => false,
-		'max_input_tokens' => false,
 		'merge_strategy' => false
     ];
 
@@ -185,7 +182,6 @@ class UrlCrawlingAugmentationQuery implements ModelInterface, ArrayAccess, \Json
         'take_top_chunks' => 'take_top_chunks',
         'model' => 'model',
         'urls' => 'urls',
-        'max_input_tokens' => 'max_input_tokens',
         'merge_strategy' => 'merge_strategy'
     ];
 
@@ -199,7 +195,6 @@ class UrlCrawlingAugmentationQuery implements ModelInterface, ArrayAccess, \Json
         'take_top_chunks' => 'setTakeTopChunks',
         'model' => 'setModel',
         'urls' => 'setUrls',
-        'max_input_tokens' => 'setMaxInputTokens',
         'merge_strategy' => 'setMergeStrategy'
     ];
 
@@ -213,7 +208,6 @@ class UrlCrawlingAugmentationQuery implements ModelInterface, ArrayAccess, \Json
         'take_top_chunks' => 'getTakeTopChunks',
         'model' => 'getModel',
         'urls' => 'getUrls',
-        'max_input_tokens' => 'getMaxInputTokens',
         'merge_strategy' => 'getMergeStrategy'
     ];
 
@@ -278,7 +272,6 @@ class UrlCrawlingAugmentationQuery implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('take_top_chunks', $data ?? [], null);
         $this->setIfExists('model', $data ?? [], null);
         $this->setIfExists('urls', $data ?? [], null);
-        $this->setIfExists('max_input_tokens', $data ?? [], null);
         $this->setIfExists('merge_strategy', $data ?? [], null);
     }
 
@@ -437,33 +430,6 @@ class UrlCrawlingAugmentationQuery implements ModelInterface, ArrayAccess, \Json
             throw new \InvalidArgumentException('non-nullable urls cannot be null');
         }
         $this->container['urls'] = $urls;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_input_tokens
-     *
-     * @return int|null
-     */
-    public function getMaxInputTokens()
-    {
-        return $this->container['max_input_tokens'];
-    }
-
-    /**
-     * Sets max_input_tokens
-     *
-     * @param int|null $max_input_tokens Maximum number of tokens
-     *
-     * @return self
-     */
-    public function setMaxInputTokens($max_input_tokens)
-    {
-        if (is_null($max_input_tokens)) {
-            throw new \InvalidArgumentException('non-nullable max_input_tokens cannot be null');
-        }
-        $this->container['max_input_tokens'] = $max_input_tokens;
 
         return $this;
     }

@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **take_top_chunks** | **int** | Number of top chunks to take | [optional]
 **model** | [**\Semanticwrap\Model\MemorylessAugmentationQueryModel**](MemorylessAugmentationQueryModel.md) |  |
 **urls** | **string[]** |  |
-**max_input_tokens** | **int** | Maximum number of tokens | [optional]
 **merge_strategy** | **string** | Merge strategy | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

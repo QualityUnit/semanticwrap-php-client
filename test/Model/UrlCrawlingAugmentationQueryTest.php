@@ -116,15 +116,6 @@ class UrlCrawlingAugmentationQueryTest extends TestCase
     }
 
     /**
-     * Test attribute "max_input_tokens"
-     */
-    public function testPropertyMaxInputTokens()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "merge_strategy"
      */
     public function testPropertyMergeStrategy()
