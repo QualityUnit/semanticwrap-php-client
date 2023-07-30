@@ -302,6 +302,21 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['vector_timing'] === null) {
+            $invalidProperties[] = "'vector_timing' can't be null";
+        }
+        if ($this->container['augment_timing'] === null) {
+            $invalidProperties[] = "'augment_timing' can't be null";
+        }
+        if ($this->container['embedding_token_count'] === null) {
+            $invalidProperties[] = "'embedding_token_count' can't be null";
+        }
+        if ($this->container['augmenting_token_count'] === null) {
+            $invalidProperties[] = "'augmenting_token_count' can't be null";
+        }
+        if ($this->container['model_name'] === null) {
+            $invalidProperties[] = "'model_name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -320,7 +335,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets vector_timing
      *
-     * @return int|null
+     * @return int
      */
     public function getVectorTiming()
     {
@@ -330,7 +345,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vector_timing
      *
-     * @param int|null $vector_timing The time taken to search the vector store
+     * @param int $vector_timing The time taken to search the vector store
      *
      * @return self
      */
@@ -347,7 +362,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets augment_timing
      *
-     * @return int|null
+     * @return int
      */
     public function getAugmentTiming()
     {
@@ -357,7 +372,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets augment_timing
      *
-     * @param int|null $augment_timing The time taken to augment the results
+     * @param int $augment_timing The time taken to augment the results
      *
      * @return self
      */
@@ -374,7 +389,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets embedding_token_count
      *
-     * @return int|null
+     * @return int
      */
     public function getEmbeddingTokenCount()
     {
@@ -384,7 +399,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets embedding_token_count
      *
-     * @param int|null $embedding_token_count The number of tokens in the embedding
+     * @param int $embedding_token_count The number of tokens in the embedding
      *
      * @return self
      */
@@ -401,7 +416,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets augmenting_token_count
      *
-     * @return int|null
+     * @return int
      */
     public function getAugmentingTokenCount()
     {
@@ -411,7 +426,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets augmenting_token_count
      *
-     * @param int|null $augmenting_token_count The number of tokens in the augmenting text
+     * @param int $augmenting_token_count The number of tokens in the augmenting text
      *
      * @return self
      */
@@ -428,7 +443,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets model_name
      *
-     * @return string|null
+     * @return string
      */
     public function getModelName()
     {
@@ -438,7 +453,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets model_name
      *
-     * @param string|null $model_name The name of the model
+     * @param string $model_name The name of the model
      *
      * @return self
      */
