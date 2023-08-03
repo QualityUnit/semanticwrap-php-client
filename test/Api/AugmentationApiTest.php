@@ -108,6 +108,18 @@ class AugmentationApiTest extends TestCase
     }
 
     /**
+     * Test case for memorylessAsyncAugment
+     *
+     * Answers a given query from the documents in the index.
+     *
+     */
+    public function testMemorylessAsyncAugment()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for memorylessAugment
      *
      * Answers a given query from the documents in the index.
