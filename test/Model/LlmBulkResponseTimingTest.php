@@ -116,9 +116,9 @@ class LlmBulkResponseTimingTest extends TestCase
     }
 
     /**
-     * Test attribute "model_name"
+     * Test attribute "ai_model_name"
      */
-    public function testPropertyModelName()
+    public function testPropertyAiModelName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

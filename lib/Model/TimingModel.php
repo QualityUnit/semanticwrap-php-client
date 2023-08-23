@@ -61,7 +61,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augment_timing' => 'int',
         'embedding_token_count' => 'int',
         'augmenting_token_count' => 'int',
-        'model_name' => 'string'
+        'ai_model_name' => 'string'
     ];
 
     /**
@@ -76,7 +76,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augment_timing' => null,
         'embedding_token_count' => null,
         'augmenting_token_count' => null,
-        'model_name' => null
+        'ai_model_name' => null
     ];
 
     /**
@@ -89,7 +89,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
 		'augment_timing' => false,
 		'embedding_token_count' => false,
 		'augmenting_token_count' => false,
-		'model_name' => false
+		'ai_model_name' => false
     ];
 
     /**
@@ -182,7 +182,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augment_timing' => 'augment_timing',
         'embedding_token_count' => 'embedding_token_count',
         'augmenting_token_count' => 'augmenting_token_count',
-        'model_name' => 'model_name'
+        'ai_model_name' => 'ai_model_name'
     ];
 
     /**
@@ -195,7 +195,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augment_timing' => 'setAugmentTiming',
         'embedding_token_count' => 'setEmbeddingTokenCount',
         'augmenting_token_count' => 'setAugmentingTokenCount',
-        'model_name' => 'setModelName'
+        'ai_model_name' => 'setAiModelName'
     ];
 
     /**
@@ -208,7 +208,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'augment_timing' => 'getAugmentTiming',
         'embedding_token_count' => 'getEmbeddingTokenCount',
         'augmenting_token_count' => 'getAugmentingTokenCount',
-        'model_name' => 'getModelName'
+        'ai_model_name' => 'getAiModelName'
     ];
 
     /**
@@ -272,7 +272,7 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('augment_timing', $data ?? [], null);
         $this->setIfExists('embedding_token_count', $data ?? [], null);
         $this->setIfExists('augmenting_token_count', $data ?? [], null);
-        $this->setIfExists('model_name', $data ?? [], null);
+        $this->setIfExists('ai_model_name', $data ?? [], null);
     }
 
     /**
@@ -314,8 +314,8 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['augmenting_token_count'] === null) {
             $invalidProperties[] = "'augmenting_token_count' can't be null";
         }
-        if ($this->container['model_name'] === null) {
-            $invalidProperties[] = "'model_name' can't be null";
+        if ($this->container['ai_model_name'] === null) {
+            $invalidProperties[] = "'ai_model_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -441,28 +441,28 @@ class TimingModel implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets model_name
+     * Gets ai_model_name
      *
      * @return string
      */
-    public function getModelName()
+    public function getAiModelName()
     {
-        return $this->container['model_name'];
+        return $this->container['ai_model_name'];
     }
 
     /**
-     * Sets model_name
+     * Sets ai_model_name
      *
-     * @param string $model_name The name of the model
+     * @param string $ai_model_name The name of the model
      *
      * @return self
      */
-    public function setModelName($model_name)
+    public function setAiModelName($ai_model_name)
     {
-        if (is_null($model_name)) {
-            throw new \InvalidArgumentException('non-nullable model_name cannot be null');
+        if (is_null($ai_model_name)) {
+            throw new \InvalidArgumentException('non-nullable ai_model_name cannot be null');
         }
-        $this->container['model_name'] = $model_name;
+        $this->container['ai_model_name'] = $ai_model_name;
 
         return $this;
     }
