@@ -58,6 +58,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'response' => 'string',
+        'logs' => 'object',
         'sources' => '\Semanticwrap\Model\Document[]'
     ];
 
@@ -70,6 +71,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'response' => null,
+        'logs' => null,
         'sources' => null
     ];
 
@@ -80,6 +82,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'response' => false,
+		'logs' => false,
 		'sources' => false
     ];
 
@@ -170,6 +173,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'response' => 'response',
+        'logs' => 'logs',
         'sources' => 'sources'
     ];
 
@@ -180,6 +184,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'response' => 'setResponse',
+        'logs' => 'setLogs',
         'sources' => 'setSources'
     ];
 
@@ -190,6 +195,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'response' => 'getResponse',
+        'logs' => 'getLogs',
         'sources' => 'getSources'
     ];
 
@@ -251,6 +257,7 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('response', $data ?? [], null);
+        $this->setIfExists('logs', $data ?? [], null);
         $this->setIfExists('sources', $data ?? [], null);
     }
 
@@ -283,6 +290,9 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['response'] === null) {
             $invalidProperties[] = "'response' can't be null";
+        }
+        if ($this->container['logs'] === null) {
+            $invalidProperties[] = "'logs' can't be null";
         }
         return $invalidProperties;
     }
@@ -322,6 +332,33 @@ class LlmResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable response cannot be null');
         }
         $this->container['response'] = $response;
+
+        return $this;
+    }
+
+    /**
+     * Gets logs
+     *
+     * @return object
+     */
+    public function getLogs()
+    {
+        return $this->container['logs'];
+    }
+
+    /**
+     * Sets logs
+     *
+     * @param object $logs logs
+     *
+     * @return self
+     */
+    public function setLogs($logs)
+    {
+        if (is_null($logs)) {
+            throw new \InvalidArgumentException('non-nullable logs cannot be null');
+        }
+        $this->container['logs'] = $logs;
 
         return $this;
     }

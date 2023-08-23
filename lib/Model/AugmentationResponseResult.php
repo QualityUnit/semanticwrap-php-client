@@ -59,6 +59,7 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'response' => 'string',
+        'logs' => 'object',
         'sources' => '\Semanticwrap\Model\Document[]'
     ];
 
@@ -71,6 +72,7 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'response' => null,
+        'logs' => null,
         'sources' => null
     ];
 
@@ -81,6 +83,7 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static array $openAPINullables = [
         'response' => false,
+		'logs' => false,
 		'sources' => false
     ];
 
@@ -171,6 +174,7 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $attributeMap = [
         'response' => 'response',
+        'logs' => 'logs',
         'sources' => 'sources'
     ];
 
@@ -181,6 +185,7 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $setters = [
         'response' => 'setResponse',
+        'logs' => 'setLogs',
         'sources' => 'setSources'
     ];
 
@@ -191,6 +196,7 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $getters = [
         'response' => 'getResponse',
+        'logs' => 'getLogs',
         'sources' => 'getSources'
     ];
 
@@ -252,6 +258,7 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(array $data = null)
     {
         $this->setIfExists('response', $data ?? [], null);
+        $this->setIfExists('logs', $data ?? [], null);
         $this->setIfExists('sources', $data ?? [], null);
     }
 
@@ -284,6 +291,9 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
 
         if ($this->container['response'] === null) {
             $invalidProperties[] = "'response' can't be null";
+        }
+        if ($this->container['logs'] === null) {
+            $invalidProperties[] = "'logs' can't be null";
         }
         return $invalidProperties;
     }
@@ -323,6 +333,33 @@ class AugmentationResponseResult implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable response cannot be null');
         }
         $this->container['response'] = $response;
+
+        return $this;
+    }
+
+    /**
+     * Gets logs
+     *
+     * @return object
+     */
+    public function getLogs()
+    {
+        return $this->container['logs'];
+    }
+
+    /**
+     * Sets logs
+     *
+     * @param object $logs logs
+     *
+     * @return self
+     */
+    public function setLogs($logs)
+    {
+        if (is_null($logs)) {
+            throw new \InvalidArgumentException('non-nullable logs cannot be null');
+        }
+        $this->container['logs'] = $logs;
 
         return $this;
     }

@@ -89,6 +89,15 @@ class AugmentationResponseResultTest extends TestCase
     }
 
     /**
+     * Test attribute "logs"
+     */
+    public function testPropertyLogs()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sources"
      */
     public function testPropertySources()
