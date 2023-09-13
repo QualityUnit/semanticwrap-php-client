@@ -57,7 +57,7 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'model_name' => 'string'
+        'fine_tuned_model_name' => 'string'
     ];
 
     /**
@@ -68,7 +68,7 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'model_name' => null
+        'fine_tuned_model_name' => null
     ];
 
     /**
@@ -77,7 +77,7 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'model_name' => false
+        'fine_tuned_model_name' => false
     ];
 
     /**
@@ -166,7 +166,7 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'model_name' => 'model_name'
+        'fine_tuned_model_name' => 'fine_tuned_model_name'
     ];
 
     /**
@@ -175,7 +175,7 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'model_name' => 'setModelName'
+        'fine_tuned_model_name' => 'setFineTunedModelName'
     ];
 
     /**
@@ -184,7 +184,7 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'model_name' => 'getModelName'
+        'fine_tuned_model_name' => 'getFineTunedModelName'
     ];
 
     /**
@@ -244,7 +244,7 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('model_name', $data ?? [], null);
+        $this->setIfExists('fine_tuned_model_name', $data ?? [], null);
     }
 
     /**
@@ -274,8 +274,8 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['model_name'] === null) {
-            $invalidProperties[] = "'model_name' can't be null";
+        if ($this->container['fine_tuned_model_name'] === null) {
+            $invalidProperties[] = "'fine_tuned_model_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -293,28 +293,28 @@ class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets model_name
+     * Gets fine_tuned_model_name
      *
      * @return string
      */
-    public function getModelName()
+    public function getFineTunedModelName()
     {
-        return $this->container['model_name'];
+        return $this->container['fine_tuned_model_name'];
     }
 
     /**
-     * Sets model_name
+     * Sets fine_tuned_model_name
      *
-     * @param string $model_name The name of the model
+     * @param string $fine_tuned_model_name The name of the model
      *
      * @return self
      */
-    public function setModelName($model_name)
+    public function setFineTunedModelName($fine_tuned_model_name)
     {
-        if (is_null($model_name)) {
-            throw new \InvalidArgumentException('non-nullable model_name cannot be null');
+        if (is_null($fine_tuned_model_name)) {
+            throw new \InvalidArgumentException('non-nullable fine_tuned_model_name cannot be null');
         }
-        $this->container['model_name'] = $model_name;
+        $this->container['fine_tuned_model_name'] = $fine_tuned_model_name;
 
         return $this;
     }

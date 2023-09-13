@@ -80,9 +80,9 @@ class SWAIFineTunedModelTest extends TestCase
     }
 
     /**
-     * Test attribute "model_name"
+     * Test attribute "fine_tuned_model_name"
      */
-    public function testPropertyModelName()
+    public function testPropertyFineTunedModelName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
