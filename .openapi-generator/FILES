@@ -6,6 +6,7 @@ README.md
 composer.json
 docs/Api/AugmentationApi.md
 docs/Api/DocumentsApi.md
+docs/Api/FineTunedApi.md
 docs/Api/IndexApi.md
 docs/Api/ProcessApi.md
 docs/Api/SearchApi.md
@@ -13,6 +14,7 @@ docs/Api/VideoApi.md
 docs/Model/AIModel.md
 docs/Model/Ack.md
 docs/Model/AsyncProcessResponse.md
+docs/Model/AugmentationQueryV2.md
 docs/Model/AugmentationResponse.md
 docs/Model/AugmentationResponseResult.md
 docs/Model/AugmentationResponseTiming.md
@@ -43,6 +45,7 @@ docs/Model/MemorylessAugmentationQueryPrompt.md
 docs/Model/PromptTemplateModel.md
 docs/Model/QueryFilter.md
 docs/Model/RelatedDocs.md
+docs/Model/SWAIModel.md
 docs/Model/SearchResponse.md
 docs/Model/TimingModel.md
 docs/Model/UpdateDoc.md
@@ -56,6 +59,7 @@ lib/HeaderSelector.php
 lib/Model/AIModel.php
 lib/Model/Ack.php
 lib/Model/AsyncProcessResponse.php
+lib/Model/AugmentationQueryV2.php
 lib/Model/AugmentationResponse.php
 lib/Model/AugmentationResponseResult.php
 lib/Model/AugmentationResponseTiming.php
@@ -87,6 +91,7 @@ lib/Model/ModelInterface.php
 lib/Model/PromptTemplateModel.php
 lib/Model/QueryFilter.php
 lib/Model/RelatedDocs.php
+lib/Model/SWAIModel.php
 lib/Model/SearchResponse.php
 lib/Model/TimingModel.php
 lib/Model/UpdateDoc.php
@@ -96,6 +101,7 @@ lib/Model/YoutubeTranscriptResponseModel.php
 lib/ObjectSerializer.php
 lib/semanticwrap/AugmentationApi.php
 lib/semanticwrap/DocumentsApi.php
+lib/semanticwrap/FineTunedApi.php
 lib/semanticwrap/IndexApi.php
 lib/semanticwrap/ProcessApi.php
 lib/semanticwrap/SearchApi.php
@@ -103,6 +109,7 @@ lib/semanticwrap/VideoApi.php
 phpunit.xml.dist
 test/Api/AugmentationApiTest.php
 test/Api/DocumentsApiTest.php
+test/Api/FineTunedApiTest.php
 test/Api/IndexApiTest.php
 test/Api/ProcessApiTest.php
 test/Api/SearchApiTest.php
@@ -110,6 +117,7 @@ test/Api/VideoApiTest.php
 test/Model/AIModelTest.php
 test/Model/AckTest.php
 test/Model/AsyncProcessResponseTest.php
+test/Model/AugmentationQueryV2Test.php
 test/Model/AugmentationResponseResultTest.php
 test/Model/AugmentationResponseTest.php
 test/Model/AugmentationResponseTimingTest.php
@@ -140,6 +148,7 @@ test/Model/MemorylessAugmentationQueryTest.php
 test/Model/PromptTemplateModelTest.php
 test/Model/QueryFilterTest.php
 test/Model/RelatedDocsTest.php
+test/Model/SWAIModelTest.php
 test/Model/SearchResponseTest.php
 test/Model/TimingModelTest.php
 test/Model/UpdateDocTest.php
