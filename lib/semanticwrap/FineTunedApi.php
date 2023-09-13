@@ -463,7 +463,7 @@ class FineTunedApi
      *
      * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Semanticwrap\Model\AugmentationResponse|\Semanticwrap\Model\Error
+     * @return \Semanticwrap\Model\LlmResponse|\Semanticwrap\Model\Error
      */
     public function memorylessAugmentV2($payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
     {
@@ -481,7 +481,7 @@ class FineTunedApi
      *
      * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Semanticwrap\Model\AugmentationResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\LlmResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function memorylessAugmentV2WithHttpInfo($payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
     {
@@ -524,17 +524,17 @@ class FineTunedApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Semanticwrap\Model\AugmentationResponse' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\LlmResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Semanticwrap\Model\AugmentationResponse' !== 'string') {
+                        if ('\Semanticwrap\Model\LlmResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\AugmentationResponse', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\LlmResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -555,7 +555,7 @@ class FineTunedApi
                     ];
             }
 
-            $returnType = '\Semanticwrap\Model\AugmentationResponse';
+            $returnType = '\Semanticwrap\Model\LlmResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -576,7 +576,7 @@ class FineTunedApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Semanticwrap\Model\AugmentationResponse',
+                        '\Semanticwrap\Model\LlmResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -628,7 +628,7 @@ class FineTunedApi
      */
     public function memorylessAugmentV2AsyncWithHttpInfo($payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
     {
-        $returnType = '\Semanticwrap\Model\AugmentationResponse';
+        $returnType = '\Semanticwrap\Model\LlmResponse';
         $request = $this->memorylessAugmentV2Request($payload, $contentType);
 
         return $this->client

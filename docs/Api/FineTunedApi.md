@@ -67,7 +67,7 @@ No authorization required
 ## `memorylessAugmentV2()`
 
 ```php
-memorylessAugmentV2($payload): \Semanticwrap\Model\AugmentationResponse
+memorylessAugmentV2($payload): \Semanticwrap\Model\LlmResponse
 ```
 
 Answers a given query from the documents in the index
@@ -105,7 +105,7 @@ try {
 
 ### Return type
 
-[**\Semanticwrap\Model\AugmentationResponse**](../Model/AugmentationResponse.md)
+[**\Semanticwrap\Model\LlmResponse**](../Model/LlmResponse.md)
 
 ### Authorization
 
