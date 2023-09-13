@@ -5,13 +5,13 @@ All URIs are relative to /api/v1, except if the operation defines another base p
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**listFineTunedModel()**](FineTunedApi.md#listFineTunedModel) | **POST** /fine_tuned/ | Get fine tuned models |
-| [**memorylessAugmentV2()**](FineTunedApi.md#memorylessAugmentV2) | **POST** /fine_tuned/memoryless/augment/{index_name} | Answers a given query from the documents in the index |
+| [**memorylessAugmentV2()**](FineTunedApi.md#memorylessAugmentV2) | **POST** /fine_tuned/memoryless/augment | Answers a given query from the documents in the index |
 
 
 ## `listFineTunedModel()`
 
 ```php
-listFineTunedModel($payload): \Semanticwrap\Model\SWAIModel[]
+listFineTunedModel($payload): \Semanticwrap\Model\SWAIFineTunedModel
 ```
 
 Get fine tuned models
@@ -49,7 +49,7 @@ try {
 
 ### Return type
 
-[**\Semanticwrap\Model\SWAIModel[]**](../Model/SWAIModel.md)
+[**\Semanticwrap\Model\SWAIFineTunedModel**](../Model/SWAIFineTunedModel.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ No authorization required
 ## `memorylessAugmentV2()`
 
 ```php
-memorylessAugmentV2($index_name, $payload): \Semanticwrap\Model\AugmentationResponse
+memorylessAugmentV2($payload): \Semanticwrap\Model\AugmentationResponse
 ```
 
 Answers a given query from the documents in the index
@@ -87,11 +87,10 @@ $apiInstance = new Semanticwrap\Api\FineTunedApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$index_name = 'index_name_example'; // string
 $payload = new \Semanticwrap\Model\AugmentationQueryV2(); // \Semanticwrap\Model\AugmentationQueryV2
 
 try {
-    $result = $apiInstance->memorylessAugmentV2($index_name, $payload);
+    $result = $apiInstance->memorylessAugmentV2($payload);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FineTunedApi->memorylessAugmentV2: ', $e->getMessage(), PHP_EOL;
@@ -102,7 +101,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **index_name** | **string**|  | |
 | **payload** | [**\Semanticwrap\Model\AugmentationQueryV2**](../Model/AugmentationQueryV2.md)|  | |
 
 ### Return type

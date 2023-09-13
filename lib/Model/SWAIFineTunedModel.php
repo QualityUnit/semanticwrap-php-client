@@ -1,6 +1,6 @@
 <?php
 /**
- * SWAIModel
+ * SWAIFineTunedModel
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Semanticwrap\ObjectSerializer;
 
 /**
- * SWAIModel Class Doc Comment
+ * SWAIFineTunedModel Class Doc Comment
  *
  * @category Class
  * @package  Semanticwrap
@@ -40,7 +40,7 @@ use \Semanticwrap\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SWAIModel implements ModelInterface, ArrayAccess, \JsonSerializable
+class SWAIFineTunedModel implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SWAIModel implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SWAIModel';
+    protected static $openAPIModelName = 'SWAIFineTunedModel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

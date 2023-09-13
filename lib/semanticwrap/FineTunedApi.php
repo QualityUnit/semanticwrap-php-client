@@ -135,7 +135,7 @@ class FineTunedApi
      *
      * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Semanticwrap\Model\SWAIModel[]|\Semanticwrap\Model\Error|\Semanticwrap\Model\Error
+     * @return \Semanticwrap\Model\SWAIFineTunedModel|\Semanticwrap\Model\Error|\Semanticwrap\Model\Error
      */
     public function listFineTunedModel($payload, string $contentType = self::contentTypes['listFineTunedModel'][0])
     {
@@ -153,7 +153,7 @@ class FineTunedApi
      *
      * @throws \Semanticwrap\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Semanticwrap\Model\SWAIModel[]|\Semanticwrap\Model\Error|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semanticwrap\Model\SWAIFineTunedModel|\Semanticwrap\Model\Error|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function listFineTunedModelWithHttpInfo($payload, string $contentType = self::contentTypes['listFineTunedModel'][0])
     {
@@ -196,17 +196,17 @@ class FineTunedApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Semanticwrap\Model\SWAIModel[]' === '\SplFileObject') {
+                    if ('\Semanticwrap\Model\SWAIFineTunedModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Semanticwrap\Model\SWAIModel[]' !== 'string') {
+                        if ('\Semanticwrap\Model\SWAIFineTunedModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\SWAIModel[]', []),
+                        ObjectSerializer::deserialize($content, '\Semanticwrap\Model\SWAIFineTunedModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -242,7 +242,7 @@ class FineTunedApi
                     ];
             }
 
-            $returnType = '\Semanticwrap\Model\SWAIModel[]';
+            $returnType = '\Semanticwrap\Model\SWAIFineTunedModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -263,7 +263,7 @@ class FineTunedApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Semanticwrap\Model\SWAIModel[]',
+                        '\Semanticwrap\Model\SWAIFineTunedModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -323,7 +323,7 @@ class FineTunedApi
      */
     public function listFineTunedModelAsyncWithHttpInfo($payload, string $contentType = self::contentTypes['listFineTunedModel'][0])
     {
-        $returnType = '\Semanticwrap\Model\SWAIModel[]';
+        $returnType = '\Semanticwrap\Model\SWAIFineTunedModel';
         $request = $this->listFineTunedModelRequest($payload, $contentType);
 
         return $this->client
@@ -458,7 +458,6 @@ class FineTunedApi
      *
      * Answers a given query from the documents in the index
      *
-     * @param  string $index_name index_name (required)
      * @param  \Semanticwrap\Model\AugmentationQueryV2 $payload payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memorylessAugmentV2'] to see the possible values for this operation
      *
@@ -466,9 +465,9 @@ class FineTunedApi
      * @throws \InvalidArgumentException
      * @return \Semanticwrap\Model\AugmentationResponse|\Semanticwrap\Model\Error
      */
-    public function memorylessAugmentV2($index_name, $payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
+    public function memorylessAugmentV2($payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
     {
-        list($response) = $this->memorylessAugmentV2WithHttpInfo($index_name, $payload, $contentType);
+        list($response) = $this->memorylessAugmentV2WithHttpInfo($payload, $contentType);
         return $response;
     }
 
@@ -477,7 +476,6 @@ class FineTunedApi
      *
      * Answers a given query from the documents in the index
      *
-     * @param  string $index_name (required)
      * @param  \Semanticwrap\Model\AugmentationQueryV2 $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memorylessAugmentV2'] to see the possible values for this operation
      *
@@ -485,9 +483,9 @@ class FineTunedApi
      * @throws \InvalidArgumentException
      * @return array of \Semanticwrap\Model\AugmentationResponse|\Semanticwrap\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function memorylessAugmentV2WithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
+    public function memorylessAugmentV2WithHttpInfo($payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
     {
-        $request = $this->memorylessAugmentV2Request($index_name, $payload, $contentType);
+        $request = $this->memorylessAugmentV2Request($payload, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -601,16 +599,15 @@ class FineTunedApi
      *
      * Answers a given query from the documents in the index
      *
-     * @param  string $index_name (required)
      * @param  \Semanticwrap\Model\AugmentationQueryV2 $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memorylessAugmentV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function memorylessAugmentV2Async($index_name, $payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
+    public function memorylessAugmentV2Async($payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
     {
-        return $this->memorylessAugmentV2AsyncWithHttpInfo($index_name, $payload, $contentType)
+        return $this->memorylessAugmentV2AsyncWithHttpInfo($payload, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -623,17 +620,16 @@ class FineTunedApi
      *
      * Answers a given query from the documents in the index
      *
-     * @param  string $index_name (required)
      * @param  \Semanticwrap\Model\AugmentationQueryV2 $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memorylessAugmentV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function memorylessAugmentV2AsyncWithHttpInfo($index_name, $payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
+    public function memorylessAugmentV2AsyncWithHttpInfo($payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
     {
         $returnType = '\Semanticwrap\Model\AugmentationResponse';
-        $request = $this->memorylessAugmentV2Request($index_name, $payload, $contentType);
+        $request = $this->memorylessAugmentV2Request($payload, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -674,22 +670,14 @@ class FineTunedApi
     /**
      * Create request for operation 'memorylessAugmentV2'
      *
-     * @param  string $index_name (required)
      * @param  \Semanticwrap\Model\AugmentationQueryV2 $payload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['memorylessAugmentV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function memorylessAugmentV2Request($index_name, $payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
+    public function memorylessAugmentV2Request($payload, string $contentType = self::contentTypes['memorylessAugmentV2'][0])
     {
-
-        // verify the required parameter 'index_name' is set
-        if ($index_name === null || (is_array($index_name) && count($index_name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $index_name when calling memorylessAugmentV2'
-            );
-        }
 
         // verify the required parameter 'payload' is set
         if ($payload === null || (is_array($payload) && count($payload) === 0)) {
@@ -699,7 +687,7 @@ class FineTunedApi
         }
 
 
-        $resourcePath = '/fine_tuned/memoryless/augment/{index_name}';
+        $resourcePath = '/fine_tuned/memoryless/augment';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -708,14 +696,6 @@ class FineTunedApi
 
 
 
-        // path params
-        if ($index_name !== null) {
-            $resourcePath = str_replace(
-                '{' . 'index_name' . '}',
-                ObjectSerializer::toPathValue($index_name),
-                $resourcePath
-            );
-        }
 
 
         $headers = $this->headerSelector->selectHeaders(

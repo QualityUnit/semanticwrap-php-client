@@ -1,4 +1,4 @@
-# # SWAIModel
+# # SWAIFineTunedModel
 
 ## Properties
 

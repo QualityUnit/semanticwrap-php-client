@@ -45,7 +45,7 @@ docs/Model/MemorylessAugmentationQueryPrompt.md
 docs/Model/PromptTemplateModel.md
 docs/Model/QueryFilter.md
 docs/Model/RelatedDocs.md
-docs/Model/SWAIModel.md
+docs/Model/SWAIFineTunedModel.md
 docs/Model/SearchResponse.md
 docs/Model/TimingModel.md
 docs/Model/UpdateDoc.md
@@ -91,7 +91,7 @@ lib/Model/ModelInterface.php
 lib/Model/PromptTemplateModel.php
 lib/Model/QueryFilter.php
 lib/Model/RelatedDocs.php
-lib/Model/SWAIModel.php
+lib/Model/SWAIFineTunedModel.php
 lib/Model/SearchResponse.php
 lib/Model/TimingModel.php
 lib/Model/UpdateDoc.php
@@ -148,7 +148,7 @@ test/Model/MemorylessAugmentationQueryTest.php
 test/Model/PromptTemplateModelTest.php
 test/Model/QueryFilterTest.php
 test/Model/RelatedDocsTest.php
-test/Model/SWAIModelTest.php
+test/Model/SWAIFineTunedModelTest.php
 test/Model/SearchResponseTest.php
 test/Model/TimingModelTest.php
 test/Model/UpdateDocTest.php

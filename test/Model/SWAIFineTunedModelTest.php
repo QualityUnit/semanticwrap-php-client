@@ -1,6 +1,6 @@
 <?php
 /**
- * SWAIModelTest
+ * SWAIFineTunedModelTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Semanticwrap\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * SWAIModelTest Class Doc Comment
+ * SWAIFineTunedModelTest Class Doc Comment
  *
  * @category    Class
- * @description SWAIModel
+ * @description SWAIFineTunedModel
  * @package     Semanticwrap
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class SWAIModelTest extends TestCase
+class SWAIFineTunedModelTest extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class SWAIModelTest extends TestCase
     }
 
     /**
-     * Test "SWAIModel"
+     * Test "SWAIFineTunedModel"
      */
-    public function testSWAIModel()
+    public function testSWAIFineTunedModel()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
