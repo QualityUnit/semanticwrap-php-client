@@ -96,4 +96,13 @@ class PromptTemplateModelTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "metadata_vars"
+     */
+    public function testPropertyMetadataVars()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

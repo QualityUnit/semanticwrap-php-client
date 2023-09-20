@@ -58,7 +58,8 @@ class PromptTemplateModel implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'prompt_template' => 'string',
-        'document_template' => 'string'
+        'document_template' => 'string',
+        'metadata_vars' => 'string[]'
     ];
 
     /**
@@ -70,7 +71,8 @@ class PromptTemplateModel implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'prompt_template' => null,
-        'document_template' => null
+        'document_template' => null,
+        'metadata_vars' => null
     ];
 
     /**
@@ -80,7 +82,8 @@ class PromptTemplateModel implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'prompt_template' => false,
-		'document_template' => false
+		'document_template' => false,
+		'metadata_vars' => false
     ];
 
     /**
@@ -170,7 +173,8 @@ class PromptTemplateModel implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'prompt_template' => 'prompt_template',
-        'document_template' => 'document_template'
+        'document_template' => 'document_template',
+        'metadata_vars' => 'metadata_vars'
     ];
 
     /**
@@ -180,7 +184,8 @@ class PromptTemplateModel implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'prompt_template' => 'setPromptTemplate',
-        'document_template' => 'setDocumentTemplate'
+        'document_template' => 'setDocumentTemplate',
+        'metadata_vars' => 'setMetadataVars'
     ];
 
     /**
@@ -190,7 +195,8 @@ class PromptTemplateModel implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'prompt_template' => 'getPromptTemplate',
-        'document_template' => 'getDocumentTemplate'
+        'document_template' => 'getDocumentTemplate',
+        'metadata_vars' => 'getMetadataVars'
     ];
 
     /**
@@ -252,6 +258,7 @@ class PromptTemplateModel implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $this->setIfExists('prompt_template', $data ?? [], null);
         $this->setIfExists('document_template', $data ?? [], null);
+        $this->setIfExists('metadata_vars', $data ?? [], null);
     }
 
     /**
@@ -346,6 +353,33 @@ class PromptTemplateModel implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable document_template cannot be null');
         }
         $this->container['document_template'] = $document_template;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata_vars
+     *
+     * @return string[]|null
+     */
+    public function getMetadataVars()
+    {
+        return $this->container['metadata_vars'];
+    }
+
+    /**
+     * Sets metadata_vars
+     *
+     * @param string[]|null $metadata_vars Metadata variables used in document template
+     *
+     * @return self
+     */
+    public function setMetadataVars($metadata_vars)
+    {
+        if (is_null($metadata_vars)) {
+            throw new \InvalidArgumentException('non-nullable metadata_vars cannot be null');
+        }
+        $this->container['metadata_vars'] = $metadata_vars;
 
         return $this;
     }
