@@ -55,28 +55,31 @@ $apiInstance = new Semanticwrap\Api\AugmentationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$payload = new \Semanticwrap\Model\UrlCrawlingAugmentationQuery(); // \Semanticwrap\Model\UrlCrawlingAugmentationQuery
+$index_name = 'index_name_example'; // string
+$payload = new \Semanticwrap\Model\CompletionQuery(); // \Semanticwrap\Model\CompletionQuery
+$error_on_empty_docs = 'error_on_empty_docs_example'; // string | If true, will return 400 error if no docs are found
+$with_source = 'with_source_example'; // string | If true, the source of the answer is returned
 
 try {
-    $result = $apiInstance->augmentByUrls($payload);
+    $result = $apiInstance->asyncAugment($index_name, $payload, $error_on_empty_docs, $with_source);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AugmentationApi->augmentByUrls: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AugmentationApi->asyncAugment: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
 
 ## API Endpoints
 
-All URIs are relative to */api/v1*
+All URIs are relative to */api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AugmentationApi* | [**augmentByUrls**](docs/Api/AugmentationApi.md#augmentbyurls) | **POST** /augment/complex-chain/urls | Answers a given query from the documents in the index
-*AugmentationApi* | [**complexAugment**](docs/Api/AugmentationApi.md#complexaugment) | **POST** /augment/complex-chain/docs | Answers a given query from the documents in the index
-*AugmentationApi* | [**memoryfullAugment**](docs/Api/AugmentationApi.md#memoryfullaugment) | **POST** /augment/memoryfull/{index_name} | Answers a given query from the documents in the index
-*AugmentationApi* | [**memorylessAsyncAugment**](docs/Api/AugmentationApi.md#memorylessasyncaugment) | **POST** /augment/async/memoryless/{index_name} | Answers a given query from the documents in the index
-*AugmentationApi* | [**memorylessAugment**](docs/Api/AugmentationApi.md#memorylessaugment) | **POST** /augment/memoryless/{index_name} | Answers a given query from the documents in the index
+*AugmentationApi* | [**asyncAugment**](docs/Api/AugmentationApi.md#asyncaugment) | **POST** /augmentation/async/augment/{index_name} | Answers a given query from the documents in the index
+*AugmentationApi* | [**augment**](docs/Api/AugmentationApi.md#augment) | **POST** /augmentation/augment/{index_name} | Answers a given query from the documents in the index
+*AugmentationApi* | [**augmentByUrls**](docs/Api/AugmentationApi.md#augmentbyurls) | **POST** /augmentation/complex-chain/urls | Answers a given query from the documents in the index
+*AugmentationApi* | [**chatAugment**](docs/Api/AugmentationApi.md#chataugment) | **POST** /augmentation/chat/augment/{index_name} | Answers a given query from the documents in the index
+*AugmentationApi* | [**complexAugment**](docs/Api/AugmentationApi.md#complexaugment) | **POST** /augmentation/complex-chain/docs | Answers a given query from the documents in the index
 *DocumentsApi* | [**deleteDocument**](docs/Api/DocumentsApi.md#deletedocument) | **DELETE** /doc/{index_name}/{doc_id} | Deletes a document
 *DocumentsApi* | [**deleteDocumentByQuery**](docs/Api/DocumentsApi.md#deletedocumentbyquery) | **POST** /doc/delete_by_query/{index_name} | Delete a document by query
 *DocumentsApi* | [**getDocument**](docs/Api/DocumentsApi.md#getdocument) | **GET** /doc/{index_name}/{doc_id} | Get a document
@@ -98,11 +101,16 @@ Class | Method | HTTP request | Description
 - [Ack](docs/Model/Ack.md)
 - [AsyncProcessResponse](docs/Model/AsyncProcessResponse.md)
 - [AugmentationQueryV2](docs/Model/AugmentationQueryV2.md)
-- [AugmentationResponse](docs/Model/AugmentationResponse.md)
-- [AugmentationResponseResult](docs/Model/AugmentationResponseResult.md)
-- [AugmentationResponseTiming](docs/Model/AugmentationResponseTiming.md)
 - [AuthSecurity](docs/Model/AuthSecurity.md)
 - [BulkIndex](docs/Model/BulkIndex.md)
+- [ChatCompletionQuery](docs/Model/ChatCompletionQuery.md)
+- [CompletionQuery](docs/Model/CompletionQuery.md)
+- [CompletionQueryFilter](docs/Model/CompletionQueryFilter.md)
+- [CompletionQueryModel](docs/Model/CompletionQueryModel.md)
+- [CompletionQueryPrompt](docs/Model/CompletionQueryPrompt.md)
+- [CompletionResponse](docs/Model/CompletionResponse.md)
+- [CompletionResponseResult](docs/Model/CompletionResponseResult.md)
+- [CompletionResponseTiming](docs/Model/CompletionResponseTiming.md)
 - [ComplexAugmentationWithDocs](docs/Model/ComplexAugmentationWithDocs.md)
 - [DocsSearch](docs/Model/DocsSearch.md)
 - [DocsSearchFilter](docs/Model/DocsSearchFilter.md)
@@ -120,11 +128,6 @@ Class | Method | HTTP request | Description
 - [LlmBulkResponse](docs/Model/LlmBulkResponse.md)
 - [LlmBulkResponseTiming](docs/Model/LlmBulkResponseTiming.md)
 - [LlmResponse](docs/Model/LlmResponse.md)
-- [MemoryfullAugmentationQuery](docs/Model/MemoryfullAugmentationQuery.md)
-- [MemorylessAugmentationQuery](docs/Model/MemorylessAugmentationQuery.md)
-- [MemorylessAugmentationQueryFilter](docs/Model/MemorylessAugmentationQueryFilter.md)
-- [MemorylessAugmentationQueryModel](docs/Model/MemorylessAugmentationQueryModel.md)
-- [MemorylessAugmentationQueryPrompt](docs/Model/MemorylessAugmentationQueryPrompt.md)
 - [PromptTemplateModel](docs/Model/PromptTemplateModel.md)
 - [QueryFilter](docs/Model/QueryFilter.md)
 - [RelatedDocs](docs/Model/RelatedDocs.md)
@@ -155,6 +158,6 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.0`
-    - Package version: `1.0.56`
+- API version: `2.0`
+    - Package version: `2.0.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

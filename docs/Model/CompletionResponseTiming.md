@@ -1,4 +1,4 @@
-# # AugmentationResponseTiming
+# # CompletionResponseTiming
 
 ## Properties
 

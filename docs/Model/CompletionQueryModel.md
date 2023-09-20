@@ -1,4 +1,4 @@
-# # MemorylessAugmentationQueryModel
+# # CompletionQueryModel
 
 ## Properties
 

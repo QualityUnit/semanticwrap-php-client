@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **prompt** | **object** | Main prompt template to use |
-**model** | [**\Semanticwrap\Model\MemorylessAugmentationQueryModel**](MemorylessAugmentationQueryModel.md) |  |
+**model** | [**\Semanticwrap\Model\CompletionQueryModel**](CompletionQueryModel.md) |  |
 **docs** | **string[]** |  |
 **merge_strategy** | **string** | Merge strategy | [optional]
 

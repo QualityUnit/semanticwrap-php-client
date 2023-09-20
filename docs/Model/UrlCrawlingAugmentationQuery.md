@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **prompt** | **object** | Main prompt template to use |
 **take_top_chunks** | **int** | Number of top chunks to take | [optional]
-**model** | [**\Semanticwrap\Model\MemorylessAugmentationQueryModel**](MemorylessAugmentationQueryModel.md) |  |
+**model** | [**\Semanticwrap\Model\CompletionQueryModel**](CompletionQueryModel.md) |  |
 **urls** | **string[]** |  |
 **merge_strategy** | **string** | Merge strategy | [optional]
 
