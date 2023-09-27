@@ -23,11 +23,6 @@ jobs:
         with:
           repository: QualityUnit/semanticwrap-php-client
           ref: main
-      - name: Tag release
-        run: |
-          git config --global user.name "QualityUnitCI"
-          git config --global user.email "yboroumand@qualityuit.com"
-          git tag -a -m "Release Semanticwrap"  "${{ inputs.release_version }}"
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
@@ -40,3 +35,4 @@ jobs:
             Changes in this Release
           draft: false
           prerelease: false
+          repository: QualityUnit/semanticwrap-php-client
