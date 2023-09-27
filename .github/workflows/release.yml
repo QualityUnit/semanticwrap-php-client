@@ -26,8 +26,7 @@ jobs:
           path: semanticwrap-php-client
       - name: Create Release
         id: create_release
-        uses: actions/create-release@latest
-        working-directory: semanticwrap-php-client
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
           GITHUB_REPOSITORY: QualityUnit/semanticwrap-php-client
