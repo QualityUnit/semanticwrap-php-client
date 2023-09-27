@@ -19,7 +19,10 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Checkout code
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
+        with:
+          repository: QualityUnit/semanticwrap-php-client
+          ref: main
       - name: Tag release
         run: |
           git config --global user.name "QualityUnitCI"
