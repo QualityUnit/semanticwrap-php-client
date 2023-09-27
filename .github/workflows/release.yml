@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@main
       - name: Tag release
         run: |
-          git tag -a -m "Release Semanticwrap"  "${{ github.event.release.tag_name }}"
+          git tag -a -m "Release Semanticwrap"  "${{ github.event.inputs.release_version }}"
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
