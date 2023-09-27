@@ -1,0 +1,31 @@
+name: Php Client Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        required: true
+        type: string
+
+jobs:
+  release:
+    name: "Trigger release version ${{ github.event.inputs.release_version }}"
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+      - name: Tag release
+        run: |
+          git tag -a -m "Release Semanticwrap"  "${{ github.event.release.tag_name }}"
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.event.inputs.release_version }}
+          release_name: Release ${{ github.event.inputs.release_version }}
+          body: |
+            Changes in this Release
+          draft: false
+          prerelease: false
