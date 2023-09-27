@@ -7,6 +7,12 @@ on:
         required: true
         type: string
 
+  workflow_call:
+    inputs:
+      release_version:
+        required: true
+        type: string
+
 jobs:
   release:
     name: "Trigger release version ${{ github.event.inputs.release_version }}"
