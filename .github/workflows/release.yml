@@ -32,8 +32,9 @@ jobs:
           GITHUB_REPOSITORY: QualityUnit/semanticwrap-php-client
         with:
           tag_name: ${{ inputs.release_version }}
-          release_name: Release ${{ inputs.release_version }}
+          name: Release ${{ inputs.release_version }}
           body: |
             Changes in this Release
           draft: false
           prerelease: false
+          repository: QualityUnit/semanticwrap-php-client
