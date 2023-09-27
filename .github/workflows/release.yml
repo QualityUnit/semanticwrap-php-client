@@ -23,7 +23,7 @@ jobs:
       - name: Tag release
         run: |
           git config --global user.name "QualityUnitCI"
-          git config --global user.email "devops@qualityunit.com"
+          git config --global user.email "yboroumand@qualityuit.com"
           git tag -a -m "Release Semanticwrap"  "${{ inputs.release_version }}"
       - name: Create Release
         id: create_release
