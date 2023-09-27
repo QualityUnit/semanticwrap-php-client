@@ -28,6 +28,7 @@ jobs:
         uses: actions/create-release@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_REPOSITORY: QualityUnit/semanticwrap-php-client
         with:
           tag_name: ${{ inputs.release_version }}
           release_name: Release ${{ inputs.release_version }}
@@ -35,4 +36,3 @@ jobs:
             Changes in this Release
           draft: false
           prerelease: false
-          repository: QualityUnit/semanticwrap-php-client
